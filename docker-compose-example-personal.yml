@@ -19,7 +19,7 @@ services:
             # --------------------------------------------------------------------
             # -> Para que se dispare el Xdebug en el entorno de desarrollo
             # XDEBUG_TRIGGER: 1
-            # a falta de configuracón adicional y no intención de uso por el momento,
+            # a falta de configuración adicional y no intención de uso por el momento,
             # queda deshabilitado el Xdebug por defecto
             # --------------------------------------------------------------------
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
