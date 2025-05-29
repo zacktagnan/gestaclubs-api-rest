@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('full_name', 100)->unique();
             $table->string('email')->unique();
-            $table->unsignedBigInteger('salary')->default(0);
+            $table->unsignedBigInteger('salary');
 
             $table->foreignIdFor(Club::class)->nullable()->constrained()->nullOnDelete()->unique();
 
