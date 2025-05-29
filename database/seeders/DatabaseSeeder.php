@@ -13,11 +13,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $clubBudgetIncrementSeeder = new ClubBudgetIncrementSeeder();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            UserSeeder::class,
+
+            ClubSeeder::class,
+            PlayerSeeder::class,
         ]);
+
+        $clubBudgetIncrementSeeder->minIncrement = 500_000;
+        $clubBudgetIncrementSeeder->maxIncrement = 700_000;
+        $clubBudgetIncrementSeeder->run();
+
+        $this->call(CoachSeeder::class);
+
+        $clubBudgetIncrementSeeder->minIncrement = 3_000_000;
+        $clubBudgetIncrementSeeder->maxIncrement = 5_000_000;
+        $clubBudgetIncrementSeeder->run();
     }
 }
