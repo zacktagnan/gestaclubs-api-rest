@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\API\V1\Club;
 
+use App\Traits\ValidatesClubBudget;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Foundation\Http\FormRequest;
  */
 class UpdateClubRequest extends FormRequest
 {
+    use ValidatesClubBudget;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -26,7 +29,12 @@ class UpdateClubRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:100|unique:clubs,name,' . $this->route('club')->id,
-            'budget' => 'required|integer|min:7400000',
+            'budget' => 'required|integer|min:1',
         ];
+    }
+
+    public function withValidator($validator): void
+    {
+        $this->validateBudgetSufficiency($validator);
     }
 }
