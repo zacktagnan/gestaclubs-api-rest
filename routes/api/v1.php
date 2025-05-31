@@ -26,8 +26,8 @@ Route::prefix('management')->middleware('auth:sanctum')->group(function () {
     Route::patch('books/{book}/stock', [ClubController::class, 'updateBudget'])->name('clubs.updateBudget');
 
     Route::apiResource('coach', CoachController::class);
-    Route::delete('/coaches/{coach}/club', [CoachController::class, 'unassignClub'])->name('books.unassignClub');
+    Route::delete('/coaches/{coach}/club', [CoachController::class, 'removeFromClub'])->name('coaches.removeFromClub');
 
     Route::apiResource('players', PlayerController::class);
-    Route::delete('/players/{coach}/club', [CoachController::class, 'unassignClub'])->name('players.unassignClub');
+    Route::delete('/players/{player}/club', [CoachController::class, 'removeFromClub'])->name('players.removeFromClub');
 });

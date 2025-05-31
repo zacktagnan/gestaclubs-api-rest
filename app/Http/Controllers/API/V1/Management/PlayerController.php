@@ -67,14 +67,14 @@ class PlayerController
         );
     }
 
-    public function unassignClub(Player $player): JsonResponse
+    public function removeFromClub(Player $player): JsonResponse
     {
         $player->club_id = null;
         $player->save();
 
         return ApiResponseService::success(
             new PlayerResource($player),
-            message: 'Player unassigned from Club successfully.'
+            message: 'Player has been released from Club successfully.'
         );
     }
 

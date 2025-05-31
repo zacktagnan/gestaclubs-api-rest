@@ -65,14 +65,14 @@ class CoachController
         );
     }
 
-    public function unassignClub(Coach $coach): JsonResponse
+    public function removeFromClub(Coach $coach): JsonResponse
     {
         $coach->club_id = null;
         $coach->save();
 
         return ApiResponseService::success(
             new CoachResource($coach),
-            message: 'Coach unassigned from Club successfully.'
+            message: 'Coach has been dismissed from Club successfully.'
         );
     }
 
