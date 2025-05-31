@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\PlayerResource;
-use DragonCode\PrettyArray\Services\Formatters\Json;
 use Symfony\Component\HttpFoundation\Response;
 
 class PlayerController
@@ -70,6 +69,7 @@ class PlayerController
     public function removeFromClub(Player $player): JsonResponse
     {
         $player->club_id = null;
+        $player->salary = null;
         $player->save();
 
         return ApiResponseService::success(

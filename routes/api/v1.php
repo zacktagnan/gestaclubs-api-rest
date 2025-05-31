@@ -23,7 +23,11 @@ Route::prefix('auth')->as('auth.')->group(function () {
 
 Route::prefix('management')->middleware('auth:sanctum')->group(function () {
     Route::apiResource('clubs', ClubController::class);
-    Route::patch('clubs/{club}/budget', [ClubController::class, 'updateBudget'])->name('clubs.updateBudget');
+    Route::prefix('clubs')->as('clubs.')->group(function () {
+        Route::patch('{club}/budget', [ClubController::class, 'updateBudget'])->name('updateBudget');
+        Route::post('{club}/sign-player', [ClubController::class, 'signPlayer'])->name('signPlayer');
+        Route::post('{club}/sign-coach', [ClubController::class, 'signCoach'])->name('signCoach');
+    });
 
     Route::apiResource('coaches', CoachController::class);
     Route::delete('/coaches/{coach}/club', [CoachController::class, 'removeFromClub'])->name('coaches.removeFromClub');

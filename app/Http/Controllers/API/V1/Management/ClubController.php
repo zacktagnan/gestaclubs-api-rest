@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Models\Club;
+use App\Models\Player;
 use Illuminate\Http\JsonResponse;
 use App\Http\Resources\API\V1\ClubResource;
 use App\Services\API\V1\ApiResponseService;
-use App\Http\Requests\API\V1\Club\StoreClubRequest;
-use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
-use App\Http\Requests\API\V1\Club\UpdateClubRequest;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\API\V1\Club\StoreClubRequest;
+use App\Http\Requests\API\V1\Club\UpdateClubRequest;
+use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
+use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
+use App\Http\Resources\API\V1\CoachResource;
+use App\Http\Resources\API\V1\PlayerResource;
+use App\Models\Coach;
 
 class ClubController
 {
@@ -90,6 +96,79 @@ class ClubController
         return ApiResponseService::success(
             data: null,
             message: 'Club deleted successfully.'
+        );
+    }
+
+    public function signPlayer(ClubSignPlayerRequest $request, Club $club): JsonResponse
+    {
+        $validated = $request->validated();
+        $playerId = $validated['player_id'];
+        $playerSalary = $validated['salary'];
+
+        $player = Player::findOrFail($playerId);
+
+        if ($player->club_id) {
+            return ApiResponseService::error(
+                message: 'Player is already assigned to another Club.',
+                code: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
+        if (($usedBudget + $playerSalary) > $club->budget) {
+            return ApiResponseService::error(
+                message: 'Club has not enough budget for this Player signing.',
+                code: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $player->club_id = $club->id;
+        $player->salary = $playerSalary;
+        $player->save();
+
+        return ApiResponseService::success(
+            new PlayerResource($player),
+            message: 'Club has signed the Player.'
+        );
+    }
+
+    public function signCoach(ClubSignCoachRequest $request, Club $club): JsonResponse
+    {
+        $validated = $request->validated();
+        $coachId = $validated['coach_id'];
+        $coachSalary = $validated['salary'];
+
+        $coach = Coach::findOrFail($coachId);
+
+        if ($club->coach) {
+            return ApiResponseService::error(
+                message: 'This Club already has a Coach assigned.',
+                code: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        if ($coach->club_id) {
+            return ApiResponseService::error(
+                message: 'Coach is already assigned to another Club.',
+                code: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $usedBudget = $club->players()->sum('salary');
+        if (($usedBudget + $coachSalary) > $club->budget) {
+            return ApiResponseService::error(
+                message: 'Club has not enough budget for this Coach signing.',
+                code: Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $coach->club_id = $club->id;
+        $coach->salary = $coachSalary;
+        $coach->save();
+
+        return ApiResponseService::success(
+            new CoachResource($coach),
+            message: 'Club has signed the Coach.'
         );
     }
 }
