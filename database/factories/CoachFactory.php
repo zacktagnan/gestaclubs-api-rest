@@ -23,12 +23,8 @@ class CoachFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'full_name' => fake()->name(),
             'full_name' => fake()->unique()->name(),
             'email' => fake()->unique()->safeEmail(),
-            // 'salary' => rand(30_000, 100_000), // en vez de 30000 y 100000
-            'salary' => fake()->numberBetween(30_000, 100_000),
-            'club_id' => null,
         ];
     }
 }

@@ -24,9 +24,6 @@ class StoreCoachRequest extends FormRequest
         return [
             'full_name' => 'required|string|max:100|unique:coaches',
             'email' => 'required|email|unique:coaches,email',
-            'salary' => 'required|integer|min:700000',
-
-            'club_id' => 'nullable|exists:clubs,id|unique:coaches,club_id',
         ];
     }
 }

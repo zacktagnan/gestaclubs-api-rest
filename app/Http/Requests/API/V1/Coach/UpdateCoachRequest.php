@@ -27,7 +27,7 @@ class UpdateCoachRequest extends FormRequest
         return [
             'full_name' => 'required|string|max:100|unique:coaches,full_name,' . $this->route('coach')->id,
             'email' => 'required|email|unique:coaches,email,' . $this->route('coach')->id,
-            'salary' => 'required|integer|min:700000',
+            'salary' => 'nullable|integer|min:700000',
 
             'club_id' => 'nullable|exists:clubs,id|unique:coaches,club_id,' . $this->route('coach')->id,
         ];

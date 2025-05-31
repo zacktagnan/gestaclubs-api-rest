@@ -27,7 +27,7 @@ class UpdatePlayerRequest extends FormRequest
         return [
             'full_name' => 'required|string|max:100|unique:players,full_name,' . $this->route('player')->id,
             'email' => 'required|email|unique:players,email,' . $this->route('player')->id,
-            'salary' => 'required|integer|min:400000',
+            'salary' => 'nullable|integer|min:400000',
 
             'club_id' => 'nullable|exists:clubs,id',
         ];

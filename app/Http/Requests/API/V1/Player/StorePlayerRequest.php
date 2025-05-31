@@ -24,9 +24,6 @@ class StorePlayerRequest extends FormRequest
         return [
             'full_name' => 'required|string|max:100|unique:players',
             'email' => 'required|email|unique:players,email',
-            'salary' => 'required|integer|min:400000',
-
-            'club_id' => 'nullable|exists:clubs,id',
         ];
     }
 }

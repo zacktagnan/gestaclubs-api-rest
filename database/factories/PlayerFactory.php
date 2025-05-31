@@ -23,12 +23,8 @@ class PlayerFactory extends Factory
     public function definition(): array
     {
         return [
-            // 'full_name' => fake()->name(),
             'full_name' => fake()->unique()->name(),
             'email' => fake()->unique()->safeEmail(),
-            // 'salary' => rand(20_000, 80_000),
-            'salary' => fake()->numberBetween(20_000, 80_000),
-            'club_id' => null,
         ];
     }
 }
