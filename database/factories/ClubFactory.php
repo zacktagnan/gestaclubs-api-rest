@@ -19,8 +19,40 @@ class ClubFactory extends Factory
      */
     public function definition(): array
     {
+        $terms = [
+            'Atlético',
+            'Balompié',
+            'Cultural',
+            'Deportivo',
+            'Estrella',
+            'Independiente',
+            'Internacional',
+            'Olímpico',
+            'Popular',
+            'Racing',
+            'Real',
+            'Recreativo',
+            'Sporting',
+            'Unión',
+        ];
+
+        $term = fake()->randomElement($terms);
+
+        $city = fake()->unique()->city();
+
+        $name = fake()->randomElement([
+            "$city $term",
+            "$term $city",
+            "$city $term FC",
+            "$term FC $city",
+            "$term $city FC",
+            "$city $term Club",
+            "$term Club $city",
+            "$term $city Club",
+        ]);
+
         return [
-            'name' => fake()->name(),
+            'name' => $name,
             'budget' => fake()->numberBetween(7_400_000, 28_000_000),
         ];
     }

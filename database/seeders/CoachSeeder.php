@@ -13,7 +13,8 @@ class CoachSeeder extends Seeder
      */
     public function run(): void
     {
-        $clubs = Club::all();
+        // $clubs = Club::all();
+        $clubs = Club::all()->shuffle()->take(7);
         $minRangeSalary = 700_000;
         $maxRangeSalary = 1_400_000;
 
