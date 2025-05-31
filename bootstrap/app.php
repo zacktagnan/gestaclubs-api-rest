@@ -1,5 +1,7 @@
 <?php
 
+use App\Exceptions\CoachAlreadyAssignedException;
+use App\Exceptions\PlayerAlreadyAssignedException;
 use Illuminate\Foundation\Application;
 use App\Services\API\V1\ApiResponseService;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -31,6 +33,18 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (NotFoundHttpException $exception) {
             return ApiResponseService::notFound(
                 message: $exception->getMessage() ?: 'Resource not found.'
+            );
+        });
+
+        $exceptions->render(function (PlayerAlreadyAssignedException $exception) {
+            return ApiResponseService::unprocessableEntity(
+                message: $exception->getMessage() ?: 'Entity is unprocessable.'
+            );
+        });
+
+        $exceptions->render(function (CoachAlreadyAssignedException $exception) {
+            return ApiResponseService::unprocessableEntity(
+                message: $exception->getMessage() ?: 'Entity is unprocessable.'
             );
         });
     })->create();

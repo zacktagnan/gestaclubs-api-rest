@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Exceptions\CoachAlreadyAssignedException;
+use App\Exceptions\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Models\Club;
 use App\Models\Player;
@@ -108,10 +110,7 @@ class ClubController
         $player = Player::findOrFail($playerId);
 
         if ($player->club_id) {
-            return ApiResponseService::error(
-                message: 'Player is already assigned to another Club.',
-                code: Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+            throw new PlayerAlreadyAssignedException("Player is already assigned to another Club ({$player->club->name}).");
         }
 
         $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
@@ -147,11 +146,9 @@ class ClubController
             );
         }
 
+
         if ($coach->club_id) {
-            return ApiResponseService::error(
-                message: 'Coach is already assigned to another Club.',
-                code: Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+            throw new CoachAlreadyAssignedException("Coach is already assigned to another Club ({$coach->club->name}).");
         }
 
         $usedBudget = $club->players()->sum('salary');
