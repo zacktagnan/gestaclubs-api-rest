@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Exceptions\ClubAlreadyHasCoachException;
 use App\Exceptions\ClubBudgetExceededException;
 use App\Exceptions\CoachAlreadyAssignedException;
 use App\Exceptions\PlayerAlreadyAssignedException;
@@ -138,10 +139,7 @@ class ClubController
         $coach = Coach::findOrFail($coachId);
 
         if ($club->coach) {
-            return ApiResponseService::error(
-                message: 'This Club already has a Coach assigned.',
-                code: Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+            throw new ClubAlreadyHasCoachException("This Club already has a Coach assigned ({$club->coach->name}).");
         }
 
         if ($coach->club_id) {

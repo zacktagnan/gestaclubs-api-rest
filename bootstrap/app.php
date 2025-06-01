@@ -1,5 +1,6 @@
 <?php
 
+use App\Exceptions\ClubAlreadyHasCoachException;
 use App\Exceptions\ClubBudgetExceededException;
 use App\Exceptions\CoachAlreadyAssignedException;
 use App\Exceptions\PlayerAlreadyAssignedException;
@@ -50,6 +51,12 @@ return Application::configure(basePath: dirname(__DIR__))
         });
 
         $exceptions->render(function (ClubBudgetExceededException $exception) {
+            return ApiResponseService::unprocessableEntity(
+                message: $exception->getMessage() ?: 'Entity is unprocessable.'
+            );
+        });
+
+        $exceptions->render(function (ClubAlreadyHasCoachException $exception) {
             return ApiResponseService::unprocessableEntity(
                 message: $exception->getMessage() ?: 'Entity is unprocessable.'
             );
