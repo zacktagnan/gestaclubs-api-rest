@@ -2,6 +2,7 @@
 
 use App\Exceptions\ClubAlreadyHasCoachException;
 use App\Exceptions\ClubBudgetExceededException;
+use App\Exceptions\ClubHasMembersException;
 use App\Exceptions\CoachAlreadyAssignedException;
 use App\Exceptions\PlayerAlreadyAssignedException;
 use Illuminate\Foundation\Application;
@@ -9,6 +10,7 @@ use App\Services\API\V1\ApiResponseService;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -50,15 +52,22 @@ return Application::configure(basePath: dirname(__DIR__))
             );
         });
 
+        $exceptions->render(function (ClubAlreadyHasCoachException $exception) {
+            return ApiResponseService::unprocessableEntity(
+                message: $exception->getMessage() ?: 'Entity is unprocessable.'
+            );
+        });
+
         $exceptions->render(function (ClubBudgetExceededException $exception) {
             return ApiResponseService::unprocessableEntity(
                 message: $exception->getMessage() ?: 'Entity is unprocessable.'
             );
         });
 
-        $exceptions->render(function (ClubAlreadyHasCoachException $exception) {
-            return ApiResponseService::unprocessableEntity(
-                message: $exception->getMessage() ?: 'Entity is unprocessable.'
+        $exceptions->render(function (ClubHasMembersException $exception) {
+            return ApiResponseService::error(
+                message: $exception->getMessage() ?: 'Conflict with the current state of the target resource.',
+                code: Response::HTTP_CONFLICT,
             );
         });
     })->create();

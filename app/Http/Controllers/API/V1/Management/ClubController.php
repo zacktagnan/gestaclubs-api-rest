@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Management;
 
 use App\Exceptions\ClubAlreadyHasCoachException;
 use App\Exceptions\ClubBudgetExceededException;
+use App\Exceptions\ClubHasMembersException;
 use App\Exceptions\CoachAlreadyAssignedException;
 use App\Exceptions\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
@@ -95,6 +96,12 @@ class ClubController
      */
     public function destroy(Club $club): JsonResponse
     {
+        if ($club->players()->exists() || $club->coach) {
+            throw new ClubHasMembersException(
+                'This Club still has Players or a Coach assigned, so it cannot be deleted.'
+            );
+        }
+
         $club->delete();
 
         return ApiResponseService::success(
