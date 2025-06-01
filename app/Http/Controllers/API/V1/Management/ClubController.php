@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Exceptions\ClubBudgetExceededException;
 use App\Exceptions\CoachAlreadyAssignedException;
 use App\Exceptions\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
@@ -115,10 +116,7 @@ class ClubController
 
         $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
         if (($usedBudget + $playerSalary) > $club->budget) {
-            return ApiResponseService::error(
-                message: 'Club has not enough budget for this Player signing.',
-                code: Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+            throw new ClubBudgetExceededException('Club has not enough budget for this Player signing.');
         }
 
         $player->club_id = $club->id;
@@ -146,17 +144,13 @@ class ClubController
             );
         }
 
-
         if ($coach->club_id) {
             throw new CoachAlreadyAssignedException("Coach is already assigned to another Club ({$coach->club->name}).");
         }
 
         $usedBudget = $club->players()->sum('salary');
         if (($usedBudget + $coachSalary) > $club->budget) {
-            return ApiResponseService::error(
-                message: 'Club has not enough budget for this Coach signing.',
-                code: Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+            throw new ClubBudgetExceededException('Club has not enough budget for this Coach signing.');
         }
 
         $coach->club_id = $club->id;
