@@ -30,7 +30,10 @@ Route::prefix('management')->middleware('auth:sanctum')->group(function () {
     });
 
     Route::apiResource('coaches', CoachController::class);
-    Route::delete('/coaches/{coach}/club', [CoachController::class, 'removeFromClub'])->name('coaches.removeFromClub');
+    Route::prefix('coaches')->as('coaches.')->group(function () {
+        Route::get('unassigned-list', [CoachController::class, 'unassignedList'])->name('unassigned-list');
+        Route::delete('{coach}/club', [CoachController::class, 'removeFromClub'])->name('removeFromClub');
+    });
 
     Route::apiResource('players', PlayerController::class);
     Route::delete('/players/{player}/club', [PlayerController::class, 'removeFromClub'])->name('players.removeFromClub');

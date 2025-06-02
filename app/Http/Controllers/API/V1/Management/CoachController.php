@@ -16,12 +16,23 @@ class CoachController
      */
     public function index(): JsonResponse
     {
-        $coachs = Coach::with('club')
+        $coaches = Coach::with('club')
             ->paginate();
 
         return ApiResponseService::success(
-            CoachResource::collection($coachs),
-            message: 'Coachs retrieved successfully.'
+            CoachResource::collection($coaches),
+            message: 'Coaches retrieved successfully.'
+        );
+    }
+
+    public function unassigned()
+    {
+        $coaches = Coach::whereNull('club_id')
+            ->paginate();
+
+        return ApiResponseService::success(
+            CoachResource::collection($coaches),
+            message: 'Coaches without assigned club retrieved successfully.'
         );
     }
 
