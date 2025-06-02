@@ -80,6 +80,7 @@ class CoachController
     public function removeFromClub(Coach $coach): JsonResponse
     {
         $coach->club_id = null;
+        $coach->salary = null;
         $coach->save();
 
         return ApiResponseService::success(
