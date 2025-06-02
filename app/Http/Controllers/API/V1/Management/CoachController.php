@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Http\Requests\API\V1\Coach\StoreCoachRequest;
+use App\Http\Requests\API\V1\Coach\UpdateCoachRequest;
 use App\Models\Coach;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\CoachResource;
@@ -39,7 +40,7 @@ class CoachController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): JsonResponse
+    public function store(StoreCoachRequest $request): JsonResponse
     {
         $coach = Coach::create($request->validated());
 
@@ -66,7 +67,7 @@ class CoachController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Coach $coach): JsonResponse
+    public function update(UpdateCoachRequest $request, Coach $coach): JsonResponse
     {
         $coach->update($request->validated());
 

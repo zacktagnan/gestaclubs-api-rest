@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
+use App\Http\Requests\API\V1\Player\StorePlayerRequest;
+use App\Http\Requests\API\V1\Player\UpdatePlayerRequest;
 use App\Models\Player;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\PlayerResource;
@@ -29,7 +30,7 @@ class PlayerController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): JsonResponse
+    public function store(StorePlayerRequest $request): JsonResponse
     {
         $player = Player::create($request->validated());
 
@@ -56,7 +57,7 @@ class PlayerController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Player $player): JsonResponse
+    public function update(UpdatePlayerRequest $request, Player $player): JsonResponse
     {
         $player->update($request->validated());
 
