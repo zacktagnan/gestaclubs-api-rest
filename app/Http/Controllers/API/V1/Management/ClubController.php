@@ -119,7 +119,15 @@ class ClubController
         $player = Player::findOrFail($playerId);
 
         if ($player->club_id) {
-            throw new PlayerAlreadyAssignedException("Player is already assigned to another Club ({$player->club->name}).");
+            if ($player->club_id === $club->id) {
+                throw new PlayerAlreadyAssignedException(
+                    "This Player is already assigned to this Club ({$club->name})."
+                );
+            }
+
+            throw new PlayerAlreadyAssignedException(
+                "This Player is already assigned to another Club ({$player->club->name})."
+            );
         }
 
         $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
@@ -150,7 +158,15 @@ class ClubController
         }
 
         if ($coach->club_id) {
-            throw new CoachAlreadyAssignedException("Coach is already assigned to another Club ({$coach->club->name}).");
+            if ($coach->club_id === $club->id) {
+                throw new CoachAlreadyAssignedException(
+                    "This Coach is already assigned to this Club ({$club->name})."
+                );
+            }
+
+            throw new CoachAlreadyAssignedException(
+                "This Coach is already assigned to another Club ({$coach->club->name})."
+            );
         }
 
         $usedBudget = $club->players()->sum('salary');
