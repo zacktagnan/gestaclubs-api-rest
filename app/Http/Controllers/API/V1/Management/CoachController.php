@@ -25,7 +25,7 @@ class CoachController
         );
     }
 
-    public function unassigned()
+    public function unassignedList()
     {
         $coaches = Coach::whereNull('club_id')
             ->paginate();

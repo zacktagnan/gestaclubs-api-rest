@@ -29,9 +29,10 @@ Route::prefix('management')->middleware('auth:sanctum')->group(function () {
         Route::post('{club}/sign-coach', [ClubController::class, 'signCoach'])->name('signCoach');
     });
 
+    // -> Para evitar colisiones con /coaches/{coach}, se coloca antes de la apiResource
+    Route::get('/coaches/unassigned-list', [CoachController::class, 'unassignedList'])->name('coaches.unassigned-list');
     Route::apiResource('coaches', CoachController::class);
     Route::prefix('coaches')->as('coaches.')->group(function () {
-        Route::get('unassigned-list', [CoachController::class, 'unassignedList'])->name('unassigned-list');
         Route::delete('{coach}/club', [CoachController::class, 'removeFromClub'])->name('removeFromClub');
     });
 
