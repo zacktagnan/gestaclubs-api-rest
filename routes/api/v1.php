@@ -36,6 +36,8 @@ Route::prefix('management')->middleware('auth:sanctum')->group(function () {
         Route::delete('{coach}/club', [CoachController::class, 'removeFromClub'])->name('removeFromClub');
     });
 
+    // -> Para evitar colisiones con /players/{player}, se coloca antes de la apiResource
+    Route::get('/players/unassigned-list', [PlayerController::class, 'unassignedList'])->name('players.unassigned-list');
     Route::apiResource('players', PlayerController::class);
     Route::delete('/players/{player}/club', [PlayerController::class, 'removeFromClub'])->name('players.removeFromClub');
 });

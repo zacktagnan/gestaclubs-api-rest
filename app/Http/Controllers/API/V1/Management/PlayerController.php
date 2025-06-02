@@ -26,6 +26,16 @@ class PlayerController
         );
     }
 
+    public function unassignedList()
+    {
+        $players = Player::whereNull('club_id')
+            ->paginate();
+
+        return ApiResponseService::success(
+            PlayerResource::collection($players),
+            message: 'Players without assigned club retrieved successfully.'
+        );
+    }
 
     /**
      * Store a newly created resource in storage.
