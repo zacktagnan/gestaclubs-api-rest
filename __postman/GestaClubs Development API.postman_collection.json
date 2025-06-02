@@ -30,7 +30,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/auth/register"
+						"url": "{{baseUrl}}/{{dirAuth}}/register"
 					},
 					"response": [
 						{
@@ -52,7 +52,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/auth/register"
+								"url": "{{baseUrl}}/{{dirAuth}}/register"
 							},
 							"status": "OK",
 							"code": 200,
@@ -117,7 +117,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/auth/register"
+								"url": "{{baseUrl}}/{{dirAuth}}/register"
 							},
 							"status": "Unprocessable Content",
 							"code": 422,
@@ -182,7 +182,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/auth/register"
+								"url": "{{baseUrl}}/{{dirAuth}}/register"
 							},
 							"status": "Too Many Requests",
 							"code": 429,
@@ -257,7 +257,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/auth/login"
+						"url": "{{baseUrl}}/{{dirAuth}}/login"
 					},
 					"response": [
 						{
@@ -279,7 +279,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/auth/login"
+								"url": "{{baseUrl}}/{{dirAuth}}/login"
 							},
 							"status": "OK",
 							"code": 200,
@@ -323,7 +323,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": \"2|8tdfWLr4T7tTfxos4uQMPcPd7znJJ5MzmZJ4BMwm0d68f810\",\n        \"token_type\": \"bearer\"\n    }\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Success\",\n    \"data\": {\n        \"token\": \"1|OCg87lwmN0fXbFCzD3eLQRSujmIuQQKuenROzFbp8171d88a\",\n        \"token_type\": \"bearer\"\n    }\n}"
 						},
 						{
 							"name": "Malformed Request",
@@ -335,7 +335,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/auth/login"
+								"url": "{{baseUrl}}/{{dirAuth}}/login"
 							},
 							"status": "Unprocessable Content",
 							"code": 422,
@@ -391,7 +391,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/auth/login"
+								"url": "{{baseUrl}}/{{dirAuth}}/login"
 							},
 							"status": "Too Many Requests",
 							"code": 429,
@@ -464,7 +464,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/auth/login"
+								"url": "{{baseUrl}}/{{dirAuth}}/login"
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -522,7 +522,7 @@
 								"value": "application/json"
 							}
 						],
-						"url": "{{baseUrl}}/auth/logout"
+						"url": "{{baseUrl}}/{{dirAuth}}/logout"
 					},
 					"response": [
 						{
@@ -535,7 +535,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/auth/logout"
+								"url": "{{baseUrl}}/{{dirAuth}}/logout"
 							},
 							"status": "OK",
 							"code": 200,
@@ -591,7 +591,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/auth/logout"
+								"url": "{{baseUrl}}/{{dirAuth}}/logout"
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -631,11 +631,5907 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Endpoints sobre las rutas de autenticación."
 		},
 		{
 			"name": "Management",
-			"item": []
+			"item": [
+				{
+					"name": "Clubs",
+					"item": [
+						{
+							"name": "Paginated",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+							},
+							"response": [
+								{
+									"name": "Successful Responsee",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:48:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clubs retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Cintrón de San Pedro Unión Club\",\n            \"budget\": 27503015,\n            \"coach\": null,\n            \"players_count\": 30,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Vall Arevalo Medio Deportivo\",\n            \"budget\": 22031175,\n            \"coach\": {\n                \"id\": 7,\n                \"full_name\": \"Beatriz Cárdenas\",\n                \"email\": \"velez.lidia@example.net\",\n                \"salary\": 740598,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 19,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Real Manzanares de las Torres FC\",\n            \"budget\": 16808922,\n            \"coach\": null,\n            \"players_count\": 17,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Vall Canales Real\",\n            \"budget\": 26258873,\n            \"coach\": {\n                \"id\": 6,\n                \"full_name\": \"Lic. Nora Flórez\",\n                \"email\": \"daniel.venegas@example.com\",\n                \"salary\": 713368,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 31,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Vall Alonzo Cultural Club\",\n            \"budget\": 17749271,\n            \"coach\": {\n                \"id\": 5,\n                \"full_name\": \"D. Joel Becerra\",\n                \"email\": \"pol92@example.org\",\n                \"salary\": 860598,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 18,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Estrella FC Villa Peláez\",\n            \"budget\": 14739789,\n            \"coach\": null,\n            \"players_count\": 13,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Colunga de la Sierra Popular FC\",\n            \"budget\": 19747933,\n            \"coach\": null,\n            \"players_count\": 22,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"La Palacios Real\",\n            \"budget\": 24023165,\n            \"coach\": {\n                \"id\": 2,\n                \"full_name\": \"Adam Ortega\",\n                \"email\": \"enrique.jiminez@example.net\",\n                \"salary\": 825770,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 24,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Atlético A Izquierdo\",\n            \"budget\": 13419777,\n            \"coach\": {\n                \"id\": 3,\n                \"full_name\": \"Jon Sauceda Segundo\",\n                \"email\": \"ana.sola@example.net\",\n                \"salary\": 936441,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 10,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"A Luján Unión\",\n            \"budget\": 20472327,\n            \"coach\": {\n                \"id\": 1,\n                \"full_name\": \"D. Rubén Herrero Hijo\",\n                \"email\": \"abermejo@example.com\",\n                \"salary\": 1029183,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 24,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Independiente FC Pagan de las Torres\",\n            \"budget\": 19651683,\n            \"coach\": {\n                \"id\": 4,\n                \"full_name\": \"Álvaro Bueno\",\n                \"email\": \"guillermo49@example.net\",\n                \"salary\": 876439,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 19,\n            \"created_at\": \"2025-05-31\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:53:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts. Please try again in 47 seconds.\",\n    \"max_attempts\": 10,\n    \"retry_after\": 47\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:46:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:05:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club created successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirol Club\",\n        \"budget\": 7400000,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 2800000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El tamaño de budget debe ser de al menos 7400000.\",\n    \"errors\": {\n        \"budget\": [\n            \"El tamaño de budget debe ser de al menos 7400000.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Already In Use",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:07:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo name ya ha sido registrado.\",\n    \"errors\": {\n        \"name\": [\n            \"El campo name ya ha sido registrado.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:48:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 53,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:49:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Club",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/1"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/1"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:12:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Cintrón de San Pedro Unión Club\",\n        \"budget\": 27503015,\n        \"coach\": null,\n        \"players_count\": 30,\n        \"created_at\": \"2025-05-31\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/1000"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:15:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Club] 1000\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/1000"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 34,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/1"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:30:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 200000,\n        \"coach\": null,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/122"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:32:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Club] 122\"\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo name es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"name\": [\n            \"El campo name es obligatorio.\"\n        ],\n        \"budget\": [\n            \"El campo budget es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 30,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:00:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Budget",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"budget\": 500000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"budget\": 500000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:30:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club budget updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 500000,\n        \"coach\": null,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"budget\": 500000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/122/budget"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:32:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Club] 122\"\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo budget es obligatorio.\",\n    \"errors\": {\n        \"budget\": [\n            \"El campo budget es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"budget\": 500000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 30,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"budget\": 500000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:00:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Sign Player",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:05:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Player.\",\n    \"data\": {\n        \"id\": 292,\n        \"full_name\": \"Diego Casas Hijo\",\n        \"email\": \"candela.barreto@example.net\",\n        \"salary\": 25000,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 5,\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo player id es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"player_id\": [\n            \"El campo player id es obligatorio.\"\n        ],\n        \"salary\": [\n            \"El campo salary es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Already Assigned to Another",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 20:31:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Player is already assigned to another Club (Cintrón de San Pedro Unión Club).\"\n}"
+								},
+								{
+									"name": "Already Belongs to this Club",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 20:57:57 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Player is already assigned to this Club (Kirola Club).\"\n}"
+								},
+								{
+									"name": "Has Not Enough Budget to",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 293,\r\n    \"salary\": 8400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 21:15:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Club has not enough budget for this Player signing.\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:48:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 53,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:49:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Sign Coach",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:05:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Coach.\",\n    \"data\": {\n        \"id\": 11,\n        \"full_name\": \"Erik Prieto\",\n        \"email\": \"isaac.bautista@example.com\",\n        \"salary\": 1100000,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 5,\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo coach id es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"coach_id\": [\n            \"El campo coach id es obligatorio.\"\n        ],\n        \"salary\": [\n            \"El campo salary es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Already Assigned to Another",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 20:31:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Player is already assigned to another Club (Cintrón de San Pedro Unión Club).\"\n}"
+								},
+								{
+									"name": "Already Has One",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 20:57:57 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Club already has a Coach assigned ().\"\n}"
+								},
+								{
+									"name": "Has Not Enough Budget to",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 293,\r\n    \"salary\": 8400000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 21:15:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Club has not enough budget for this Player signing.\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:48:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 53,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:49:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/13"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/13"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:41:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club deleted successfully.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/133"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:39:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Club] 133\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/133"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:03:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 15,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/13"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:04:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Endpoints sobre las rutas de la entidad de Club."
+				},
+				{
+					"name": "Coaches",
+					"item": [
+						{
+							"name": "Paginated",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+							},
+							"response": [
+								{
+									"name": "Successful Responsee",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:48:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coachs retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Noa Maestas Hijo\",\n            \"email\": \"andres.atencio@example.com\",\n            \"salary\": 741635,\n            \"club\": {\n                \"id\": 9,\n                \"name\": \"Dávila del Pozo Balompié\",\n                \"budget\": 31334011,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Adriana Espinosa\",\n            \"email\": \"pena.anaisabel@example.com\",\n            \"salary\": 1004173,\n            \"club\": {\n                \"id\": 10,\n                \"name\": \"San Grijalva de Lemos Olímpico Club\",\n                \"budget\": 24835357,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Iván Grijalva\",\n            \"email\": \"ainhoa.hernandez@example.org\",\n            \"salary\": 904381,\n            \"club\": {\n                \"id\": 4,\n                \"name\": \"Olímpico FC L' Silva de San Pedro\",\n                \"budget\": 33185105,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Juan José Medina\",\n            \"email\": \"eduardo91@example.com\",\n            \"salary\": 738576,\n            \"club\": {\n                \"id\": 2,\n                \"name\": \"La Vidal de Arriba Balompié Club\",\n                \"budget\": 13921782,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Claudia Hernándes\",\n            \"email\": \"antonio16@example.org\",\n            \"salary\": 921969,\n            \"club\": {\n                \"id\": 3,\n                \"name\": \"San Henríquez del Pozo Recreativo\",\n                \"budget\": 15430518,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Alex Irizarry\",\n            \"email\": \"luis98@example.org\",\n            \"salary\": 729051,\n            \"club\": {\n                \"id\": 11,\n                \"name\": \"Real FC Tamayo del Puerto\",\n                \"budget\": 30177312,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Valeria Ybarra\",\n            \"email\": \"vega.aragon@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Iker Rodarte\",\n            \"email\": \"herrera.pau@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Dr. Eric Montaño\",\n            \"email\": \"xfont@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Samuel Gonzáles\",\n            \"email\": \"ovelez@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Erik Prieto\",\n            \"email\": \"isaac.bautista@example.com\",\n            \"salary\": 1100000,\n            \"club\": {\n                \"id\": 12,\n                \"name\": \"Kirol Club\",\n                \"budget\": 7400000,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Olivia Reyes Tercero\",\n            \"email\": \"upichardo@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Saúl Fajardo\",\n            \"email\": \"nayara63@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Dr. Asier Vanegas Tercero\",\n            \"email\": \"fnieto@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Ing. Gabriel Sancho Hijo\",\n            \"email\": \"izan48@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:53:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts. Please try again in 47 seconds.\",\n    \"max_attempts\": 10,\n    \"retry_after\": 47\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:46:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Paginated Without Club",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/unassigned-list"
+							},
+							"response": [
+								{
+									"name": "Successful Responsee",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/unassigned-list"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:48:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coaches without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"full_name\": \"Valeria Ybarra\",\n            \"email\": \"vega.aragon@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Iker Rodarte\",\n            \"email\": \"herrera.pau@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Dr. Eric Montaño\",\n            \"email\": \"xfont@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Samuel Gonzáles\",\n            \"email\": \"ovelez@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Olivia Reyes Tercero\",\n            \"email\": \"upichardo@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Saúl Fajardo\",\n            \"email\": \"nayara63@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Dr. Asier Vanegas Tercero\",\n            \"email\": \"fnieto@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Ing. Gabriel Sancho Hijo\",\n            \"email\": \"izan48@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 16,\n            \"full_name\": \"Ing. Ona Valentín\",\n            \"email\": \"malave.carlota@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 17,\n            \"full_name\": \"Josefa Macias\",\n            \"email\": \"quintanilla.oriol@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/unassigned-list"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:53:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts. Please try again in 47 seconds.\",\n    \"max_attempts\": 10,\n    \"retry_after\": 47\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/unassigned-list"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:46:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:05:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach created successfully.\",\n    \"data\": {\n        \"id\": 18,\n        \"full_name\": \"Carlos Martínez\",\n        \"email\": \"carlos.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-02\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo full name es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name es obligatorio.\"\n        ],\n        \"email\": [\n            \"El campo email es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Already In Use",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:07:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo full name ya ha sido registrado. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name ya ha sido registrado.\"\n        ],\n        \"email\": [\n            \"El campo email ya ha sido registrado.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:48:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 53,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:49:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Coach",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/1"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/1"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:12:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"Noa Maestas Hijo\",\n        \"email\": \"andres.atencio@example.com\",\n        \"salary\": 741635,\n        \"club\": {\n            \"id\": 9,\n            \"name\": \"Dávila del Pozo Balompié\",\n            \"budget\": 31334011,\n            \"players_count\": null,\n            \"created_at\": \"2025-06-01\"\n        },\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/1000"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:15:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Coach] 1000\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/1"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 34,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/1"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/12"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/12"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:30:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Carlosón Martínez\",\n        \"email\": \"carloson.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/122"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:32:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Coach] 122\"\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/12"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo name es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name es obligatorio.\"\n        ],\n        \"email\": [\n            \"El campo email es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/12"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 30,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/12"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:00:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/13"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/18"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:41:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach deleted successfully.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/183"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:39:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Coach] 183\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/133"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:03:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 15,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/13"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:04:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete - Unassign",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:41:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach has been dismissed from Club successfully.\",\n    \"data\": {\n        \"id\": 11,\n        \"full_name\": \"Erik Prieto\",\n        \"email\": \"isaac.bautista@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/1111/club"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:39:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Coach] 1111\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:03:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 15,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:04:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Endpoints sobre las rutas de la entidad de Coach."
+				},
+				{
+					"name": "Players",
+					"item": [
+						{
+							"name": "Paginated",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/players"
+							},
+							"response": [
+								{
+									"name": "Successful Responsee",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:48:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Ainhoa Barrera Segundo\",\n            \"email\": \"leo.cintron@example.net\",\n            \"salary\": 1094951,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Sr. Aaron Garibay Hijo\",\n            \"email\": \"garza.andres@example.org\",\n            \"salary\": 894444,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Santiago Serra\",\n            \"email\": \"oscar14@example.org\",\n            \"salary\": 862644,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Javier Román\",\n            \"email\": \"pastor.rosa@example.net\",\n            \"salary\": 763660,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Víctor Guerrero\",\n            \"email\": \"malak.pantoja@example.org\",\n            \"salary\": 1096558,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Berta Flores\",\n            \"email\": \"teresa.villalba@example.net\",\n            \"salary\": 883473,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Isaac Carrillo\",\n            \"email\": \"medina.oriol@example.com\",\n            \"salary\": 683574,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Dr. Pilar Villareal\",\n            \"email\": \"unai.blazquez@example.org\",\n            \"salary\": 715867,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Úrsula Blanco Tercero\",\n            \"email\": \"olivia68@example.com\",\n            \"salary\": 639011,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Sra. Inés Bahena\",\n            \"email\": \"hmanzanares@example.net\",\n            \"salary\": 1040734,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Aitor Zamora\",\n            \"email\": \"ainhoa89@example.com\",\n            \"salary\": 542186,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Biel Aguirre\",\n            \"email\": \"vraya@example.com\",\n            \"salary\": 986423,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Sr. Ignacio Alvarado\",\n            \"email\": \"elena.santamaria@example.com\",\n            \"salary\": 1060581,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Naiara Santillán Hijo\",\n            \"email\": \"inmaculada45@example.org\",\n            \"salary\": 567722,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Sandra García\",\n            \"email\": \"mateo.collazo@example.org\",\n            \"salary\": 905299,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:53:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts. Please try again in 47 seconds.\",\n    \"max_attempts\": 10,\n    \"retry_after\": 47\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:46:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Paginated Without Club",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/players/unassigned-list"
+							},
+							"response": [
+								{
+									"name": "Successful Responsee",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/unassigned-list"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:48:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 291,\n            \"full_name\": \"Guillem Riera Tercero\",\n            \"email\": \"orosco.juanjose@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 293,\n            \"full_name\": \"Dr. Dario Gracia\",\n            \"email\": \"torta@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 294,\n            \"full_name\": \"Hugo Mesa\",\n            \"email\": \"jan07@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 295,\n            \"full_name\": \"Ainara Briones\",\n            \"email\": \"davila.alejandra@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 296,\n            \"full_name\": \"Carlota Yáñez\",\n            \"email\": \"andres73@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 297,\n            \"full_name\": \"Valeria Guerrero Segundo\",\n            \"email\": \"ramon.anaisabel@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 298,\n            \"full_name\": \"Francisco Jiménez\",\n            \"email\": \"franco.isabel@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 299,\n            \"full_name\": \"Dr. Amparo Pérez Segundo\",\n            \"email\": \"anamaria99@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 300,\n            \"full_name\": \"Sr. Juan Conde Segundo\",\n            \"email\": \"wquinones@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 301,\n            \"full_name\": \"Ismael Carrión Hijo\",\n            \"email\": \"oscar.barraza@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 302,\n            \"full_name\": \"Luisa Rosas\",\n            \"email\": \"maria37@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 303,\n            \"full_name\": \"Dr. Isaac Córdova\",\n            \"email\": \"otero.zoe@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 304,\n            \"full_name\": \"Valentina Ornelas\",\n            \"email\": \"antonio35@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 305,\n            \"full_name\": \"Ana Arguello\",\n            \"email\": \"bravo.helena@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 306,\n            \"full_name\": \"Sra. Mar Rivero Segundo\",\n            \"email\": \"rgastelum@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/unassigned-list"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:53:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts. Please try again in 47 seconds.\",\n    \"max_attempts\": 10,\n    \"retry_after\": 47\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/unassigned-list"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 18:46:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/players"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:05:32 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player created successfully.\",\n    \"data\": {\n        \"id\": 360,\n        \"full_name\": \"Estoikof\",\n        \"email\": \"estoikof@delantero.es\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-02\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo full name es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name es obligatorio.\"\n        ],\n        \"email\": [\n            \"El campo email es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Already In Use",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:07:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo full name ya ha sido registrado. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name ya ha sido registrado.\"\n        ],\n        \"email\": [\n            \"El campo email ya ha sido registrado.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:48:54 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 53,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:49:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Player",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/players/1"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:12:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"Ainhoa Barrera Segundo\",\n        \"email\": \"leo.cintron@example.net\",\n        \"salary\": 1094951,\n        \"club\": {\n            \"id\": 1,\n            \"name\": \"Independiente As Casillas del Mirador Club\",\n            \"budget\": 17959426,\n            \"players_count\": null,\n            \"created_at\": \"2025-06-01\"\n        },\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1000"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:15:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Player] 1000\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 34,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:52:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/{{dirManagement}}/players/12"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players/12"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:30:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Estrogof Modifikof\",\n        \"email\": \"estrogof-modifikof@delantero.es\",\n        \"salary\": 986423,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1221"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:32:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Player] 1221\"\n}"
+								},
+								{
+									"name": "Malformed Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players/12"
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"El campo name es obligatorio. (y 1 error más)\",\n    \"errors\": {\n        \"full_name\": [\n            \"El campo full name es obligatorio.\"\n        ],\n        \"email\": [\n            \"El campo email es obligatorio.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players/12"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 12:59:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 30,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/players/12"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:00:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/players/13"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/13"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:41:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player deleted successfully.\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1881"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:39:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Player] 1881\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/133"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:03:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 15,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/13"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:04:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete - Unassign",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/{{dirManagement}}/players/101/club"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/101/club"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:41:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player has been released from Club successfully.\",\n    \"data\": {\n        \"id\": 101,\n        \"full_name\": \"Inés Saavedra\",\n        \"email\": \"oliver.juan@example.net\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/1111/club"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 01 Jun 2025 19:39:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "8"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No query results for model [App\\\\Models\\\\Player] 1111\"\n}"
+								},
+								{
+									"name": "Rate Limit Exceeded",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/11/club"
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:03:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Too many attempts, please slow down the request.\",\n    \"retry_after\": 15,\n    \"max_attempts\": 10\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/11/club"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:5000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jun 2024 13:04:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Endpoints sobre las rutas de la entidad de Player."
+				}
+			],
+			"description": "Endpoints sobre las rutas de gestión de las entidades de Club, Coach y Player."
 		}
 	],
 	"auth": {
