@@ -2,25 +2,24 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
-use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
-use App\Exceptions\API\V1\ClubBudgetExceededException;
-use App\Exceptions\API\V1\ClubHasMembersException;
-use App\Exceptions\API\V1\CoachAlreadyAssignedException;
-use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
-use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Models\Club;
-use App\Models\Player;
+use App\Models\Coach;
 use Illuminate\Http\JsonResponse;
 use App\Http\Resources\API\V1\ClubResource;
 use App\Services\API\V1\ApiResponseService;
-use Symfony\Component\HttpFoundation\Response;
-use App\Http\Requests\API\V1\Club\StoreClubRequest;
-use App\Http\Requests\API\V1\Club\UpdateClubRequest;
-use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
-use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 use App\Http\Resources\API\V1\CoachResource;
 use App\Http\Resources\API\V1\PlayerResource;
-use App\Models\Coach;
+use Symfony\Component\HttpFoundation\Response;
+use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
+use App\Exceptions\API\V1\ClubHasMembersException;
+use App\Http\Requests\API\V1\Club\StoreClubRequest;
+use App\Http\Requests\API\V1\Club\UpdateClubRequest;
+use App\Exceptions\API\V1\ClubBudgetExceededException;
+use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
+use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
+use App\Exceptions\API\V1\CoachAlreadyAssignedException;
+use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
+use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 
 class ClubController
 {
@@ -112,35 +111,13 @@ class ClubController
 
     public function signPlayer(ClubSignPlayerRequest $request, Club $club): JsonResponse
     {
-        $validated = $request->validated();
-        $playerId = $validated['player_id'];
-        $playerSalary = $validated['salary'];
+        $data = $request->validated();
+        data_set($data, 'club', $club);
 
-        $player = Player::findOrFail($playerId);
-
-        if ($player->club_id) {
-            if ($player->club_id === $club->id) {
-                throw new PlayerAlreadyAssignedException(
-                    "This Player is already assigned to this Club ({$club->name})."
-                );
-            }
-
-            throw new PlayerAlreadyAssignedException(
-                "This Player is already assigned to another Club ({$player->club->name})."
-            );
-        }
-
-        $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
-        if (($usedBudget + $playerSalary) > $club->budget) {
-            throw new ClubBudgetExceededException('Club has not enough budget for this Player signing.');
-        }
-
-        $player->club_id = $club->id;
-        $player->salary = $playerSalary;
-        $player->save();
+        $passable = ClubSignPlayerPipeline::execute($data);
 
         return ApiResponseService::success(
-            new PlayerResource($player),
+            new PlayerResource($passable->getPlayer()),
             message: 'Club has signed the Player.'
         );
     }
