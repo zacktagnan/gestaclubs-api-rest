@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+final class {{ class }}
+{
+    public function execute(array $data = [])
+    {
+        // Add your Action logic here
+    }
+}
