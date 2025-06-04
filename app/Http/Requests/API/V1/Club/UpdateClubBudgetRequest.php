@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\API\V1\Club;
 
-use App\Traits\ValidatesClubBudget;
+use App\Traits\API\V1\ValidatesClubBudget;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**

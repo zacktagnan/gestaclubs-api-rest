@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Coach;
-use App\Traits\HasClub;
+use App\Traits\API\V1\HasClub;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

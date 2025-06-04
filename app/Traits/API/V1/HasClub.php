@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace App\Traits\API\V1;
 
 use App\Models\Club;
 use Illuminate\Database\Eloquent\Factories\Factory;
