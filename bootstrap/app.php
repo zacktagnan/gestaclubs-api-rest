@@ -1,10 +1,10 @@
 <?php
 
-use App\Exceptions\ClubAlreadyHasCoachException;
-use App\Exceptions\ClubBudgetExceededException;
-use App\Exceptions\ClubHasMembersException;
-use App\Exceptions\CoachAlreadyAssignedException;
-use App\Exceptions\PlayerAlreadyAssignedException;
+use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
+use App\Exceptions\API\V1\ClubBudgetExceededException;
+use App\Exceptions\API\V1\ClubHasMembersException;
+use App\Exceptions\API\V1\CoachAlreadyAssignedException;
+use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use Illuminate\Foundation\Application;
 use App\Services\API\V1\ApiResponseService;
 use Illuminate\Foundation\Configuration\Exceptions;

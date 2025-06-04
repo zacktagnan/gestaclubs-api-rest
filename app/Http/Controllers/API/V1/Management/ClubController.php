@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
-use App\Exceptions\ClubAlreadyHasCoachException;
-use App\Exceptions\ClubBudgetExceededException;
-use App\Exceptions\ClubHasMembersException;
-use App\Exceptions\CoachAlreadyAssignedException;
-use App\Exceptions\PlayerAlreadyAssignedException;
+use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
+use App\Exceptions\API\V1\ClubBudgetExceededException;
+use App\Exceptions\API\V1\ClubHasMembersException;
+use App\Exceptions\API\V1\CoachAlreadyAssignedException;
+use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Models\Club;
 use App\Models\Player;
