@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\V1\Management;
 
 use App\Models\Club;
-use App\Models\Coach;
 use Illuminate\Http\JsonResponse;
 use App\Http\Resources\API\V1\ClubResource;
 use App\Services\API\V1\ApiResponseService;
@@ -11,13 +10,11 @@ use App\Http\Resources\API\V1\CoachResource;
 use App\Http\Resources\API\V1\PlayerResource;
 use Symfony\Component\HttpFoundation\Response;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
+use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubCoachPlayerPipeline;
 use App\Exceptions\API\V1\ClubHasMembersException;
 use App\Http\Requests\API\V1\Club\StoreClubRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubRequest;
-use App\Exceptions\API\V1\ClubBudgetExceededException;
-use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
-use App\Exceptions\API\V1\CoachAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 
@@ -124,39 +121,13 @@ class ClubController
 
     public function signCoach(ClubSignCoachRequest $request, Club $club): JsonResponse
     {
-        $validated = $request->validated();
-        $coachId = $validated['coach_id'];
-        $coachSalary = $validated['salary'];
+        $data = $request->validated();
+        data_set($data, 'club', $club);
 
-        $coach = Coach::findOrFail($coachId);
-
-        if ($club->coach) {
-            throw new ClubAlreadyHasCoachException("This Club already has a Coach assigned ({$club->coach->name}).");
-        }
-
-        if ($coach->club_id) {
-            if ($coach->club_id === $club->id) {
-                throw new CoachAlreadyAssignedException(
-                    "This Coach is already assigned to this Club ({$club->name})."
-                );
-            }
-
-            throw new CoachAlreadyAssignedException(
-                "This Coach is already assigned to another Club ({$coach->club->name})."
-            );
-        }
-
-        $usedBudget = $club->players()->sum('salary');
-        if (($usedBudget + $coachSalary) > $club->budget) {
-            throw new ClubBudgetExceededException('Club has not enough budget for this Coach signing.');
-        }
-
-        $coach->club_id = $club->id;
-        $coach->salary = $coachSalary;
-        $coach->save();
+        $passable = ClubCoachPlayerPipeline::execute($data);
 
         return ApiResponseService::success(
-            new CoachResource($coach),
+            new CoachResource($passable->getCoach()),
             message: 'Club has signed the Coach.'
         );
     }
