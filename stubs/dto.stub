@@ -1,0 +1,28 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
+readonly class {{ class }}
+{
+    private function __construct(public string $name, public string $slug)
+    {}
+
+    public static function fromRequest(Request $request): self
+    {
+        return new self(
+            name: $request->validated('name'),
+            slug: Str::slug($request->validated('name')),
+        );
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'slug' => $this->slug,
+        ];
+    }
+}
