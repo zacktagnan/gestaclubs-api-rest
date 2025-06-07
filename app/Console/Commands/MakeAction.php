@@ -2,11 +2,14 @@
 
 namespace App\Console\Commands;
 
+use App\Traits\CliOutputStyler;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
 class MakeAction extends Command
 {
+    use CliOutputStyler;
+
     /**
      * The name and signature of the console command.
      *
@@ -19,7 +22,7 @@ class MakeAction extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new Action file in a specific namespace.';
+    protected $description = 'Create a new Action file in a specific namespace.  :)';
 
     public function __construct(protected Filesystem $files, protected string $itemName = 'Action')
     {
@@ -36,22 +39,20 @@ class MakeAction extends Command
         $parts = explode('\\', $name);
         $class = array_pop($parts);
 
-        // namespace base: App\Actions || el resto: puede ser proporcionado como namespace personalizado.
         $namespace = 'App\\' . $this->itemName . 's' . (!empty($parts) ? '\\' . implode('\\', $parts) : '');
 
-        // Generando la ruta del archivo.
         $path = app_path($this->itemName . 's/' . implode('/', $parts) . '/' . $class . '.php');
 
-        // Verificar si el archivo ya existe.
         if ($this->files->exists($path)) {
-            $this->fail('This ' . $this->itemName . ' already exists');
+            $this->renderErrorMessage(
+                "The specified {$this->itemName} already exists."
+            );
 
-            return false; //
+            return self::FAILURE;
         }
 
         $this->makeDirectory($path);
 
-        // Obtener el contenido del stub y reemplazar los marcadores de posición (placeholders).
         $stub = $this->getStub();
         $stub = str_replace(
             ['{{ namespace }}', '{{ class }}'],
@@ -59,12 +60,15 @@ class MakeAction extends Command
             $stub
         );
 
-        // Guardar el archivo generado en la ruta especificada y notificación al usuario.
         $this->files->put($path, $stub);
 
-        $this->info($this->itemName . ' created successfully.');
+        $relativePath = str_replace(base_path() . '/', '', $path);
 
-        return true; //
+        $this->renderInfoMessage(
+            "{$this->itemName} <span class=\"font-bold\">[{$relativePath}]</span> created successfully."
+        );
+
+        return self::SUCCESS;
     }
 
     protected function makeDirectory($path): void
@@ -79,7 +83,6 @@ class MakeAction extends Command
      */
     public function getStub(): string
     {
-        // Cargar el stub del archivo de plantilla.
         return $this->files->get(base_path('stubs/action.stub'));
     }
 }
