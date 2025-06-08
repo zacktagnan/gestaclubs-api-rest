@@ -1,0 +1,1056 @@
+{
+  "name": "GestaClubs Development API",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Management",
+      "filename": "Management",
+      "seq": 2,
+      "root": {
+        "docs": "Endpoints sobre las rutas de gestión de las entidades de Club, Coach y Player.",
+        "meta": {
+          "name": "Management",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "folder",
+          "name": "Clubs",
+          "filename": "Clubs",
+          "seq": 1,
+          "root": {
+            "docs": "Endpoints sobre las rutas de la entidad de Club.",
+            "meta": {
+              "name": "Clubs",
+              "seq": 1
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Club",
+              "filename": "Club.bru",
+              "seq": 3,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/1",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Create",
+              "filename": "Create.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete",
+              "filename": "Delete.bru",
+              "seq": 8,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/13",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Paginated",
+              "filename": "Paginated.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Sign Coach",
+              "filename": "Sign Coach.bru",
+              "seq": 7,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Sign Player",
+              "filename": "Sign Player.bru",
+              "seq": 6,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Update Budget",
+              "filename": "Update Budget.bru",
+              "seq": 5,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12/budget",
+                "method": "PATCH",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"budget\": 500000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Update",
+              "filename": "Update.bru",
+              "seq": 4,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12",
+                "method": "PUT",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Coaches",
+          "filename": "Coaches",
+          "seq": 2,
+          "root": {
+            "docs": "Endpoints sobre las rutas de la entidad de Coach.",
+            "meta": {
+              "name": "Coaches",
+              "seq": 2
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Coach",
+              "filename": "Coach.bru",
+              "seq": 4,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/1",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Create",
+              "filename": "Create.bru",
+              "seq": 3,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"full_name\": \"Carlos Martínez\",\r\n    \"email\": \"carlos.martinez@example.com\"\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete - Unassign",
+              "filename": "Delete - Unassign.bru",
+              "seq": 7,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete",
+              "filename": "Delete.bru",
+              "seq": 6,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/13",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Paginated Without Club",
+              "filename": "Paginated Without Club.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/unassigned-list",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Paginated",
+              "filename": "Paginated.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Update",
+              "filename": "Update.bru",
+              "seq": 5,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/12",
+                "method": "PUT",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"full_name\": \"Carlosón Martínez\",\r\n    \"email\": \"carloson.martinez@example.com\"\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Players",
+          "filename": "Players",
+          "seq": 3,
+          "root": {
+            "docs": "Endpoints sobre las rutas de la entidad de Player.",
+            "meta": {
+              "name": "Players",
+              "seq": 3
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Create",
+              "filename": "Create.bru",
+              "seq": 3,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"full_name\": \"Estoikof\",\r\n    \"email\": \"estoikof@delantero.es\"\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete - Unassign",
+              "filename": "Delete - Unassign.bru",
+              "seq": 7,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players/101/club",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete",
+              "filename": "Delete.bru",
+              "seq": 6,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players/13",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Paginated Without Club",
+              "filename": "Paginated Without Club.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players/unassigned-list",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Paginated",
+              "filename": "Paginated.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Player",
+              "filename": "Player.bru",
+              "seq": 4,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players/1",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Update",
+              "filename": "Update.bru",
+              "seq": 5,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/players/12",
+                "method": "PUT",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"full_name\": \"Estrogof Modifikof\",\r\n    \"email\": \"estrogof-modifikof@delantero.es\"\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Auth",
+      "filename": "Auth",
+      "seq": 1,
+      "root": {
+        "docs": "Endpoints sobre las rutas de autenticación.",
+        "meta": {
+          "name": "Auth",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Login",
+          "filename": "Login.bru",
+          "seq": 2,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/login",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n    \"email\": \"admin@test.es\",\r\n    \"password\": \"12345678\",\r\n    \"device_name\": \"gestaclubs_device\"\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Logout",
+          "filename": "Logout.bru",
+          "seq": 3,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/logout",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Register",
+          "filename": "Register.bru",
+          "seq": 1,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/register",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"name\": \"Adminos Test\",\n    \"email\": \"adminos@test.es\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\",\n    \"device_name\": \"gestaclubs_device\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "zQLUo0QNRV6f3TUSLRvnt",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "version",
+          "value": "v1",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "baseUrl",
+          "value": "http://localhost:7411/api/{{version}}",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "token",
+          "value": "31|ZBO2N3Qk1nXtFVnzpp8pBOWCKNLNYytDjlec4pFqaf869e1f",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "dirAuth",
+          "value": "auth",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "dirManagement",
+          "value": "management",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Development"
+    }
+  ],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "bearer",
+        "bearer": {
+          "token": "{{token}}"
+        }
+      },
+      "script": {
+        "res": "let response = res.getBody();\nbru.setEnvVar(\"token\", response.data.token);"
+      },
+      "vars": {
+        "req": [
+          {
+            "name": "id",
+            "value": "1",
+            "enabled": true,
+            "local": false,
+            "uid": "q0oaSC32H6ye3HFZi8L6B"
+          },
+          {
+            "name": "base_url",
+            "value": "https://postman-rest-api-learner.glitch.me/",
+            "enabled": true,
+            "local": false,
+            "uid": "FKGNFBGGsh4HIpan83wkV"
+          }
+        ]
+      }
+    },
+    "docs": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+    "meta": {
+      "name": "GestaClubs Development API"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "GestaClubs Development API",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.009673118591308594,
+    "filesCount": 32
+  }
+}
