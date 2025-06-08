@@ -32,7 +32,7 @@ class MakeAction extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): int
     {
         $name = $this->argument('name');
 
