@@ -62,7 +62,7 @@ class MakeAction extends Command
 
         $this->files->put($path, $stub);
 
-        $relativePath = str_replace(base_path() . '/', '', $path);
+        $relativePath = str_replace([base_path() . '/', '//'], ['', '/'], $path);
 
         $this->renderInfoMessage(
             "{$this->itemName} <span class=\"font-bold\">[{$relativePath}]</span> created successfully."

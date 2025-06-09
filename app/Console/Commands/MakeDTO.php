@@ -73,7 +73,10 @@ class MakeDTO extends Command
         $this->files->put($path, $stub);
 
         // Obtener la ruta relativa para que se vea bien en consola
-        $relativePath = str_replace(base_path() . '/', '', $path);
+        // $relativePath = str_replace(base_path() . '/', '', $path);
+        // $relativePath = str_replace('//', '/', $relativePath);
+        // o
+        $relativePath = str_replace([base_path() . '/', '//'], ['', '/'], $path);
 
         // $this->newLine();
         // $this->info('INFO ' . $this->itemName . ' [' . $relativePath . '] created successfully.');
