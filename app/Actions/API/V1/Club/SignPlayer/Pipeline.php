@@ -21,6 +21,7 @@ final class Pipeline
                 EnsurePlayerIsNotAlreadyAssignedAction::class,
                 EnsureClubHasEnoughBudgetAction::class,
                 AssignPlayerToClubAction::class,
+                NotificationToAssignedPlayerAction::class,
             ])
             ->thenReturn();
     }

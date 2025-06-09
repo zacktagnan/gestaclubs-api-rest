@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
-use App\Actions\API\V1\Club\DeleteClubAction;
 use App\Models\Club;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use App\Http\Resources\API\V1\ClubResource;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\CoachResource;
+use App\Actions\API\V1\Club\DeleteClubAction;
 use App\Http\Resources\API\V1\PlayerResource;
 use Symfony\Component\HttpFoundation\Response;
-use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
-use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubCoachPlayerPipeline;
-use App\Exceptions\API\V1\ClubHasMembersException;
 use App\Http\Requests\API\V1\Club\StoreClubRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubRequest;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
+use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
+use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
 
 class ClubController
 {
@@ -106,12 +106,26 @@ class ClubController
         $data = $request->validated();
         data_set($data, 'club', $club);
 
-        $passable = ClubSignPlayerPipeline::execute($data);
+        try {
+            // Toda la ejecución del pipeline se encierra en una transacción.
+            // $passable = DB::transaction(function () use ($data) {
+            //     return ClubSignPlayerPipeline::execute($data);
+            // });
+            // o
+            $passable = DB::transaction(
+                fn() => ClubSignPlayerPipeline::execute($data)
+            );
 
-        return ApiResponseService::success(
-            new PlayerResource($passable->getPlayer()),
-            message: 'Club has signed the Player.'
-        );
+            return ApiResponseService::success(
+                new PlayerResource($passable->getPlayer()),
+                message: 'Club has signed the Player.'
+            );
+        } catch (\Throwable $e) {
+            // Cualquier excepción en el pipeline (incluyendo la notificación) revierte la transacción.
+            return ApiResponseService::internalServerError(
+                message: $e->getMessage()
+            );
+        }
     }
 
     public function signCoach(ClubSignCoachRequest $request, Club $club): JsonResponse
@@ -119,7 +133,7 @@ class ClubController
         $data = $request->validated();
         data_set($data, 'club', $club);
 
-        $passable = ClubCoachPlayerPipeline::execute($data);
+        $passable = ClubSignCoachPipeline::execute($data);
 
         return ApiResponseService::success(
             new CoachResource($passable->getCoach()),

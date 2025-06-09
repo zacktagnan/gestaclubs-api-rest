@@ -4,6 +4,7 @@ use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
 use App\Exceptions\API\V1\ClubBudgetExceededException;
 use App\Exceptions\API\V1\ClubHasMembersException;
 use App\Exceptions\API\V1\CoachAlreadyAssignedException;
+use App\Exceptions\API\V1\ErrorSendingNotificationException;
 use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use Illuminate\Foundation\Application;
 use App\Services\API\V1\ApiResponseService;
@@ -68,6 +69,12 @@ return Application::configure(basePath: dirname(__DIR__))
             return ApiResponseService::error(
                 message: $exception->getMessage() ?: 'Conflict with the current state of the target resource.',
                 code: Response::HTTP_CONFLICT,
+            );
+        });
+
+        $exceptions->render(function (ErrorSendingNotificationException $exception) {
+            return ApiResponseService::internalServerError(
+                message: $exception->getMessage() ?: 'Internal Server Error.'
             );
         });
     })->create();
