@@ -42,7 +42,10 @@ class PlayerAssignedToClubNotification extends Notification
             ->action($notifiable->club->name, route('v1.clubs.show', [
                 'club' => $notifiable->club->id,
             ]))
-            ->line(__('notification/sign_player.line_2'))
+            ->line(__('notification/sign_player.line_2', [
+                'salary' => $notifiable->salary,
+            ]))
+            ->line(__('notification/sign_player.line_3'))
             ->salutation(__('notification/sign_player.farewell'));
     }
 
