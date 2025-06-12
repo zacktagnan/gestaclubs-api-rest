@@ -43,7 +43,7 @@ class PlayerAssignedToClubNotification extends Notification
                 'club' => $notifiable->club->id,
             ]))
             ->line(__('notification/sign_player.line_2', [
-                'salary' => $notifiable->salary,
+                'salary' => formatCurrencyLocalized($notifiable->salary),
             ]))
             ->line(__('notification/sign_player.line_3'))
             ->salutation(__('notification/sign_player.farewell'));
