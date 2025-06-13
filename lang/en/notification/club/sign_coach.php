@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'subject' => 'You have been signed!',
+    'subject' => 'You have been hired!',
     'greeting' => 'Hi :full_name:',
     'line_1' => 'You have been appointed as the new coach of the following Club:',
     'line_2' => '- Assigned salary: :salary',

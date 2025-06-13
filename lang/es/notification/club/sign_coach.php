@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'subject' => '¡Has sido fichado!',
+    'subject' => '¡Has sido contratado!',
     'greeting' => 'Hola :full_name:',
     'line_1' => 'Has sido nombrado como el nuevo entrenador del siguiente Club:',
     'line_2' => '- Sueldo asignado: :salary',

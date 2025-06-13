@@ -155,17 +155,4 @@ class ClubController
             );
         }
     }
-
-    public function signCoach00(ClubSignCoachRequest $request, Club $club): JsonResponse
-    {
-        $data = $request->validated();
-        data_set($data, 'club', $club);
-
-        $passable = ClubSignCoachPipeline::execute($data);
-
-        return ApiResponseService::success(
-            new CoachResource($passable->getCoach()),
-            message: 'Club has signed the Coach.'
-        );
-    }
 }
