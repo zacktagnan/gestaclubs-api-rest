@@ -18,6 +18,7 @@ use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
+use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
 
 class ClubController
 {
@@ -116,8 +117,10 @@ class ClubController
                 fn() => ClubSignPlayerPipeline::execute($data)
             );
 
+            $player = PlayerWithRelationsDTO::from($passable->getPlayer());
+
             return ApiResponseService::success(
-                new PlayerResource($passable->getPlayer()),
+                new PlayerResource($player),
                 message: 'Club has signed the Player.'
             );
         } catch (\Throwable $e) {
