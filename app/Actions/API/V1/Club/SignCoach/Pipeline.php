@@ -22,6 +22,7 @@ final class Pipeline
                 EnsureCoachIsNotAlreadyAssignedAction::class,
                 EnsureClubHasEnoughBudgetAction::class,
                 AssignCoachToClubAction::class,
+                NotificationToAssignedCoachAction::class,
             ])
             ->thenReturn();
     }

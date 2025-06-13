@@ -25,13 +25,17 @@ class CoachResource extends JsonResource
             'email' => $this->email,
             'salary' => $this->salary,
 
-            'club' => new ClubResource($this->whenLoaded('club')),
-            // 'club' => $this->whenLoaded('club', function () {
-            //     return [
-            //         'id' => $this->club->id,
-            //         'name' => $this->club->name,
-            //     ];
-            // }),
+            // -> Todos los datos
+            // 'club' => new ClubResource($this->whenLoaded('club')),
+            // -> Solo los datos necesarios
+            'club' => $this->whenLoaded('club', function () {
+                return [
+                    'id' => $this->club->id,
+                    'name' => $this->club->name,
+
+                    'players_count' => $this->club->players_count,
+                ];
+            }),
 
             'created_at' => $this->created_at->format('Y-m-d'),
             'updated_at' => $this->updated_at->format('Y-m-d'),

@@ -19,6 +19,7 @@ use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
 use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
+use App\DTOs\API\V1\Coach\WithRelationsDTO as CoachWithRelationsDTO;
 
 class ClubController
 {
@@ -132,6 +133,30 @@ class ClubController
     }
 
     public function signCoach(ClubSignCoachRequest $request, Club $club): JsonResponse
+    {
+        $data = $request->validated();
+        data_set($data, 'club', $club);
+
+        try {
+            $passable = DB::transaction(
+                fn() => ClubSignCoachPipeline::execute($data)
+            );
+
+            $coach = CoachWithRelationsDTO::from($passable->getCoach());
+
+            return ApiResponseService::success(
+                new CoachResource($coach),
+                message: 'Club has signed the Coach.'
+            );
+        } catch (\Throwable $e) {
+            // Cualquier excepción en el pipeline (incluyendo la notificación) revierte la transacción.
+            return ApiResponseService::internalServerError(
+                message: $e->getMessage()
+            );
+        }
+    }
+
+    public function signCoach00(ClubSignCoachRequest $request, Club $club): JsonResponse
     {
         $data = $request->validated();
         data_set($data, 'club', $club);

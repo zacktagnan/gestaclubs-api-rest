@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use App\Models\Contracts\NotifiableEntityInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
-class Coach extends Model
+class Coach extends Model implements NotifiableEntityInterface
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'full_name',
@@ -16,6 +18,11 @@ class Coach extends Model
         'salary',
         'club_id',
     ];
+
+    public function preferredNotificationChannels(): array
+    {
+        return ['mail'];
+    }
 
     protected function casts(): array
     {
