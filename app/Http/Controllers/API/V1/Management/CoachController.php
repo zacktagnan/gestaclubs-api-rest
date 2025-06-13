@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
-use App\Http\Requests\API\V1\Coach\StoreCoachRequest;
-use App\Http\Requests\API\V1\Coach\UpdateCoachRequest;
 use App\Models\Coach;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\CoachResource;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\API\V1\Coach\StoreCoachRequest;
+use App\Http\Requests\API\V1\Coach\UpdateCoachRequest;
+use App\Actions\API\V1\Coach\RemoveFromClub\Pipeline as RemoveFromClubPipeline;
 
 class CoachController
 {
@@ -79,14 +81,20 @@ class CoachController
 
     public function removeFromClub(Coach $coach): JsonResponse
     {
-        $coach->club_id = null;
-        $coach->salary = null;
-        $coach->save();
+        try {
+            $passable = DB::transaction(
+                fn() => RemoveFromClubPipeline::execute($coach)
+            );
 
-        return ApiResponseService::success(
-            new CoachResource($coach),
-            message: 'Coach has been dismissed from Club successfully.'
-        );
+            return ApiResponseService::success(
+                new CoachResource($passable->getCoach()),
+                message: 'Coach has been fired from Club successfully.'
+            );
+        } catch (\Throwable $e) {
+            return ApiResponseService::internalServerError(
+                message: $e->getMessage()
+            );
+        }
     }
 
     /**
