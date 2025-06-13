@@ -3,8 +3,6 @@
 namespace App\DTOs\API\V1\Player;
 
 use App\Models\Player;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 readonly class WithRelationsDTO
 {
