@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\API\V1\Management;
 
-use App\Http\Requests\API\V1\Player\StorePlayerRequest;
-use App\Http\Requests\API\V1\Player\UpdatePlayerRequest;
 use App\Models\Player;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use App\Services\API\V1\ApiResponseService;
 use App\Http\Resources\API\V1\PlayerResource;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\API\V1\Player\StorePlayerRequest;
+use App\Http\Requests\API\V1\Player\UpdatePlayerRequest;
+use App\Actions\API\V1\Player\RemoveFromClub\Pipeline as RemoveFromClubPipeline;
+use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
 
 class PlayerController
 {
@@ -56,7 +59,7 @@ class PlayerController
      */
     public function show(Player $player): JsonResponse
     {
-        $player->load('club');
+        $player = PlayerWithRelationsDTO::from($player);
 
         return ApiResponseService::success(
             new PlayerResource($player),
@@ -79,14 +82,20 @@ class PlayerController
 
     public function removeFromClub(Player $player): JsonResponse
     {
-        $player->club_id = null;
-        $player->salary = null;
-        $player->save();
+        try {
+            $passable = DB::transaction(
+                fn() => RemoveFromClubPipeline::execute($player)
+            );
 
-        return ApiResponseService::success(
-            new PlayerResource($player),
-            message: 'Player has been released from Club successfully.'
-        );
+            return ApiResponseService::success(
+                new PlayerResource($passable->getPlayer()),
+                message: 'Player has been released from Club successfully.'
+            );
+        } catch (\Throwable $e) {
+            return ApiResponseService::internalServerError(
+                message: $e->getMessage()
+            );
+        }
     }
 
     /**
