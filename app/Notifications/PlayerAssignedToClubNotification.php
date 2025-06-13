@@ -34,19 +34,19 @@ class PlayerAssignedToClubNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject(__('notification/sign_player.subject'))
-            ->greeting(__('notification/sign_player.greeting', [
+            ->subject(__('notification/club/sign_player.subject'))
+            ->greeting(__('notification/club/sign_player.greeting', [
                 'full_name' => $notifiable->full_name,
             ]))
-            ->line(__('notification/sign_player.line_1'))
+            ->line(__('notification/club/sign_player.line_1'))
             ->action($notifiable->club->name, route('v1.clubs.show', [
                 'club' => $notifiable->club->id,
             ]))
-            ->line(__('notification/sign_player.line_2', [
+            ->line(__('notification/club/sign_player.line_2', [
                 'salary' => formatCurrencyLocalized($notifiable->salary),
             ]))
-            ->line(__('notification/sign_player.line_3'))
-            ->salutation(__('notification/sign_player.farewell'));
+            ->line(__('notification/club/sign_player.line_3'))
+            ->salutation(__('notification/club/sign_player.farewell'));
     }
 
     /**
