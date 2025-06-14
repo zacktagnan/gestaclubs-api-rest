@@ -71,6 +71,7 @@ class ClubController
     public function update(UpdateClubRequest $request, Club $club): JsonResponse
     {
         $club->update($request->validated());
+        $club = $club->loadCount('players');
 
         return ApiResponseService::success(
             new ClubResource($club),
@@ -83,6 +84,7 @@ class ClubController
         $club->update([
             'budget' => data_get($request->validated(), 'budget', $club->budget),
         ]);
+        $club->loadCount('players');
 
         return ApiResponseService::success(
             new ClubResource($club),

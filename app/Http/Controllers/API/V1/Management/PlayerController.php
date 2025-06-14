@@ -20,7 +20,10 @@ class PlayerController
      */
     public function index(): JsonResponse
     {
-        $players = Player::with('club')
+        $players = Player::with([
+            'club' => fn($query) => $query
+                ->withCount('players'),
+        ])
             ->paginate();
 
         return ApiResponseService::success(

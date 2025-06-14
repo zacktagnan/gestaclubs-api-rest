@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\API\V1\Coach\StoreCoachRequest;
 use App\Http\Requests\API\V1\Coach\UpdateCoachRequest;
 use App\Actions\API\V1\Coach\RemoveFromClub\Pipeline as RemoveFromClubPipeline;
+use App\DTOs\API\V1\Coach\WithRelationsDTO as CoachWithRelationsDTO;
 
 class CoachController
 {
@@ -19,7 +20,10 @@ class CoachController
      */
     public function index(): JsonResponse
     {
-        $coaches = Coach::with('club')
+        $coaches = Coach::with([
+            'club' => fn($query) => $query
+                ->withCount('players'),
+        ])
             ->paginate();
 
         return ApiResponseService::success(
@@ -58,7 +62,7 @@ class CoachController
      */
     public function show(Coach $coach): JsonResponse
     {
-        $coach->load('club');
+        $coach = CoachWithRelationsDTO::from($coach);
 
         return ApiResponseService::success(
             new CoachResource($coach),
