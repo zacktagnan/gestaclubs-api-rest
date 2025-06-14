@@ -579,7 +579,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully logged out\",\n    \"data\": null\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logged out successfully!!\",\n    \"data\": null\n}"
 						},
 						{
 							"name": "Unauthorized",
@@ -707,7 +707,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clubs retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Cintrón de San Pedro Unión Club\",\n            \"budget\": 27503015,\n            \"coach\": null,\n            \"players_count\": 30,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Vall Arevalo Medio Deportivo\",\n            \"budget\": 22031175,\n            \"coach\": {\n                \"id\": 7,\n                \"full_name\": \"Beatriz Cárdenas\",\n                \"email\": \"velez.lidia@example.net\",\n                \"salary\": 740598,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 19,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Real Manzanares de las Torres FC\",\n            \"budget\": 16808922,\n            \"coach\": null,\n            \"players_count\": 17,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Vall Canales Real\",\n            \"budget\": 26258873,\n            \"coach\": {\n                \"id\": 6,\n                \"full_name\": \"Lic. Nora Flórez\",\n                \"email\": \"daniel.venegas@example.com\",\n                \"salary\": 713368,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 31,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Vall Alonzo Cultural Club\",\n            \"budget\": 17749271,\n            \"coach\": {\n                \"id\": 5,\n                \"full_name\": \"D. Joel Becerra\",\n                \"email\": \"pol92@example.org\",\n                \"salary\": 860598,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 18,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Estrella FC Villa Peláez\",\n            \"budget\": 14739789,\n            \"coach\": null,\n            \"players_count\": 13,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Colunga de la Sierra Popular FC\",\n            \"budget\": 19747933,\n            \"coach\": null,\n            \"players_count\": 22,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"La Palacios Real\",\n            \"budget\": 24023165,\n            \"coach\": {\n                \"id\": 2,\n                \"full_name\": \"Adam Ortega\",\n                \"email\": \"enrique.jiminez@example.net\",\n                \"salary\": 825770,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 24,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Atlético A Izquierdo\",\n            \"budget\": 13419777,\n            \"coach\": {\n                \"id\": 3,\n                \"full_name\": \"Jon Sauceda Segundo\",\n                \"email\": \"ana.sola@example.net\",\n                \"salary\": 936441,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 10,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"A Luján Unión\",\n            \"budget\": 20472327,\n            \"coach\": {\n                \"id\": 1,\n                \"full_name\": \"D. Rubén Herrero Hijo\",\n                \"email\": \"abermejo@example.com\",\n                \"salary\": 1029183,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 24,\n            \"created_at\": \"2025-05-31\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Independiente FC Pagan de las Torres\",\n            \"budget\": 19651683,\n            \"coach\": {\n                \"id\": 4,\n                \"full_name\": \"Álvaro Bueno\",\n                \"email\": \"guillermo49@example.net\",\n                \"salary\": 876439,\n                \"created_at\": \"2025-05-31\",\n                \"updated_at\": \"2025-05-31\"\n            },\n            \"players_count\": 19,\n            \"created_at\": \"2025-05-31\"\n        }\n    ]\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Clubs retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"L' Delrío Internacional FC\",\n            \"budget\": 25386002,\n            \"coach\": {\n                \"id\": 6,\n                \"full_name\": \"Paula Delgado\",\n                \"email\": \"paula.delgado@altamirano.org\",\n                \"salary\": 825146,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 27,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Sporting FC Vaca de las Torres\",\n            \"budget\": 16363141,\n            \"coach\": {\n                \"id\": 2,\n                \"full_name\": \"Daniel Tapia\",\n                \"email\": \"daniel.tapia@gastelum.com\",\n                \"salary\": 843999,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 14,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Estrella Prado de Arriba Club\",\n            \"budget\": 26298416,\n            \"coach\": null,\n            \"players_count\": 29,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Villa Mayorga Balompié Club\",\n            \"budget\": 21431587,\n            \"coach\": null,\n            \"players_count\": 21,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Balompié Club A Leiva\",\n            \"budget\": 27156323,\n            \"coach\": null,\n            \"players_count\": 29,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Os Armas de San Pedro Independiente FC\",\n            \"budget\": 17152717,\n            \"coach\": {\n                \"id\": 4,\n                \"full_name\": \"Lic. Carmen Garrido\",\n                \"email\": \"lic.carmen.garrido@terra.com\",\n                \"salary\": 712782,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 16,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Recreativo La Valdés\",\n            \"budget\": 15504977,\n            \"coach\": null,\n            \"players_count\": 13,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Deportivo Villa Lozada FC\",\n            \"budget\": 25669080,\n            \"coach\": {\n                \"id\": 3,\n                \"full_name\": \"Ing. Alonso Figueroa\",\n                \"email\": \"ing.alonso.figueroa@hotmail.com\",\n                \"salary\": 759851,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 25,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"O Bustos de Lemos Independiente Club\",\n            \"budget\": 24165546,\n            \"coach\": {\n                \"id\": 1,\n                \"full_name\": \"César Verduzco\",\n                \"email\": \"cesar.verduzco@hispavista.com\",\n                \"salary\": 718913,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 26,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Internacional FC Expósito del Penedès\",\n            \"budget\": 13671772,\n            \"coach\": {\n                \"id\": 5,\n                \"full_name\": \"Julia Macias\",\n                \"email\": \"julia.macias@example.org\",\n                \"salary\": 882797,\n                \"created_at\": \"2025-06-14\",\n                \"updated_at\": \"2025-06-14\"\n            },\n            \"players_count\": 11,\n            \"created_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Unión Club Díaz de Arriba\",\n            \"budget\": 18102261,\n            \"coach\": null,\n            \"players_count\": 22,\n            \"created_at\": \"2025-06-14\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Rate Limit Exceeded",
@@ -892,7 +892,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club created successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirol Club\",\n        \"budget\": 7400000,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club created successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirol Club\",\n        \"budget\": 7400000,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Malformed Request",
@@ -1207,7 +1207,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Cintrón de San Pedro Unión Club\",\n        \"budget\": 27503015,\n        \"coach\": null,\n        \"players_count\": 30,\n        \"created_at\": \"2025-05-31\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"L' Delrío Internacional FC\",\n        \"budget\": 25386002,\n        \"coach\": {\n            \"id\": 6,\n            \"full_name\": \"Paula Delgado\",\n            \"email\": \"paula.delgado@altamirano.org\",\n            \"salary\": 825146,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        \"players_count\": 27,\n        \"created_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -1448,7 +1448,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 200000,\n        \"coach\": null,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 200000,\n        \"coach\": null,\n        \"players_count\": 0,\n        \"created_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -1781,7 +1781,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club budget updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 500000,\n        \"coach\": null,\n        \"players_count\": null,\n        \"created_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club budget updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"Kirola Club\",\n        \"budget\": 500000,\n        \"coach\": null,\n        \"players_count\": 0,\n        \"created_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -2041,14 +2041,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+									"raw": "{\r\n    \"player_id\": 28,\r\n    \"salary\": 746947\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/11/sign-player"
 							},
 							"response": [
 								{
@@ -2063,14 +2063,14 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+											"raw": "{\r\n    \"player_id\": 28,\r\n    \"salary\": 746947\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player"
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/11/sign-player"
 									},
 									"status": "Created",
 									"code": 201,
@@ -2114,7 +2114,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Player.\",\n    \"data\": {\n        \"id\": 292,\n        \"full_name\": \"Diego Casas Hijo\",\n        \"email\": \"candela.barreto@example.net\",\n        \"salary\": 25000,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Player.\",\n    \"data\": {\n        \"id\": 28,\n        \"full_name\": \"Ing. Óscar Zarate\",\n        \"email\": \"ing.oscar.zarate@yahoo.com\",\n        \"salary\": 746947,\n        \"club\": {\n            \"id\": 11,\n            \"name\": \"Unión Club Díaz de Arriba\",\n            \"players_count\": 23\n        },\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Malformed Request",
@@ -2309,7 +2309,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Player is already assigned to this Club (Kirola Club).\"\n}"
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Player is already assigned to this Club (Unión Club Díaz de Arriba).\"\n}"
 								},
 								{
 									"name": "Has Not Enough Budget to",
@@ -2489,6 +2489,71 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "Error Sending Notification",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_id\": 101,\r\n    \"salary\": 960069\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/11/sign-player"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jun 2025 21:22:18 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Failed to send notification to assigned Player: Connection could not be established with host \\\"mailpit:1021\\\": stream_socket_client(): Unable to connect to mailpit:1021 (Connection refused)\"\n}"
 								}
 							]
 						},
@@ -2504,14 +2569,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+									"raw": "{\r\n    \"coach_id\": 7,\r\n    \"salary\": 1102800\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+								"url": "{{baseUrl}}/{{dirManagement}}/clubs/7/sign-coach"
 							},
 							"response": [
 								{
@@ -2526,14 +2591,14 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+											"raw": "{\r\n    \"coach_id\": 7,\r\n    \"salary\": 1102800\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/7/sign-coach"
 									},
 									"status": "Created",
 									"code": 201,
@@ -2577,7 +2642,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Coach.\",\n    \"data\": {\n        \"id\": 11,\n        \"full_name\": \"Erik Prieto\",\n        \"email\": \"isaac.bautista@example.com\",\n        \"salary\": 1100000,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Club has signed the Coach.\",\n    \"data\": {\n        \"id\": 7,\n        \"full_name\": \"Dr. Omar Rendón Segundo\",\n        \"email\": \"dr.omar.rendon.segundo@live.com\",\n        \"salary\": 1102800,\n        \"club\": {\n            \"id\": 7,\n            \"name\": \"Recreativo La Valdés\",\n            \"players_count\": 13\n        },\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Malformed Request",
@@ -2656,14 +2721,14 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"coach_id\": 5,\r\n    \"salary\": 25000\r\n}",
+											"raw": "{\r\n    \"coach_id\": 1,\r\n    \"salary\": 1102800\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/11/sign-coach"
 									},
 									"status": "Unprocessable Content",
 									"code": 422,
@@ -2707,7 +2772,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Player is already assigned to another Club (Cintrón de San Pedro Unión Club).\"\n}"
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Coach is already assigned to another Club (O Bustos de Lemos Independiente Club).\"\n}"
 								},
 								{
 									"name": "Already Has One",
@@ -2721,14 +2786,14 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+											"raw": "{\r\n    \"coach_id\": 7,\r\n    \"salary\": 1102800\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach"
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/1/sign-coach"
 									},
 									"status": "Unprocessable Content",
 									"code": 422,
@@ -2772,7 +2837,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Club already has a Coach assigned ().\"\n}"
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"This Club already has a Coach assigned (Paula Delgado).\"\n}"
 								},
 								{
 									"name": "Has Not Enough Budget to",
@@ -2786,7 +2851,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"coach_id\": 293,\r\n    \"salary\": 8400000\r\n}",
+											"raw": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 8400000\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2952,6 +3017,71 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "Error Sending Notification",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"coach_id\": 7,\r\n    \"salary\": 1102800\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/{{dirManagement}}/clubs/7/sign-coach"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 20:45:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Failed to send notification to assigned Coach: Connection could not be established with host \\\"mailpit:1021\\\": stream_socket_client(): Unable to connect to mailpit:1021 (Connection refused)\"\n}"
 								}
 							]
 						},
@@ -3246,7 +3376,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coachs retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Noa Maestas Hijo\",\n            \"email\": \"andres.atencio@example.com\",\n            \"salary\": 741635,\n            \"club\": {\n                \"id\": 9,\n                \"name\": \"Dávila del Pozo Balompié\",\n                \"budget\": 31334011,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Adriana Espinosa\",\n            \"email\": \"pena.anaisabel@example.com\",\n            \"salary\": 1004173,\n            \"club\": {\n                \"id\": 10,\n                \"name\": \"San Grijalva de Lemos Olímpico Club\",\n                \"budget\": 24835357,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Iván Grijalva\",\n            \"email\": \"ainhoa.hernandez@example.org\",\n            \"salary\": 904381,\n            \"club\": {\n                \"id\": 4,\n                \"name\": \"Olímpico FC L' Silva de San Pedro\",\n                \"budget\": 33185105,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Juan José Medina\",\n            \"email\": \"eduardo91@example.com\",\n            \"salary\": 738576,\n            \"club\": {\n                \"id\": 2,\n                \"name\": \"La Vidal de Arriba Balompié Club\",\n                \"budget\": 13921782,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Claudia Hernándes\",\n            \"email\": \"antonio16@example.org\",\n            \"salary\": 921969,\n            \"club\": {\n                \"id\": 3,\n                \"name\": \"San Henríquez del Pozo Recreativo\",\n                \"budget\": 15430518,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Alex Irizarry\",\n            \"email\": \"luis98@example.org\",\n            \"salary\": 729051,\n            \"club\": {\n                \"id\": 11,\n                \"name\": \"Real FC Tamayo del Puerto\",\n                \"budget\": 30177312,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Valeria Ybarra\",\n            \"email\": \"vega.aragon@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Iker Rodarte\",\n            \"email\": \"herrera.pau@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Dr. Eric Montaño\",\n            \"email\": \"xfont@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Samuel Gonzáles\",\n            \"email\": \"ovelez@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Erik Prieto\",\n            \"email\": \"isaac.bautista@example.com\",\n            \"salary\": 1100000,\n            \"club\": {\n                \"id\": 12,\n                \"name\": \"Kirol Club\",\n                \"budget\": 7400000,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Olivia Reyes Tercero\",\n            \"email\": \"upichardo@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Saúl Fajardo\",\n            \"email\": \"nayara63@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Dr. Asier Vanegas Tercero\",\n            \"email\": \"fnieto@example.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Ing. Gabriel Sancho Hijo\",\n            \"email\": \"izan48@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coaches retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"César Verduzco\",\n            \"email\": \"cesar.verduzco@hispavista.com\",\n            \"salary\": 718913,\n            \"club\": {\n                \"id\": 9,\n                \"name\": \"O Bustos de Lemos Independiente Club\",\n                \"players_count\": 26\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Daniel Tapia\",\n            \"email\": \"daniel.tapia@gastelum.com\",\n            \"salary\": 843999,\n            \"club\": {\n                \"id\": 2,\n                \"name\": \"Sporting FC Vaca de las Torres\",\n                \"players_count\": 13\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Ing. Alonso Figueroa\",\n            \"email\": \"ing.alonso.figueroa@hotmail.com\",\n            \"salary\": 759851,\n            \"club\": {\n                \"id\": 8,\n                \"name\": \"Deportivo Villa Lozada FC\",\n                \"players_count\": 25\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Lic. Carmen Garrido\",\n            \"email\": \"lic.carmen.garrido@terra.com\",\n            \"salary\": 712782,\n            \"club\": {\n                \"id\": 6,\n                \"name\": \"Os Armas de San Pedro Independiente FC\",\n                \"players_count\": 16\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Julia Macias\",\n            \"email\": \"julia.macias@example.org\",\n            \"salary\": 882797,\n            \"club\": {\n                \"id\": 10,\n                \"name\": \"Internacional FC Expósito del Penedès\",\n                \"players_count\": 11\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Paula Delgado\",\n            \"email\": \"paula.delgado@altamirano.org\",\n            \"salary\": 825146,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Dr. Omar Rendón Segundo\",\n            \"email\": \"dr.omar.rendon.segundo@live.com\",\n            \"salary\": 1102800,\n            \"club\": {\n                \"id\": 7,\n                \"name\": \"Recreativo La Valdés\",\n                \"players_count\": 13\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Teresa Zamudio\",\n            \"email\": \"teresa.zamudio@hotmail.es\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Rodrigo Soliz\",\n            \"email\": \"rodrigo.soliz@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Silvia Abreu Segundo\",\n            \"email\": \"silvia.abreu.segundo@gmail.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Lucía Barraza\",\n            \"email\": \"lucia.barraza@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Ana Isabel Asensio Segundo\",\n            \"email\": \"ana.isabel.asensio.segundo@yahoo.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Inés Longoria\",\n            \"email\": \"ines.longoria@campos.com\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Ing. Aitor Córdoba Segundo\",\n            \"email\": \"ing.aitor.cordoba.segundo@example.net\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Lic. Natalia Betancourt Segundo\",\n            \"email\": \"lic.natalia.betancourt.segundo@example.org\",\n            \"salary\": null,\n            \"club\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Rate Limit Exceeded",
@@ -3425,7 +3555,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coaches without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 7,\n            \"full_name\": \"Valeria Ybarra\",\n            \"email\": \"vega.aragon@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Iker Rodarte\",\n            \"email\": \"herrera.pau@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Dr. Eric Montaño\",\n            \"email\": \"xfont@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Samuel Gonzáles\",\n            \"email\": \"ovelez@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Olivia Reyes Tercero\",\n            \"email\": \"upichardo@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Saúl Fajardo\",\n            \"email\": \"nayara63@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Dr. Asier Vanegas Tercero\",\n            \"email\": \"fnieto@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Ing. Gabriel Sancho Hijo\",\n            \"email\": \"izan48@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 16,\n            \"full_name\": \"Ing. Ona Valentín\",\n            \"email\": \"malave.carlota@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 17,\n            \"full_name\": \"Josefa Macias\",\n            \"email\": \"quintanilla.oriol@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coaches without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 8,\n            \"full_name\": \"Teresa Zamudio\",\n            \"email\": \"teresa.zamudio@hotmail.es\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Rodrigo Soliz\",\n            \"email\": \"rodrigo.soliz@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Silvia Abreu Segundo\",\n            \"email\": \"silvia.abreu.segundo@gmail.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Lucía Barraza\",\n            \"email\": \"lucia.barraza@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Ana Isabel Asensio Segundo\",\n            \"email\": \"ana.isabel.asensio.segundo@yahoo.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Inés Longoria\",\n            \"email\": \"ines.longoria@campos.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Ing. Aitor Córdoba Segundo\",\n            \"email\": \"ing.aitor.cordoba.segundo@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Lic. Natalia Betancourt Segundo\",\n            \"email\": \"lic.natalia.betancourt.segundo@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 16,\n            \"full_name\": \"María Ángeles Maldonado\",\n            \"email\": \"maria.angeles.maldonado@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 17,\n            \"full_name\": \"Blanca Saavedra\",\n            \"email\": \"blanca.saavedra@yahoo.es\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 18,\n            \"full_name\": \"Carlos Martínez\",\n            \"email\": \"carlos.martinez@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Rate Limit Exceeded",
@@ -3610,7 +3740,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach created successfully.\",\n    \"data\": {\n        \"id\": 18,\n        \"full_name\": \"Carlos Martínez\",\n        \"email\": \"carlos.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-02\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach created successfully.\",\n    \"data\": {\n        \"id\": 18,\n        \"full_name\": \"Carlos Martínez\",\n        \"email\": \"carlos.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Malformed Request",
@@ -3925,7 +4055,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"Noa Maestas Hijo\",\n        \"email\": \"andres.atencio@example.com\",\n        \"salary\": 741635,\n        \"club\": {\n            \"id\": 9,\n            \"name\": \"Dávila del Pozo Balompié\",\n            \"budget\": 31334011,\n            \"players_count\": null,\n            \"created_at\": \"2025-06-01\"\n        },\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"César Verduzco\",\n        \"email\": \"cesar.verduzco@hispavista.com\",\n        \"salary\": 718913,\n        \"club\": {\n            \"id\": 9,\n            \"name\": \"O Bustos de Lemos Independiente Club\",\n            \"players_count\": 26\n        },\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -4166,7 +4296,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Carlosón Martínez\",\n        \"email\": \"carloson.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Carlosón Martínez\",\n        \"email\": \"carloson.martinez@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -4642,7 +4772,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+								"url": "{{baseUrl}}/{{dirManagement}}/coaches/7/club"
 							},
 							"response": [
 								{
@@ -4655,7 +4785,7 @@
 												"value": "application/json"
 											}
 										],
-										"url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club"
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/7/club"
 									},
 									"status": "OK",
 									"code": 200,
@@ -4699,7 +4829,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach has been dismissed from Club successfully.\",\n    \"data\": {\n        \"id\": 11,\n        \"full_name\": \"Erik Prieto\",\n        \"email\": \"isaac.bautista@example.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Coach has been fired from Club successfully.\",\n    \"data\": {\n        \"id\": 7,\n        \"full_name\": \"Dr. Omar Rendón Segundo\",\n        \"email\": \"dr.omar.rendon.segundo@live.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -4847,6 +4977,62 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "Error Sending Notification",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/coaches/7/club"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 23:19:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "9"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Failed to send notification to removed Coach: Connection could not be established with host \\\"mailpit:1021\\\": stream_socket_client(): Unable to connect to mailpit:1021 (Connection refused)\"\n}"
 								}
 							]
 						}
@@ -4923,7 +5109,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Ainhoa Barrera Segundo\",\n            \"email\": \"leo.cintron@example.net\",\n            \"salary\": 1094951,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Sr. Aaron Garibay Hijo\",\n            \"email\": \"garza.andres@example.org\",\n            \"salary\": 894444,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Santiago Serra\",\n            \"email\": \"oscar14@example.org\",\n            \"salary\": 862644,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Javier Román\",\n            \"email\": \"pastor.rosa@example.net\",\n            \"salary\": 763660,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Víctor Guerrero\",\n            \"email\": \"malak.pantoja@example.org\",\n            \"salary\": 1096558,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Berta Flores\",\n            \"email\": \"teresa.villalba@example.net\",\n            \"salary\": 883473,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Isaac Carrillo\",\n            \"email\": \"medina.oriol@example.com\",\n            \"salary\": 683574,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Dr. Pilar Villareal\",\n            \"email\": \"unai.blazquez@example.org\",\n            \"salary\": 715867,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Úrsula Blanco Tercero\",\n            \"email\": \"olivia68@example.com\",\n            \"salary\": 639011,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Sra. Inés Bahena\",\n            \"email\": \"hmanzanares@example.net\",\n            \"salary\": 1040734,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Aitor Zamora\",\n            \"email\": \"ainhoa89@example.com\",\n            \"salary\": 542186,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Biel Aguirre\",\n            \"email\": \"vraya@example.com\",\n            \"salary\": 986423,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Sr. Ignacio Alvarado\",\n            \"email\": \"elena.santamaria@example.com\",\n            \"salary\": 1060581,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Naiara Santillán Hijo\",\n            \"email\": \"inmaculada45@example.org\",\n            \"salary\": 567722,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Sandra García\",\n            \"email\": \"mateo.collazo@example.org\",\n            \"salary\": 905299,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Independiente As Casillas del Mirador Club\",\n                \"budget\": 17959426,\n                \"players_count\": null,\n                \"created_at\": \"2025-06-01\"\n            },\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Sra. Josefa Sáez\",\n            \"email\": \"sra.josefa.saez@example.com\",\n            \"salary\": 994771,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Jon Valladares\",\n            \"email\": \"jon.valladares@example.com\",\n            \"salary\": 771379,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 3,\n            \"full_name\": \"Ing. Fátima Marrero\",\n            \"email\": \"ing.fatima.marrero@terra.com\",\n            \"salary\": 952593,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 4,\n            \"full_name\": \"Laura Esparza Hijo\",\n            \"email\": \"laura.esparza.hijo@example.com\",\n            \"salary\": 942081,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 5,\n            \"full_name\": \"Ing. Raúl Peláez Segundo\",\n            \"email\": \"ing.raul.pelaez.segundo@terra.com\",\n            \"salary\": 669882,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 6,\n            \"full_name\": \"Jordi Cuesta\",\n            \"email\": \"jordi.cuesta@yahoo.es\",\n            \"salary\": 547310,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"Eva Vallejo\",\n            \"email\": \"eva.vallejo@tirado.com\",\n            \"salary\": 541552,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Luna Vázquez\",\n            \"email\": \"luna.vazquez@terra.com\",\n            \"salary\": 656959,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 9,\n            \"full_name\": \"Lic. Lorena Candelaria Hijo\",\n            \"email\": \"lic.lorena.candelaria.hijo@gomez.com\",\n            \"salary\": 631187,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 10,\n            \"full_name\": \"Claudia Esteban\",\n            \"email\": \"claudia.esteban@example.net\",\n            \"salary\": 899502,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 11,\n            \"full_name\": \"Antonio Mayorga\",\n            \"email\": \"antonio.mayorga@bustos.com\",\n            \"salary\": 570278,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Lorena Feliciano Hijo\",\n            \"email\": \"lorena.feliciano.hijo@example.com\",\n            \"salary\": 955393,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 13,\n            \"full_name\": \"Oriol Gonzáles\",\n            \"email\": \"oriol.gonzales@vigil.com\",\n            \"salary\": 580200,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 14,\n            \"full_name\": \"Hugo Camacho\",\n            \"email\": \"hugo.camacho@fonseca.org\",\n            \"salary\": 433467,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 15,\n            \"full_name\": \"Elena Nazario\",\n            \"email\": \"elena.nazario@example.org\",\n            \"salary\": 840090,\n            \"club\": {\n                \"id\": 1,\n                \"name\": \"Delrío Internacional FC\",\n                \"players_count\": 27\n            },\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Rate Limit Exceeded",
@@ -5102,7 +5288,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 291,\n            \"full_name\": \"Guillem Riera Tercero\",\n            \"email\": \"orosco.juanjose@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 293,\n            \"full_name\": \"Dr. Dario Gracia\",\n            \"email\": \"torta@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 294,\n            \"full_name\": \"Hugo Mesa\",\n            \"email\": \"jan07@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 295,\n            \"full_name\": \"Ainara Briones\",\n            \"email\": \"davila.alejandra@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 296,\n            \"full_name\": \"Carlota Yáñez\",\n            \"email\": \"andres73@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 297,\n            \"full_name\": \"Valeria Guerrero Segundo\",\n            \"email\": \"ramon.anaisabel@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 298,\n            \"full_name\": \"Francisco Jiménez\",\n            \"email\": \"franco.isabel@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 299,\n            \"full_name\": \"Dr. Amparo Pérez Segundo\",\n            \"email\": \"anamaria99@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 300,\n            \"full_name\": \"Sr. Juan Conde Segundo\",\n            \"email\": \"wquinones@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 301,\n            \"full_name\": \"Ismael Carrión Hijo\",\n            \"email\": \"oscar.barraza@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 302,\n            \"full_name\": \"Luisa Rosas\",\n            \"email\": \"maria37@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 303,\n            \"full_name\": \"Dr. Isaac Córdova\",\n            \"email\": \"otero.zoe@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 304,\n            \"full_name\": \"Valentina Ornelas\",\n            \"email\": \"antonio35@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 305,\n            \"full_name\": \"Ana Arguello\",\n            \"email\": \"bravo.helena@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        },\n        {\n            \"id\": 306,\n            \"full_name\": \"Sra. Mar Rivero Segundo\",\n            \"email\": \"rgastelum@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-01\",\n            \"updated_at\": \"2025-06-01\"\n        }\n    ]\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Players without assigned club retrieved successfully.\",\n    \"data\": [\n        {\n            \"id\": 234,\n            \"full_name\": \"Lucas Delgado\",\n            \"email\": \"lucas.delgado@yahoo.es\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 235,\n            \"full_name\": \"Abril Clemente\",\n            \"email\": \"abril.clemente@sepulveda.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 236,\n            \"full_name\": \"Naia Conde\",\n            \"email\": \"naia.conde@example.net\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 237,\n            \"full_name\": \"Dña Paola Solorzano Tercero\",\n            \"email\": \"dna.paola.solorzano.tercero@velez.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 238,\n            \"full_name\": \"Lic. Fernando Vázquez Segundo\",\n            \"email\": \"lic.fernando.vazquez.segundo@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 239,\n            \"full_name\": \"Guillem Arellano\",\n            \"email\": \"guillem.arellano@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 240,\n            \"full_name\": \"Ing. Francisco Prieto\",\n            \"email\": \"ing.francisco.prieto@duenas.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 241,\n            \"full_name\": \"Leire Mascareñas\",\n            \"email\": \"leire.mascarenas@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 242,\n            \"full_name\": \"Dr. Guillermo Becerra\",\n            \"email\": \"dr.guillermo.becerra@paz.es\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 243,\n            \"full_name\": \"Lara Delagarza\",\n            \"email\": \"lara.delagarza@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 244,\n            \"full_name\": \"Isaac Armenta\",\n            \"email\": \"isaac.armenta@hotmail.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 245,\n            \"full_name\": \"Lucas Rangel\",\n            \"email\": \"lucas.rangel@example.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 246,\n            \"full_name\": \"Dr. Adam Molina Segundo\",\n            \"email\": \"dr.adam.molina.segundo@hotmail.com\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 247,\n            \"full_name\": \"Lic. Alex Carrera\",\n            \"email\": \"lic.alex.carrera@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        },\n        {\n            \"id\": 248,\n            \"full_name\": \"Sr. Jaime Pizarro\",\n            \"email\": \"sr.jaime.pizarro@example.org\",\n            \"salary\": null,\n            \"created_at\": \"2025-06-14\",\n            \"updated_at\": \"2025-06-14\"\n        }\n    ]\n}"
 								},
 								{
 									"name": "Rate Limit Exceeded",
@@ -5287,7 +5473,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player created successfully.\",\n    \"data\": {\n        \"id\": 360,\n        \"full_name\": \"Estoikof\",\n        \"email\": \"estoikof@delantero.es\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-02\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player created successfully.\",\n    \"data\": {\n        \"id\": 303,\n        \"full_name\": \"Estoikof\",\n        \"email\": \"estoikof@delantero.es\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Malformed Request",
@@ -5602,7 +5788,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"Ainhoa Barrera Segundo\",\n        \"email\": \"leo.cintron@example.net\",\n        \"salary\": 1094951,\n        \"club\": {\n            \"id\": 1,\n            \"name\": \"Independiente As Casillas del Mirador Club\",\n            \"budget\": 17959426,\n            \"players_count\": null,\n            \"created_at\": \"2025-06-01\"\n        },\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-01\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"full_name\": \"Sra. Josefa Sáez\",\n        \"email\": \"sra.josefa.saez@example.com\",\n        \"salary\": 994771,\n        \"club\": {\n            \"id\": 1,\n            \"name\": \"Delrío Internacional FC\",\n            \"coach\": {\n                \"full_name\": \"Paula Delgado\",\n                \"email\": \"paula.delgado@altamirano.org\"\n            },\n            \"players_count\": 27\n        },\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -5843,7 +6029,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Estrogof Modifikof\",\n        \"email\": \"estrogof-modifikof@delantero.es\",\n        \"salary\": 986423,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player updated successfully.\",\n    \"data\": {\n        \"id\": 12,\n        \"full_name\": \"Estrogof Modifikof\",\n        \"email\": \"estrogof-modifikof@delantero.es\",\n        \"salary\": 955393,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -6319,7 +6505,7 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/{{dirManagement}}/players/101/club"
+								"url": "{{baseUrl}}/{{dirManagement}}/players/28/club"
 							},
 							"response": [
 								{
@@ -6376,7 +6562,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player has been released from Club successfully.\",\n    \"data\": {\n        \"id\": 101,\n        \"full_name\": \"Inés Saavedra\",\n        \"email\": \"oliver.juan@example.net\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-01\",\n        \"updated_at\": \"2025-06-02\"\n    }\n}"
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Player has been released from Club successfully.\",\n    \"data\": {\n        \"id\": 28,\n        \"full_name\": \"Ing. Óscar Zarate\",\n        \"email\": \"ing.oscar.zarate@yahoo.com\",\n        \"salary\": null,\n        \"created_at\": \"2025-06-14\",\n        \"updated_at\": \"2025-06-14\"\n    }\n}"
 								},
 								{
 									"name": "Not Found",
@@ -6524,6 +6710,62 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "Error Sending Notification",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl}}/{{dirManagement}}/players/101/club"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:7411"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.7"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 13 Jun 2025 20:22:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "10"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "7"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Failed to send notification to removed Player: Connection could not be established with host \\\"mailpit:1021\\\": stream_socket_client(): Unable to connect to mailpit:1021 (Connection refused)\"\n}"
 								}
 							]
 						}
