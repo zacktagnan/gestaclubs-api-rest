@@ -4,6 +4,128 @@
   "items": [
     {
       "type": "folder",
+      "name": "Auth",
+      "filename": "Auth",
+      "seq": 1,
+      "root": {
+        "docs": "Endpoints sobre las rutas de autenticación.",
+        "meta": {
+          "name": "Auth",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Login",
+          "filename": "Login.bru",
+          "seq": 2,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/login",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\r\n    \"email\": \"admin@test.es\",\r\n    \"password\": \"12345678\",\r\n    \"device_name\": \"gestaclubs_device\"\r\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Logout",
+          "filename": "Logout.bru",
+          "seq": 3,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/logout",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Register",
+          "filename": "Register.bru",
+          "seq": 1,
+          "request": {
+            "url": "{{baseUrl}}/{{dirAuth}}/register",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"name\": \"Admin Test\",\n    \"email\": \"admin@test.es\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\",\n    \"device_name\": \"gestaclubs_device\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
       "name": "Management",
       "filename": "Management",
       "seq": 2,
@@ -36,77 +158,6 @@
               "request": {
                 "url": "{{baseUrl}}/{{dirManagement}}/clubs/1",
                 "method": "GET",
-                "headers": [
-                  {
-                    "name": "Accept",
-                    "value": "application/json",
-                    "enabled": true
-                  }
-                ],
-                "params": [],
-                "body": {
-                  "mode": "none",
-                  "formUrlEncoded": [],
-                  "multipartForm": [],
-                  "file": []
-                },
-                "script": {},
-                "vars": {},
-                "assertions": [],
-                "tests": "",
-                "docs": "",
-                "auth": {
-                  "mode": "bearer",
-                  "bearer": {
-                    "token": "{{token}}"
-                  }
-                }
-              }
-            },
-            {
-              "type": "http",
-              "name": "Create",
-              "filename": "Create.bru",
-              "seq": 2,
-              "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/clubs",
-                "method": "POST",
-                "headers": [
-                  {
-                    "name": "Accept",
-                    "value": "application/json",
-                    "enabled": true
-                  }
-                ],
-                "params": [],
-                "body": {
-                  "mode": "json",
-                  "json": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
-                  "formUrlEncoded": [],
-                  "multipartForm": [],
-                  "file": []
-                },
-                "script": {},
-                "vars": {},
-                "assertions": [],
-                "tests": "",
-                "docs": "",
-                "auth": {
-                  "mode": "bearer",
-                  "bearer": {
-                    "token": "{{token}}"
-                  }
-                }
-              }
-            },
-            {
-              "type": "http",
-              "name": "Delete",
-              "filename": "Delete.bru",
-              "seq": 8,
-              "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/clubs/13",
-                "method": "DELETE",
                 "headers": [
                   {
                     "name": "Accept",
@@ -175,7 +226,7 @@
               "filename": "Sign Coach.bru",
               "seq": 7,
               "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-coach",
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/7/sign-coach",
                 "method": "POST",
                 "headers": [
                   {
@@ -187,7 +238,7 @@
                 "params": [],
                 "body": {
                   "mode": "json",
-                  "json": "{\r\n    \"coach_id\": 11,\r\n    \"salary\": 1100000\r\n}",
+                  "json": "{\r\n    \"coach_id\": 7,\r\n    \"salary\": 1102800\r\n}",
                   "formUrlEncoded": [],
                   "multipartForm": [],
                   "file": []
@@ -211,7 +262,7 @@
               "filename": "Sign Player.bru",
               "seq": 6,
               "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/clubs/12/sign-player",
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/11/sign-player",
                 "method": "POST",
                 "headers": [
                   {
@@ -223,7 +274,7 @@
                 "params": [],
                 "body": {
                   "mode": "json",
-                  "json": "{\r\n    \"player_id\": 292,\r\n    \"salary\": 25000\r\n}",
+                  "json": "{\r\n    \"player_id\": 28,\r\n    \"salary\": 746947\r\n}",
                   "formUrlEncoded": [],
                   "multipartForm": [],
                   "file": []
@@ -296,6 +347,77 @@
                 "body": {
                   "mode": "json",
                   "json": "{\r\n    \"name\": \"Kirola Club\",\r\n    \"budget\": 200000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Create",
+              "filename": "Create.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\r\n    \"name\": \"Kirol Club\",\r\n    \"budget\": 7400000\r\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Delete",
+              "filename": "Delete.bru",
+              "seq": 8,
+              "request": {
+                "url": "{{baseUrl}}/{{dirManagement}}/clubs/13",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
                   "formUrlEncoded": [],
                   "multipartForm": [],
                   "file": []
@@ -405,7 +527,7 @@
               "filename": "Delete - Unassign.bru",
               "seq": 7,
               "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/coaches/11/club",
+                "url": "{{baseUrl}}/{{dirManagement}}/coaches/7/club",
                 "method": "DELETE",
                 "headers": [
                   {
@@ -632,7 +754,7 @@
               "filename": "Delete - Unassign.bru",
               "seq": 7,
               "request": {
-                "url": "{{baseUrl}}/{{dirManagement}}/players/101/club",
+                "url": "{{baseUrl}}/{{dirManagement}}/players/28/club",
                 "method": "DELETE",
                 "headers": [
                   {
@@ -840,131 +962,9 @@
           ]
         }
       ]
-    },
-    {
-      "type": "folder",
-      "name": "Auth",
-      "filename": "Auth",
-      "seq": 1,
-      "root": {
-        "docs": "Endpoints sobre las rutas de autenticación.",
-        "meta": {
-          "name": "Auth",
-          "seq": 1
-        }
-      },
-      "items": [
-        {
-          "type": "http",
-          "name": "Login",
-          "filename": "Login.bru",
-          "seq": 2,
-          "request": {
-            "url": "{{baseUrl}}/{{dirAuth}}/login",
-            "method": "POST",
-            "headers": [
-              {
-                "name": "Accept",
-                "value": "application/json",
-                "enabled": true
-              }
-            ],
-            "params": [],
-            "body": {
-              "mode": "json",
-              "json": "{\r\n    \"email\": \"admin@test.es\",\r\n    \"password\": \"12345678\",\r\n    \"device_name\": \"gestaclubs_device\"\r\n}",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "Logout",
-          "filename": "Logout.bru",
-          "seq": 3,
-          "request": {
-            "url": "{{baseUrl}}/{{dirAuth}}/logout",
-            "method": "POST",
-            "headers": [
-              {
-                "name": "Accept",
-                "value": "application/json",
-                "enabled": true
-              }
-            ],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "Register",
-          "filename": "Register.bru",
-          "seq": 1,
-          "request": {
-            "url": "{{baseUrl}}/{{dirAuth}}/register",
-            "method": "POST",
-            "headers": [
-              {
-                "name": "Accept",
-                "value": "application/json",
-                "enabled": true
-              }
-            ],
-            "params": [],
-            "body": {
-              "mode": "json",
-              "json": "{\n    \"name\": \"Adminos Test\",\n    \"email\": \"adminos@test.es\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\",\n    \"device_name\": \"gestaclubs_device\"\n}",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "bearer",
-              "bearer": {
-                "token": "{{token}}"
-              }
-            }
-          }
-        }
-      ]
     }
   ],
-  "activeEnvironmentUid": "zQLUo0QNRV6f3TUSLRvnt",
+  "activeEnvironmentUid": "RvHNFWeaNZgi0FUhHGg7G",
   "environments": [
     {
       "variables": [
@@ -984,7 +984,7 @@
         },
         {
           "name": "token",
-          "value": "31|ZBO2N3Qk1nXtFVnzpp8pBOWCKNLNYytDjlec4pFqaf869e1f",
+          "value": "3|dlYdiyzyRlHa8SPpwkrDSIvq70nJ16KGcJAftlGp61ca6413",
           "enabled": true,
           "secret": false,
           "type": "text"
@@ -1025,14 +1025,14 @@
             "value": "1",
             "enabled": true,
             "local": false,
-            "uid": "q0oaSC32H6ye3HFZi8L6B"
+            "uid": "dhiJxCsaPqo7unLkJiIEV"
           },
           {
             "name": "base_url",
             "value": "https://postman-rest-api-learner.glitch.me/",
             "enabled": true,
             "local": false,
-            "uid": "FKGNFBGGsh4HIpan83wkV"
+            "uid": "XsMgteN5Dh6NXArku31ai"
           }
         ]
       }
@@ -1050,7 +1050,7 @@
       "node_modules",
       ".git"
     ],
-    "size": 0.009673118591308594,
-    "filesCount": 32
+    "size": 0.009533882141113281,
+    "filesCount": 31
   }
 }
