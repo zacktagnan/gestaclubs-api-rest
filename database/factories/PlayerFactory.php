@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Player;
+use Illuminate\Support\Str;
 use App\Traits\API\V1\HasClub;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,9 +23,20 @@ class PlayerFactory extends Factory
      */
     public function definition(): array
     {
+        $domains = [
+            fake()->freeEmailDomain(),
+            fake()->safeEmailDomain(),
+            fake()->domainName(),
+        ];
+        $domain = '@' . fake()->randomElement($domains);
+
+        $fullName = fake()->unique()->name();
+        $username = Str::slug($fullName, '.');
+        $email = $username . $domain;
+
         return [
-            'full_name' => fake()->unique()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'full_name' => $fullName,
+            'email' => $email,
         ];
     }
 }
