@@ -36,7 +36,7 @@ services:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
             # --------------------------------------------------------------------
-            MYSQL_TCP_PORT: "${DB_PORT}"
+            MYSQL_TCP_PORT: "${FORWARD_DB_PORT}"
             # --------------------------------------------------------------------
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'
@@ -64,7 +64,7 @@ services:
         environment:
             PMA_HOST: "${DB_HOST}"
             # --------------------------------------------------------------------
-            PMA_PORT: "${DB_PORT}"
+            PMA_PORT: "${FORWARD_DB_PORT}"
             # --------------------------------------------------------------------
         networks:
             - sail
