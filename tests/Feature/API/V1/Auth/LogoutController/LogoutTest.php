@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\API\V1\Auth\LogoutController;
 
-use Tests\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
 use Tests\Feature\API\V1\Auth\AuthTestCase;

@@ -11,7 +11,8 @@ trait RateLimitTestHelpers
         string $method = 'getJson',
         array $payload = [],
         string|array|null $uniqueFields = null,
-        int $maxAttempts = 10
+        int $maxAttempts = 10,
+        ?string $token = null
     ): void {
         // Aplica variaciones si hay campos únicos
         $generatePayload = function (int $i) use ($payload, $uniqueFields) {
@@ -31,16 +32,17 @@ trait RateLimitTestHelpers
 
         // Lanza `maxAttempts` peticiones válidas
         for ($i = 0; $i < $maxAttempts; $i++) {
-            $this
-                ->withServerVariables(['REMOTE_ADDR' => '127.0.0.1'])
-                ->{$method}($route, $generatePayload($i))
-                ->assertOk();
+            $request = $token
+                ? $this->withToken($token)->{$method}($route, $generatePayload($i))
+                : $this->{$method}($route, $generatePayload($i));
+
+            $request->assertOk();
         }
 
         // Lanza la petición 429 esperada
-        $response = $this
-            ->withServerVariables(['REMOTE_ADDR' => '127.0.0.1'])
-            ->{$method}($route, $generatePayload($maxAttempts));
+        $response = $token
+            ? $this->withToken($token)->{$method}($route, $generatePayload($maxAttempts))
+            : $this->{$method}($route, $generatePayload($maxAttempts));
 
         $this->assertResponseIsRateLimited($response, $maxAttempts);
     }
