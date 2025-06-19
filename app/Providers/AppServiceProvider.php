@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use App\Services\API\V1\AuthSanctumService;
-use App\Contracts\API\Auth\AuthServiceInterface;
-use App\Notifications\Channels\EmailNotifier;
 use App\Notifications\NotifierManager;
 use Illuminate\Validation\Rules\Email;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\RateLimiting\Limit;
+use App\Services\API\V1\AuthSanctumService;
+use Illuminate\Support\Facades\RateLimiter;
+use App\Notifications\Channels\EmailNotifier;
+use App\Contracts\API\Auth\AuthServiceInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -48,6 +50,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Para las pruebas de control máximo de peticiones
+        RateLimiter::for('test-too-many-requests', function ($request) {
+            return Limit::perMinute(10)->by('test-too-many-requests-signature');
+        });
     }
 }
