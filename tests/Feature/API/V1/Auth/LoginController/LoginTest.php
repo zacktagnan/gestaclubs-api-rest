@@ -7,6 +7,7 @@ use PHPUnit\Framework\Attributes\Group;
 use Tests\DataProviders\AuthDataProvider;
 use Tests\Feature\API\V1\Auth\AuthTestCase;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
+use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 
 #[Group('api:v1')]
@@ -54,12 +55,12 @@ class LoginTest extends AuthTestCase
             'email' => $this->user->email,
         ]);
 
-        $this->assertRateLimitExceeded(
-            route($this->authBaseRouteName . 'login'),
-            'postJson',
-            $userData,
-            null,
-            10,
-        );
+        $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
+            route: route($this->authBaseRouteName . 'login'),
+            method: 'postJson',
+            payload: $userData,
+            uniqueFields: null,
+            maxAttempts: 10
+        ));
     }
 }

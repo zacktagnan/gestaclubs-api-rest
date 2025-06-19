@@ -7,6 +7,7 @@ use PHPUnit\Framework\Attributes\Group;
 use Tests\DataProviders\AuthDataProvider;
 use Tests\Feature\API\V1\Auth\AuthTestCase;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
+use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 
 #[Group('api:v1')]
@@ -70,12 +71,12 @@ class RegisterTest extends AuthTestCase
     #[DataProviderExternal(AuthDataProvider::class, 'provideUserDataToRegister')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $userData): void
     {
-        $this->assertRateLimitExceeded(
-            route($this->authBaseRouteName . 'register'),
-            'postJson',
-            $userData,
-            'email', // Campo único para variar en cada petición
-            10, // Máximo de intentos permitidos
-        );
+        $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
+            route: route($this->authBaseRouteName . 'register'),
+            method: 'postJson',
+            payload: $userData,
+            uniqueFields: 'email', // Campo único para variar en cada petición
+            maxAttempts: 10 // Máximo de intentos permitidos
+        ));
     }
 }

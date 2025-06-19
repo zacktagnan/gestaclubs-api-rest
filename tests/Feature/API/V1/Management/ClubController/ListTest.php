@@ -5,6 +5,7 @@ namespace Tests\Feature\API\V1\Management\ClubController;
 use App\Models\Club;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
+use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
@@ -44,14 +45,14 @@ class ListTest extends ClubTestCase
     #[Group('api:v1:management:clubs:list:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
-        $this->assertRateLimitExceeded(
-            route($this->clubsBaseRouteName . 'index'),
-            'getJson',
-            [],
-            null,
-            10,
-            $this->token,
-        );
+        $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
+            route: route($this->clubsBaseRouteName . 'index'),
+            method: 'getJson',
+            payload: [],
+            uniqueFields: null,
+            maxAttempts: 10,
+            token: $this->token
+        ));
     }
 
     #[Test]
