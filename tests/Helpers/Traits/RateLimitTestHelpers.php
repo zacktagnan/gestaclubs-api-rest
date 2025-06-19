@@ -39,7 +39,7 @@ trait RateLimitTestHelpers
                 ? $this->withToken($options->token)->{$options->method}($options->route, $generatePayload($i))
                 : $this->{$options->method}($options->route, $generatePayload($i));
 
-            $request->assertOk();
+            $request->assertStatus($options->expectedStatus);
         }
 
         // Lanza la petición 429 esperada

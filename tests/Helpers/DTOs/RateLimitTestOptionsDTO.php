@@ -10,6 +10,7 @@ class RateLimitTestOptionsDTO
         public array $payload = [],
         public string|array|null $uniqueFields = null,
         public int $maxAttempts = 10,
+        public int $expectedStatus = 200,
         public ?string $token = null
     ) {}
 }
