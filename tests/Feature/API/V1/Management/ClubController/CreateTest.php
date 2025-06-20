@@ -73,7 +73,7 @@ class CreateTest extends ClubTestCase
             ->assertUnprocessable()
             ->assertJsonValidationErrors(['name']);
 
-        $this->assertDatabaseCount($this->table, 1);
+        $this->assertDatabaseCount($this->table, 2); // 2: el creado desde ClubTestCase y el creado en este test
     }
 
     #[Test]
