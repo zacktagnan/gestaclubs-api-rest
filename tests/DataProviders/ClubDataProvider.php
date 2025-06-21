@@ -38,9 +38,21 @@ class ClubDataProvider
             'minimum budget not met' => [
                 [
                     'name' => 'Test Club',
-                    'budget' => 6900000,
+                    'budget' => 0,
                 ],
                 ['budget'],
+            ],
+        ];
+    }
+
+    public static function provideClubDataToUpdate(): array
+    {
+        return [
+            'club_data_to_update' => [
+                [
+                    'name' => 'Updated Club Name',
+                    'budget' => 432000,
+                ],
             ],
         ];
     }

@@ -2,10 +2,8 @@
 
 namespace Tests\Feature\API\V1\Management\ClubController;
 
-use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
-use Tests\DataProviders\ClubDataProvider;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
