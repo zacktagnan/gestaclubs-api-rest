@@ -56,4 +56,25 @@ class ClubDataProvider
             ],
         ];
     }
+
+    public static function provideClubBudgetToUpdate(): array
+    {
+        return [
+            'club_budget_to_update' => [
+                [
+                    'budget' => 432000,
+                ],
+            ],
+        ];
+    }
+
+    public static function provideInvalidClubBudget(): array
+    {
+        return [
+            'empty payload' => [
+                [],
+                ['budget'],
+            ],
+        ];
+    }
 }
