@@ -6,6 +6,7 @@ class RateLimitTestOptionsDTO
 {
     public function __construct(
         public string $route,
+        public ?\Closure $routeGenerator = null,
         public string $method = 'getJson',
         public array $payload = [],
         public ?\Closure $payloadGenerator = null,

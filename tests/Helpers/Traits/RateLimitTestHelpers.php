@@ -35,16 +35,24 @@ trait RateLimitTestHelpers
 
         // Lanza `maxAttempts` peticiones válidas
         for ($i = 0; $i < $options->maxAttempts; $i++) {
+            $route = $options->routeGenerator
+                ? ($options->routeGenerator)($i)
+                : $options->route;
+
             $payload = $options->payloadGenerator
                 ? ($options->payloadGenerator)($i)
                 : $generatePayload($i);
 
             $request = $options->token
-                ? $this->withToken($options->token)->{$options->method}($options->route, $payload)
-                : $this->{$options->method}($options->route, $payload);
+                ? $this->withToken($options->token)->{$options->method}($route, $payload)
+                : $this->{$options->method}($route, $payload);
 
             $request->assertStatus($options->expectedStatus);
         }
+
+        $finalRoute = $options->routeGenerator
+            ? ($options->routeGenerator)($options->maxAttempts)
+            : $options->route;
 
         $finalPayload = $options->payloadGenerator
             ? ($options->payloadGenerator)($options->maxAttempts)
@@ -52,8 +60,8 @@ trait RateLimitTestHelpers
 
         // Lanza la petición 429 esperada
         $response = $options->token
-            ? $this->withToken($options->token)->{$options->method}($options->route, $finalPayload)
-            : $this->{$options->method}($options->route, $finalPayload);
+            ? $this->withToken($options->token)->{$options->method}($finalRoute, $finalPayload)
+            : $this->{$options->method}($finalRoute, $finalPayload);
 
         $this->assertResponseIsRateLimited($response, $options->maxAttempts);
     }
