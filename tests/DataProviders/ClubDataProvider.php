@@ -99,4 +99,26 @@ class ClubDataProvider
             ],
         ];
     }
+
+    public static function provideInvalidClubSignCoachData(): array
+    {
+        return [
+            'empty payload' => [
+                [],
+                ['coach_id', 'salary'],
+            ],
+            'missing coach id' => [
+                [
+                    'salary' => 746_947,
+                ],
+                ['coach_id'],
+            ],
+            'missing salary' => [
+                [
+                    'coach_id' => 1,
+                ],
+                ['salary'],
+            ],
+        ];
+    }
 }

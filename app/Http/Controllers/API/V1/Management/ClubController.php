@@ -154,7 +154,12 @@ class ClubController
 
             return ApiResponseService::success(
                 new CoachResource($coach),
-                message: 'Club has signed the Coach.'
+                message: 'Club has signed the Coach.',
+                code: Response::HTTP_CREATED,
+            );
+        } catch (DomainUnprocessableException $e) {
+            return ApiResponseService::unprocessableEntity(
+                message: $e->getMessage()
             );
         } catch (\Throwable $e) {
             // Cualquier excepción en el pipeline (incluyendo la notificación) revierte la transacción.
