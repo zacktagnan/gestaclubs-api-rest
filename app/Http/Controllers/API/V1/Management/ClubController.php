@@ -15,11 +15,13 @@ use App\Http\Requests\API\V1\Club\StoreClubRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubRequest;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
+use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
+use App\DTOs\API\V1\Coach\WithRelationsDTO as CoachWithRelationsDTO;
+use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
 use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
-use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
-use App\DTOs\API\V1\Coach\WithRelationsDTO as CoachWithRelationsDTO;
+use App\Exceptions\API\V1\ClubBudgetExceededException;
 
 class ClubController
 {
@@ -124,7 +126,16 @@ class ClubController
 
             return ApiResponseService::success(
                 new PlayerResource($player),
-                message: 'Club has signed the Player.'
+                message: 'Club has signed the Player.',
+                code: Response::HTTP_CREATED,
+            );
+        } catch (PlayerAlreadyAssignedException $e) {
+            return ApiResponseService::unprocessableEntity(
+                message: $e->getMessage()
+            );
+        } catch (ClubBudgetExceededException $e) {
+            return ApiResponseService::unprocessableEntity(
+                message: $e->getMessage()
             );
         } catch (\Throwable $e) {
             // Cualquier excepción en el pipeline (incluyendo la notificación) revierte la transacción.

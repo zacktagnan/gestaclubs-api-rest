@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Notifications\NotifierManager;
-use Illuminate\Validation\Rules\Email;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\RateLimiting\Limit;
 use App\Services\API\V1\AuthSanctumService;

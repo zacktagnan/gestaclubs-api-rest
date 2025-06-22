@@ -77,4 +77,26 @@ class ClubDataProvider
             ],
         ];
     }
+
+    public static function provideInvalidClubSignPlayerData(): array
+    {
+        return [
+            'empty payload' => [
+                [],
+                ['player_id', 'salary'],
+            ],
+            'missing player id' => [
+                [
+                    'salary' => 746_947,
+                ],
+                ['player_id'],
+            ],
+            'missing salary' => [
+                [
+                    'player_id' => 1,
+                ],
+                ['salary'],
+            ],
+        ];
+    }
 }
