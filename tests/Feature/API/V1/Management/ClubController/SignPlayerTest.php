@@ -23,6 +23,7 @@ class SignPlayerTest extends ClubTestCase
 
     protected Player $playerToSign;
     protected int $validSalaryToAssign;
+    protected string $playersTable;
 
     protected function setUp(): void
     {
@@ -30,6 +31,7 @@ class SignPlayerTest extends ClubTestCase
 
         $this->playerToSign = Player::factory()->create();
         $this->validSalaryToAssign = $this->club->budget - 1;
+        $this->playersTable = 'players';
     }
 
     #[Test]
@@ -55,7 +57,7 @@ class SignPlayerTest extends ClubTestCase
             'email' => $this->playerToSign->email,
         ]);
 
-        $this->assertDatabaseHas('players', [
+        $this->assertDatabaseHas($this->playersTable, [
             'id' => $response->json('data.id'),
             // o
             // 'id' => $this->club->id,
@@ -206,7 +208,7 @@ class SignPlayerTest extends ClubTestCase
             ]);
 
         // 6. Verificar que no se asignó el club (rollback)
-        $this->assertDatabaseMissing('players', [
+        $this->assertDatabaseMissing($this->playersTable, [
             'id' => $this->playerToSign->id,
             'club_id' => $this->club->id,
         ]);
