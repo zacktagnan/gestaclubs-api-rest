@@ -15,13 +15,12 @@ use App\Http\Requests\API\V1\Club\StoreClubRequest;
 use App\Http\Requests\API\V1\Club\UpdateClubRequest;
 use App\Http\Requests\API\V1\Club\ClubSignCoachRequest;
 use App\Http\Requests\API\V1\Club\ClubSignPlayerRequest;
-use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use App\Http\Requests\API\V1\Club\UpdateClubBudgetRequest;
 use App\DTOs\API\V1\Coach\WithRelationsDTO as CoachWithRelationsDTO;
 use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
 use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
-use App\Exceptions\API\V1\ClubBudgetExceededException;
+use App\Contracts\DomainUnprocessableException;
 
 class ClubController
 {
@@ -129,11 +128,7 @@ class ClubController
                 message: 'Club has signed the Player.',
                 code: Response::HTTP_CREATED,
             );
-        } catch (PlayerAlreadyAssignedException $e) {
-            return ApiResponseService::unprocessableEntity(
-                message: $e->getMessage()
-            );
-        } catch (ClubBudgetExceededException $e) {
+        } catch (DomainUnprocessableException $e) {
             return ApiResponseService::unprocessableEntity(
                 message: $e->getMessage()
             );

@@ -2,9 +2,10 @@
 
 namespace App\Exceptions\API\V1;
 
+use App\Contracts\DomainUnprocessableException;
 use Exception;
 
-class PlayerAlreadyAssignedException extends Exception
+class PlayerAlreadyAssignedException extends Exception implements DomainUnprocessableException
 {
     // protected $message = 'Player is already assigned to another Club.';
     // o

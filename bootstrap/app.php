@@ -1,11 +1,7 @@
 <?php
 
-use App\Exceptions\API\V1\ClubAlreadyHasCoachException;
-use App\Exceptions\API\V1\ClubBudgetExceededException;
 use App\Exceptions\API\V1\ClubHasMembersException;
-use App\Exceptions\API\V1\CoachAlreadyAssignedException;
 use App\Exceptions\API\V1\ErrorSendingNotificationException;
-use App\Exceptions\API\V1\PlayerAlreadyAssignedException;
 use Illuminate\Foundation\Application;
 use App\Services\API\V1\ApiResponseService;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -38,30 +34,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (NotFoundHttpException $exception) {
             return ApiResponseService::notFound(
                 message: $exception->getMessage() ?: 'Resource not found.'
-            );
-        });
-
-        $exceptions->render(function (PlayerAlreadyAssignedException $exception) {
-            return ApiResponseService::unprocessableEntity(
-                message: $exception->getMessage() ?: 'Entity is unprocessable.'
-            );
-        });
-
-        $exceptions->render(function (CoachAlreadyAssignedException $exception) {
-            return ApiResponseService::unprocessableEntity(
-                message: $exception->getMessage() ?: 'Entity is unprocessable.'
-            );
-        });
-
-        $exceptions->render(function (ClubAlreadyHasCoachException $exception) {
-            return ApiResponseService::unprocessableEntity(
-                message: $exception->getMessage() ?: 'Entity is unprocessable.'
-            );
-        });
-
-        $exceptions->render(function (ClubBudgetExceededException $exception) {
-            return ApiResponseService::unprocessableEntity(
-                message: $exception->getMessage() ?: 'Entity is unprocessable.'
             );
         });
 
