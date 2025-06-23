@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\API\V1\Management\ClubController;
+namespace Tests\Feature\API\V1\Management\CoachController;
 
-use App\Models\Club;
+use App\Models\Coach;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
@@ -10,50 +10,50 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 
 #[Group('api:v1')]
 #[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:delete')]
-class DeleteTest extends ClubTestCase
+#[Group('api:v1:management:coaches')]
+#[Group('api:v1:management:coaches:delete')]
+class DeleteTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:success')]
-    public function a_club_can_be_deleted(): void
+    #[Group('api:v1:management:coaches:delete:success')]
+    public function a_coach_can_be_deleted(): void
     {
         $response = $this
             // $this
             ->withToken($this->token)
-            ->deleteJson(route($this->clubsBaseRouteName . 'destroy', $this->club))
+            ->deleteJson(route($this->coachesBaseRouteName . 'destroy', $this->coach))
             ->assertOk();
 
         $this->assertDatabaseMissing($this->table, [
             'id' => $response->json('data.id'),
             // o
-            // 'id' => $this->club->id,
+            // 'id' => $this->coach->id,
         ]);
 
         $this->assertDatabaseCount($this->table, 0);
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:not_be_found')]
-    public function club_to_delete_cannot_be_found(): void
+    #[Group('api:v1:management:coaches:delete:not_be_found')]
+    public function coach_to_delete_cannot_be_found(): void
     {
         $this
             ->withToken($this->token)
-            ->deleteJson(route($this->clubsBaseRouteName . 'destroy', 999))
+            ->deleteJson(route($this->coachesBaseRouteName . 'destroy', 999))
             ->assertNotFound();
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:too_many_requests')]
+    #[Group('api:v1:management:coaches:delete:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
             route: '',
             routeGenerator: function (int $i): string {
-                $clubToDelete = Club::factory()->create();
-                return route($this->clubsBaseRouteName . 'destroy', $clubToDelete);
+                $coachToDelete = Coach::factory()->create();
+                return route($this->coachesBaseRouteName . 'destroy', $coachToDelete);
             },
             method: 'deleteJson',
             payload: [],
@@ -64,11 +64,11 @@ class DeleteTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:unauthenticated')]
-    public function an_unauthenticated_user_cannot_delete_a_club(): void
+    #[Group('api:v1:management:coaches:delete:unauthenticated')]
+    public function an_unauthenticated_user_cannot_delete_a_coach(): void
     {
         $this
-            ->deleteJson(route($this->clubsBaseRouteName . 'destroy', $this->club))
+            ->deleteJson(route($this->coachesBaseRouteName . 'destroy', $this->coach))
             ->assertUnauthorized();
     }
 }
