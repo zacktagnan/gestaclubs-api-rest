@@ -71,4 +71,21 @@ class DeleteTest extends ClubTestCase
             ->deleteJson(route($this->clubsBaseRouteName . 'destroy', $this->club))
             ->assertUnauthorized();
     }
+
+    #[Test]
+    #[Group('api:v1:management:clubs:delete:impossible_having_members')]
+    public function club_cannot_be_deleted_if_having_members(): void
+    {
+        $this->assignStaffToClub(
+            coachSalary: 7_000_000,
+            playerSalaries: [
+                4_000_000,
+            ]
+        );
+
+        $this
+            ->withToken($this->token)
+            ->deleteJson(route($this->clubsBaseRouteName . 'destroy', $this->club))
+            ->assertConflict();
+    }
 }
