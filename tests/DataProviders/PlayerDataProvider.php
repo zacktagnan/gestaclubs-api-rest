@@ -37,4 +37,16 @@ class PlayerDataProvider
             ],
         ];
     }
+
+    public static function providePlayerDataToUpdate(): array
+    {
+        return [
+            'player_data_to_update' => [
+                [
+                    'full_name' => 'Updated Pitxitxi Naiz ... berriro',
+                    'email' => 'nik.pitxitxi.naiz@kirolaria.eus',
+                ],
+            ],
+        ];
+    }
 }
