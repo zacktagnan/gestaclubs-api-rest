@@ -37,4 +37,16 @@ class CoachDataProvider
             ],
         ];
     }
+
+    public static function provideCoachDataToUpdate(): array
+    {
+        return [
+            'coach_data_to_update' => [
+                [
+                    'full_name' => 'Updated Kepita Arrillaga',
+                    'email' => 'kepita.arrillaga@euskaltel.eus',
+                ],
+            ],
+        ];
+    }
 }
