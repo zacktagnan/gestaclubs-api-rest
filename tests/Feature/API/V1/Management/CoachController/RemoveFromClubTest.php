@@ -11,6 +11,10 @@ use PHPUnit\Framework\Attributes\Group;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
+#[Group('api:v1')]
+#[Group('api:v1:management')]
+#[Group('api:v1:management:coaches')]
+#[Group('api:v1:management:coaches:remove_from_club')]
 class RemoveFromClubTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
