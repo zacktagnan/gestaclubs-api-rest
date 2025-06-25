@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:create')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:create')]
 class CreateTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:clubs:create:success')]
+    #[Group('api:v1:feat:management:clubs:create:success')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToCreate')]
     public function a_club_can_be_created(array $clubData): void
     {
@@ -42,7 +43,7 @@ class CreateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:create:malformed_request')]
+    #[Group('api:v1:feat:management:clubs:create:malformed_request')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideInvalidClubData')]
     public function club_creation_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -56,7 +57,7 @@ class CreateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:create:already_in_use')]
+    #[Group('api:v1:feat:management:clubs:create:already_in_use')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToCreate')]
     public function club_name_is_already_in_use(array $clubData): void
     {
@@ -77,7 +78,7 @@ class CreateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:create:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:create:too_many_requests')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToCreate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $clubData): void
     {
@@ -93,7 +94,7 @@ class CreateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:create:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:create:unauthenticated')]
     public function an_unauthenticated_user_cannot_create_a_club(): void
     {
         $this

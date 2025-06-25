@@ -9,15 +9,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:coaches')]
-#[Group('api:v1:management:coaches:list')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:coaches')]
+#[Group('api:v1:feat:management:coaches:list')]
 class ListTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:coaches:list:success')]
+    #[Group('api:v1:feat:management:coaches:list:success')]
     public function coaches_can_be_listed_by_authenticated_user(): void
     {
         Coach::factory()->count(10)->create();
@@ -44,7 +45,7 @@ class ListTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:list:too_many_requests')]
+    #[Group('api:v1:feat:management:coaches:list:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -58,7 +59,7 @@ class ListTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:list:unauthenticated')]
+    #[Group('api:v1:feat:management:coaches:list:unauthenticated')]
     public function an_unauthenticated_user_cannot_access_to_protected_coaches_list(): void
     {
         $this

@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:coaches')]
-#[Group('api:v1:management:coaches:create')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:coaches')]
+#[Group('api:v1:feat:management:coaches:create')]
 class CreateTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:coaches:create:success')]
+    #[Group('api:v1:feat:management:coaches:create:success')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToCreate')]
     public function a_coach_can_be_created(array $coachData): void
     {
@@ -42,7 +43,7 @@ class CreateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:create:malformed_request')]
+    #[Group('api:v1:feat:management:coaches:create:malformed_request')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideInvalidCoachData')]
     public function coach_creation_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -56,7 +57,7 @@ class CreateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:create:already_in_use')]
+    #[Group('api:v1:feat:management:coaches:create:already_in_use')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToCreate')]
     public function coach_name_is_already_in_use(array $coachData): void
     {
@@ -77,7 +78,7 @@ class CreateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:create:too_many_requests')]
+    #[Group('api:v1:feat:management:coaches:create:too_many_requests')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToCreate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $coachData): void
     {
@@ -93,7 +94,7 @@ class CreateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:create:unauthenticated')]
+    #[Group('api:v1:feat:management:coaches:create:unauthenticated')]
     public function an_unauthenticated_user_cannot_create_a_coach(): void
     {
         $this

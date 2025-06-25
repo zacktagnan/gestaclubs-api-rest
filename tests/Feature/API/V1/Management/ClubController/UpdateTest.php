@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:update')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:update')]
 class UpdateTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:clubs:update:success')]
+    #[Group('api:v1:feat:management:clubs:update:success')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToUpdate')]
     public function a_club_can_be_updated(array $clubDataToUpdate): void
     {
@@ -46,7 +47,7 @@ class UpdateTest extends ClubTestCase
 
     #[Test]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToUpdate')]
-    #[Group('api:v1:management:clubs:update:not_be_found')]
+    #[Group('api:v1:feat:management:clubs:update:not_be_found')]
     public function a_club_cannot_be_found(array $clubDataToUpdate): void
     {
         $this
@@ -56,7 +57,7 @@ class UpdateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update:malformed_request')]
+    #[Group('api:v1:feat:management:clubs:update:malformed_request')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideInvalidClubData')]
     public function club_updating_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -70,7 +71,7 @@ class UpdateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update:not_enough_budget')]
+    #[Group('api:v1:feat:management:clubs:update:not_enough_budget')]
     public function club_updating_fails_with_not_enough_budget(): void
     {
         $this->assignStaffToClub(
@@ -104,7 +105,7 @@ class UpdateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:update:too_many_requests')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubDataToUpdate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $clubDataToUpdate): void
     {
@@ -119,7 +120,7 @@ class UpdateTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:update:unauthenticated')]
     public function an_unauthenticated_user_cannot_update_a_club(): void
     {
         $this

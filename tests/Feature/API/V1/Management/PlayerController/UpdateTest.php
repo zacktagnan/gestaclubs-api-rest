@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:update')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:update')]
 class UpdateTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:players:update:success')]
+    #[Group('api:v1:feat:management:players:update:success')]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToUpdate')]
     public function a_player_can_be_updated(array $playerDataToUpdate): void
     {
@@ -46,7 +47,7 @@ class UpdateTest extends PlayerTestCase
 
     #[Test]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToUpdate')]
-    #[Group('api:v1:management:players:update:not_be_found')]
+    #[Group('api:v1:feat:management:players:update:not_be_found')]
     public function a_player_cannot_be_found(array $playerDataToUpdate): void
     {
         $this
@@ -56,7 +57,7 @@ class UpdateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:update:malformed_request')]
+    #[Group('api:v1:feat:management:players:update:malformed_request')]
     #[DataProviderExternal(PlayerDataProvider::class, 'provideInvalidPlayerData')]
     public function player_updating_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -70,7 +71,7 @@ class UpdateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:update:too_many_requests')]
+    #[Group('api:v1:feat:management:players:update:too_many_requests')]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToUpdate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $playerDataToUpdate): void
     {
@@ -85,7 +86,7 @@ class UpdateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:update:unauthenticated')]
+    #[Group('api:v1:feat:management:players:update:unauthenticated')]
     public function an_unauthenticated_user_cannot_update_a_player(): void
     {
         $this

@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:create')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:create')]
 class CreateTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:players:create:success')]
+    #[Group('api:v1:feat:management:players:create:success')]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToCreate')]
     public function a_player_can_be_created(array $playerData): void
     {
@@ -42,7 +43,7 @@ class CreateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:create:malformed_request')]
+    #[Group('api:v1:feat:management:players:create:malformed_request')]
     #[DataProviderExternal(PlayerDataProvider::class, 'provideInvalidPlayerData')]
     public function player_creation_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -56,7 +57,7 @@ class CreateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:create:already_in_use')]
+    #[Group('api:v1:feat:management:players:create:already_in_use')]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToCreate')]
     public function player_name_is_already_in_use(array $playerData): void
     {
@@ -77,7 +78,7 @@ class CreateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:create:too_many_requests')]
+    #[Group('api:v1:feat:management:players:create:too_many_requests')]
     #[DataProviderExternal(PlayerDataProvider::class, 'providePlayerDataToCreate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $playerData): void
     {
@@ -93,7 +94,7 @@ class CreateTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:create:unauthenticated')]
+    #[Group('api:v1:feat:management:players:create:unauthenticated')]
     public function an_unauthenticated_user_cannot_create_a_player(): void
     {
         $this

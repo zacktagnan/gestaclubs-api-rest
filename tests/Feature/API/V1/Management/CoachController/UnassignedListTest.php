@@ -9,15 +9,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:coaches')]
-#[Group('api:v1:management:coaches:unassigned_list')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:coaches')]
+#[Group('api:v1:feat:management:coaches:unassigned_list')]
 class UnassignedListTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:coaches:unassigned_list:success')]
+    #[Group('api:v1:feat:management:coaches:unassigned_list:success')]
     public function unassigned_coaches_can_be_listed_by_authenticated_user(): void
     {
         Coach::factory()->count(10)->create();
@@ -64,7 +65,7 @@ class UnassignedListTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:unassigned_list:too_many_requests')]
+    #[Group('api:v1:feat:management:coaches:unassigned_list:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -78,7 +79,7 @@ class UnassignedListTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:unassigned_list:unauthenticated')]
+    #[Group('api:v1:feat:management:coaches:unassigned_list:unauthenticated')]
     public function an_unauthenticated_user_cannot_access_to_protected_unassigned_coaches_list(): void
     {
         $this

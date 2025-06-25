@@ -14,9 +14,10 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:sign_coach')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:sign_coach')]
 class SignCoachTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
@@ -35,7 +36,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:success')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:success')]
     public function a_club_can_sign_a_coach(): void
     {
         $response = $this
@@ -68,7 +69,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:malformed_request')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:malformed_request')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideInvalidClubSignCoachData')]
     public function coach_assignation_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -82,7 +83,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:already_assigned')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:already_assigned')]
     public function coach_is_already_assigned_to_another_club(): void
     {
         $anotherClub = Club::factory()->create();
@@ -101,7 +102,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:already_has_one')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:already_has_one')]
     public function club_already_has_one_coach(): void
     {
         Coach::factory()->for($this->club)->create();
@@ -120,7 +121,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:not_enough')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:not_enough')]
     public function club_budget_is_not_enough_to_sign_coach(): void
     {
         $salaryToAssign = $this->club->budget + 1;
@@ -138,7 +139,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $salaryToAssign = 1;
@@ -174,7 +175,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:unauthenticated')]
     public function an_unauthenticated_user_cannot_sign_a_coach(): void
     {
         $this
@@ -183,7 +184,7 @@ class SignCoachTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_coach:notification_failure')]
+    #[Group('api:v1:feat:management:clubs:sign_coach:notification_failure')]
     public function error_sending_notification_after_sign_a_coach(): void
     {
         // 1. Creado Coach y establecido un SALARY válido que asignar...

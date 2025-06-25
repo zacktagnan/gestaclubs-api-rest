@@ -14,9 +14,10 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:sign_player')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:sign_player')]
 class SignPlayerTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
@@ -35,7 +36,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:success')]
+    #[Group('api:v1:feat:management:clubs:sign_player:success')]
     public function a_club_can_sign_a_player(): void
     {
         $response = $this
@@ -68,7 +69,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:malformed_request')]
+    #[Group('api:v1:feat:management:clubs:sign_player:malformed_request')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideInvalidClubSignPlayerData')]
     public function player_assignation_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -82,7 +83,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:already_assigned')]
+    #[Group('api:v1:feat:management:clubs:sign_player:already_assigned')]
     public function player_is_already_assigned_to_another_club(): void
     {
         $anotherClub = Club::factory()->create();
@@ -101,7 +102,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:already_belongs')]
+    #[Group('api:v1:feat:management:clubs:sign_player:already_belongs')]
     public function player_is_already_belongs_to_this_club(): void
     {
         $playerToSign = Player::factory()->for($this->club)->create();
@@ -119,7 +120,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:not_enough')]
+    #[Group('api:v1:feat:management:clubs:sign_player:not_enough')]
     public function club_budget_is_not_enough_to_sign_player(): void
     {
         $salaryToAssign = $this->club->budget + 1;
@@ -137,7 +138,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:sign_player:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $salaryToAssign = 1;
@@ -162,7 +163,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:sign_player:unauthenticated')]
     public function an_unauthenticated_user_cannot_sign_a_player(): void
     {
         $this
@@ -171,7 +172,7 @@ class SignPlayerTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:sign_player:notification_failure')]
+    #[Group('api:v1:feat:management:clubs:sign_player:notification_failure')]
     public function error_sending_notification_after_sign_a_player(): void
     {
         // 1. Creado Player y establecido un SALARY válido que asignar...

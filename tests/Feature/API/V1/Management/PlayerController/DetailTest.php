@@ -8,15 +8,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:detail')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:detail')]
 class DetailTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:players:detail:success')]
+    #[Group('api:v1:feat:management:players:detail:success')]
     public function a_player_can_be_retrieved(): void
     {
         $response = $this
@@ -35,7 +36,7 @@ class DetailTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:detail:not_be_found')]
+    #[Group('api:v1:feat:management:players:detail:not_be_found')]
     public function a_player_cannot_be_found(): void
     {
         $this
@@ -45,7 +46,7 @@ class DetailTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:detail:too_many_requests')]
+    #[Group('api:v1:feat:management:players:detail:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -59,7 +60,7 @@ class DetailTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:detail:unauthenticated')]
+    #[Group('api:v1:feat:management:players:detail:unauthenticated')]
     public function an_unauthenticated_user_cannot_retrieve_a_player(): void
     {
         $this

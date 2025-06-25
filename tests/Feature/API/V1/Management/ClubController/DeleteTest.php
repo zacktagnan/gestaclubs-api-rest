@@ -9,15 +9,16 @@ use Tests\Helpers\Traits\RateLimitTestHelpers;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:delete')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:delete')]
 class DeleteTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:success')]
+    #[Group('api:v1:feat:management:clubs:delete:success')]
     public function a_club_can_be_deleted(): void
     {
         $response = $this
@@ -36,7 +37,7 @@ class DeleteTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:not_be_found')]
+    #[Group('api:v1:feat:management:clubs:delete:not_be_found')]
     public function club_to_delete_cannot_be_found(): void
     {
         $this
@@ -46,7 +47,7 @@ class DeleteTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:delete:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -64,7 +65,7 @@ class DeleteTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:delete:unauthenticated')]
     public function an_unauthenticated_user_cannot_delete_a_club(): void
     {
         $this
@@ -73,7 +74,7 @@ class DeleteTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:delete:impossible_having_members')]
+    #[Group('api:v1:feat:management:clubs:delete:impossible_having_members')]
     public function club_cannot_be_deleted_if_having_members(): void
     {
         $this->assignStaffToClub(

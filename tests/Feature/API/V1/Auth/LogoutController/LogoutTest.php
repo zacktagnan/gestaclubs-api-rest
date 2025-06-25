@@ -7,12 +7,13 @@ use PHPUnit\Framework\Attributes\Group;
 use Tests\Feature\API\V1\Auth\AuthTestCase;
 
 #[Group('api:v1')]
-#[Group('api:v1:auth')]
-#[Group('api:v1:auth:logout')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:auth')]
+#[Group('api:v1:feat:auth:logout')]
 class LogoutTest extends AuthTestCase
 {
     #[Test]
-    #[Group('api:v1:auth:logout:success')]
+    #[Group('api:v1:feat:auth:logout:success')]
     public function an_user_can_logout(): void
     {
         $this
@@ -24,7 +25,7 @@ class LogoutTest extends AuthTestCase
     }
 
     #[Test]
-    #[Group('api:v1:auth:logout:unauthenticated')]
+    #[Group('api:v1:feat:auth:logout:unauthenticated')]
     public function an_unauthenticated_user_cannot_logout(): void
     {
         $this

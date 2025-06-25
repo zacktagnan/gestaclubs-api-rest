@@ -9,15 +9,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:list')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:list')]
 class ListTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:players:list:success')]
+    #[Group('api:v1:feat:management:players:list:success')]
     public function players_can_be_listed_by_authenticated_user(): void
     {
         Player::factory()->count(10)->create();
@@ -44,7 +45,7 @@ class ListTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:list:too_many_requests')]
+    #[Group('api:v1:feat:management:players:list:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -58,7 +59,7 @@ class ListTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:list:unauthenticated')]
+    #[Group('api:v1:feat:management:players:list:unauthenticated')]
     public function an_unauthenticated_user_cannot_access_to_protected_players_list(): void
     {
         $this

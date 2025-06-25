@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:clubs')]
-#[Group('api:v1:management:clubs:update_budget')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:clubs')]
+#[Group('api:v1:feat:management:clubs:update_budget')]
 class UpdateBudgetTest extends ClubTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:clubs:update_budget:success')]
+    #[Group('api:v1:feat:management:clubs:update_budget:success')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubBudgetToUpdate')]
     public function a_club_budget_can_be_updated(array $clubBudgetToUpdate): void
     {
@@ -46,7 +47,7 @@ class UpdateBudgetTest extends ClubTestCase
 
     #[Test]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubBudgetToUpdate')]
-    #[Group('api:v1:management:clubs:update_budget:not_be_found')]
+    #[Group('api:v1:feat:management:clubs:update_budget:not_be_found')]
     public function a_club_cannot_be_found(array $clubBudgetToUpdate): void
     {
         $this
@@ -56,7 +57,7 @@ class UpdateBudgetTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update_budget:malformed_request')]
+    #[Group('api:v1:feat:management:clubs:update_budget:malformed_request')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideInvalidClubBudget')]
     public function club_budget_updating_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -70,7 +71,7 @@ class UpdateBudgetTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update_budget:not_enough_budget')]
+    #[Group('api:v1:feat:management:clubs:update_budget:not_enough_budget')]
     public function club_budget_updating_fails_with_not_enough_budget(): void
     {
         $this->assignStaffToClub(
@@ -100,7 +101,7 @@ class UpdateBudgetTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update_budget:too_many_requests')]
+    #[Group('api:v1:feat:management:clubs:update_budget:too_many_requests')]
     #[DataProviderExternal(ClubDataProvider::class, 'provideClubBudgetToUpdate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $clubBudgetToUpdate): void
     {
@@ -115,7 +116,7 @@ class UpdateBudgetTest extends ClubTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:clubs:update_budget:unauthenticated')]
+    #[Group('api:v1:feat:management:clubs:update_budget:unauthenticated')]
     public function an_unauthenticated_user_cannot_update_a_club_budget(): void
     {
         $this

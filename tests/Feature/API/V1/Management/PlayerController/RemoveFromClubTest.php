@@ -12,9 +12,10 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:remove_from_club')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:remove_from_club')]
 class RemoveFromClubTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
@@ -36,7 +37,7 @@ class RemoveFromClubTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:remove_from_club:success')]
+    #[Group('api:v1:feat:management:players:remove_from_club:success')]
     public function a_player_can_be_removed_from_a_club(): void
     {
         $this
@@ -52,7 +53,7 @@ class RemoveFromClubTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:remove_from_club:not_be_found')]
+    #[Group('api:v1:feat:management:players:remove_from_club:not_be_found')]
     public function player_ro_remove_cannot_be_found(): void
     {
         $this
@@ -62,7 +63,7 @@ class RemoveFromClubTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:remove_from_club:too_many_requests')]
+    #[Group('api:v1:feat:management:players:remove_from_club:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -82,7 +83,7 @@ class RemoveFromClubTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:remove_from_club:unauthenticated')]
+    #[Group('api:v1:feat:management:players:remove_from_club:unauthenticated')]
     public function an_unauthenticated_user_cannot_remove_a_player_from_a_club(): void
     {
         $this
@@ -91,7 +92,7 @@ class RemoveFromClubTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:remove_from_club:notification_failure')]
+    #[Group('api:v1:feat:management:players:remove_from_club:notification_failure')]
     public function error_sending_notification_after_remove_a_player_from_a_club(): void
     {
         $emailNotifierInstance = new EmailNotifier();

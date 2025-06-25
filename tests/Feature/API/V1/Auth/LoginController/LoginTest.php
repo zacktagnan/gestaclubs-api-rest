@@ -11,14 +11,15 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use PHPUnit\Framework\Attributes\DataProviderExternal;
 
 #[Group('api:v1')]
-#[Group('api:v1:auth')]
-#[Group('api:v1:auth:login')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:auth')]
+#[Group('api:v1:feat:auth:login')]
 class LoginTest extends AuthTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:auth:login:success')]
+    #[Group('api:v1:feat:auth:login:success')]
     #[DataProviderExternal(AuthDataProvider::class, 'provideUserBaseDataToLogin')]
     public function an_user_can_login_successfully(array $userBaseData): void
     {
@@ -35,7 +36,7 @@ class LoginTest extends AuthTestCase
     }
 
     #[Test]
-    #[Group('api:v1:auth:login:malformed_request')]
+    #[Group('api:v1:feat:auth:login:malformed_request')]
     #[DataProviderExternal(AuthDataProvider::class, 'provideInvalidLoginData')]
     public function user_login_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -47,7 +48,7 @@ class LoginTest extends AuthTestCase
     }
 
     #[Test]
-    #[Group('api:v1:auth:login:too_many_requests')]
+    #[Group('api:v1:feat:auth:login:too_many_requests')]
     #[DataProviderExternal(AuthDataProvider::class, 'provideUserBaseDataToLogin')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $userBaseData): void
     {

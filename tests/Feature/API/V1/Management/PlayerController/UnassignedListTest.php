@@ -9,15 +9,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:players')]
-#[Group('api:v1:management:players:unassigned_list')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:players')]
+#[Group('api:v1:feat:management:players:unassigned_list')]
 class UnassignedListTest extends PlayerTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:players:unassigned_list:success')]
+    #[Group('api:v1:feat:management:players:unassigned_list:success')]
     public function unassigned_players_can_be_listed_by_authenticated_user(): void
     {
         Player::factory()->count(10)->create();
@@ -48,7 +49,7 @@ class UnassignedListTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:unassigned_list:too_many_requests')]
+    #[Group('api:v1:feat:management:players:unassigned_list:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -62,7 +63,7 @@ class UnassignedListTest extends PlayerTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:players:unassigned_list:unauthenticated')]
+    #[Group('api:v1:feat:management:players:unassigned_list:unauthenticated')]
     public function an_unauthenticated_user_cannot_access_to_protected_unassigned_players_list(): void
     {
         $this

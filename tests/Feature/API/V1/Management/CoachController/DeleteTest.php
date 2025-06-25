@@ -9,15 +9,16 @@ use Tests\Helpers\Traits\RateLimitTestHelpers;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:coaches')]
-#[Group('api:v1:management:coaches:delete')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:coaches')]
+#[Group('api:v1:feat:management:coaches:delete')]
 class DeleteTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:coaches:delete:success')]
+    #[Group('api:v1:feat:management:coaches:delete:success')]
     public function a_coach_can_be_deleted(): void
     {
         $response = $this
@@ -36,7 +37,7 @@ class DeleteTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:delete:not_be_found')]
+    #[Group('api:v1:feat:management:coaches:delete:not_be_found')]
     public function coach_to_delete_cannot_be_found(): void
     {
         $this
@@ -46,7 +47,7 @@ class DeleteTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:delete:too_many_requests')]
+    #[Group('api:v1:feat:management:coaches:delete:too_many_requests')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(): void
     {
         $this->assertRateLimitExceeded(new RateLimitTestOptionsDTO(
@@ -64,7 +65,7 @@ class DeleteTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:delete:unauthenticated')]
+    #[Group('api:v1:feat:management:coaches:delete:unauthenticated')]
     public function an_unauthenticated_user_cannot_delete_a_coach(): void
     {
         $this

@@ -10,15 +10,16 @@ use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
 #[Group('api:v1')]
-#[Group('api:v1:management')]
-#[Group('api:v1:management:coaches')]
-#[Group('api:v1:management:coaches:update')]
+#[Group('api:v1:feat')]
+#[Group('api:v1:feat:management')]
+#[Group('api:v1:feat:management:coaches')]
+#[Group('api:v1:feat:management:coaches:update')]
 class UpdateTest extends CoachTestCase
 {
     use RateLimitTestHelpers;
 
     #[Test]
-    #[Group('api:v1:management:coaches:update:success')]
+    #[Group('api:v1:feat:management:coaches:update:success')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToUpdate')]
     public function a_coach_can_be_updated(array $coachDataToUpdate): void
     {
@@ -46,7 +47,7 @@ class UpdateTest extends CoachTestCase
 
     #[Test]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToUpdate')]
-    #[Group('api:v1:management:coaches:update:not_be_found')]
+    #[Group('api:v1:feat:management:coaches:update:not_be_found')]
     public function a_coach_cannot_be_found(array $coachDataToUpdate): void
     {
         $this
@@ -56,7 +57,7 @@ class UpdateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:update:malformed_request')]
+    #[Group('api:v1:feat:management:coaches:update:malformed_request')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideInvalidCoachData')]
     public function coach_updating_fails_with_invalid_data(array $invalidData, array $expectedErrors): void
     {
@@ -70,7 +71,7 @@ class UpdateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:update:too_many_requests')]
+    #[Group('api:v1:feat:management:coaches:update:too_many_requests')]
     #[DataProviderExternal(CoachDataProvider::class, 'provideCoachDataToUpdate')]
     public function it_returns_rate_limit_exceeded_when_too_many_requests(array $coachDataToUpdate): void
     {
@@ -85,7 +86,7 @@ class UpdateTest extends CoachTestCase
     }
 
     #[Test]
-    #[Group('api:v1:management:coaches:update:unauthenticated')]
+    #[Group('api:v1:feat:management:coaches:update:unauthenticated')]
     public function an_unauthenticated_user_cannot_update_a_coach(): void
     {
         $this
