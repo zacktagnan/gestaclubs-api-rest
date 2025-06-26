@@ -5,6 +5,7 @@ namespace Tests\Feature\API\V1\Management\ClubController;
 use App\Models\Club;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
+use Tests\Helpers\DataWithRelationsHelper;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 
@@ -77,7 +78,8 @@ class DeleteTest extends ClubTestCase
     #[Group('api:v1:feat:management:clubs:delete:impossible_having_members')]
     public function club_cannot_be_deleted_if_having_members(): void
     {
-        $this->assignStaffToClub(
+        DataWithRelationsHelper::assignStaffToClub(
+            $this->club,
             coachSalary: 7_000_000,
             playerSalaries: [
                 4_000_000,

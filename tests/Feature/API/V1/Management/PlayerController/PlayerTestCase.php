@@ -4,9 +4,12 @@ namespace Tests\Feature\API\V1\Management\PlayerController;
 
 use Tests\TestCase;
 use App\Models\Player;
+use Tests\Helpers\Traits\DataCreationForTesting;
 
 abstract class PlayerTestCase extends TestCase
 {
+    use DataCreationForTesting;
+
     protected string $playersBaseRouteName;
     protected string $table;
     protected Player $player;
@@ -18,6 +21,6 @@ abstract class PlayerTestCase extends TestCase
         $this->playersBaseRouteName = 'v1.players.';
         $this->table = 'players';
 
-        $this->player = Player::factory()->create();
+        $this->player = $this->createPlayer();
     }
 }

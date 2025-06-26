@@ -6,6 +6,7 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Group;
 use Tests\DataProviders\ClubDataProvider;
+use Tests\Helpers\DataWithRelationsHelper;
 use Tests\Helpers\DTOs\RateLimitTestOptionsDTO;
 use Tests\Helpers\Traits\RateLimitTestHelpers;
 
@@ -74,7 +75,8 @@ class UpdateTest extends ClubTestCase
     #[Group('api:v1:feat:management:clubs:update:not_enough_budget')]
     public function club_updating_fails_with_not_enough_budget(): void
     {
-        $this->assignStaffToClub(
+        DataWithRelationsHelper::assignStaffToClub(
+            $this->club,
             // coachSalary: 4_000_000,
             playerSalaries: [
                 3_000_000,
