@@ -74,7 +74,7 @@ class PipelineTest extends UnitTestCase
         $this->assertEquals($this->club->id, $signedPlayer->club_id);
         $this->assertEquals($salaryToAssign, $signedPlayer->salary);
 
-        $this->assertDatabaseHas('players', [
+        $this->assertDatabaseHas($this->playersTable, [
             'id' => $signedPlayer->id,
             'club_id' => $this->club->id,
             'salary' => $salaryToAssign,
