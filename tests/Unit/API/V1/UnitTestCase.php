@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\API\V1;
 
+use App\Actions\API\V1\Club\SignPlayer\Passable as SignPlayerPassable;
 use Tests\TestCase;
 use App\Models\Club;
 use App\Models\Coach;
@@ -15,6 +16,9 @@ abstract class UnitTestCase extends TestCase
     protected Club $club;
     protected Coach $coach;
     protected Player $player;
+
+    protected $coachesTable = 'coaches';
+    protected $playersTable = 'players';
 
     protected function setUp(): void
     {
@@ -34,5 +38,43 @@ abstract class UnitTestCase extends TestCase
     protected function setUpPlayer(): void
     {
         $this->player = $this->createPlayer();
+    }
+
+    protected function setPassableForPlayerSigning(
+        int $salary,
+        ?Club $club = null,
+        ?Player $player = null
+    ): SignPlayerPassable {
+        return new SignPlayerPassable([
+            'player_id' => ($player ?? $this->player)->id,
+            'salary' => $salary,
+            'club' => $club ?? $this->club,
+        ]);
+    }
+
+    protected function expectExceptionOnly(
+        string $exceptionClass,
+        string $exceptionMessage,
+        callable $actionCallback
+    ): void {
+        $this->expectException($exceptionClass);
+        $this->expectExceptionMessage($exceptionMessage);
+
+        $actionCallback();
+    }
+
+    protected function expectExceptionAndDatabaseMissing(
+        string $exceptionClass,
+        string $exceptionMessage,
+        string $table,
+        array $missingData,
+        callable $actionCallback
+    ): void {
+        $this->expectException($exceptionClass);
+        $this->expectExceptionMessage($exceptionMessage);
+
+        $this->assertDatabaseMissing($table, $missingData);
+
+        $actionCallback();
     }
 }

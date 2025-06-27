@@ -11,7 +11,7 @@ final class EnsureClubHasEnoughBudgetAction
         $playerSalary = $passable->getPropertyFromData('salary');
         $club = $passable->getPropertyFromData('club');
 
-        $usedBudget = $club->players()->sum('salary') + optional($club->coach)->salary;
+        $usedBudget = $club->getInvestedBudget();
         if (($usedBudget + $playerSalary) > $club->budget) {
             throw new ClubBudgetExceededException('Club has not enough budget for this Player signing.');
         }

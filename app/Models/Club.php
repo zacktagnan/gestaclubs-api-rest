@@ -32,4 +32,10 @@ class Club extends Model
     {
         return $this->hasMany(Player::class);
     }
+
+    public function getInvestedBudget(): int
+    {
+        // return $this->players()->sum('salary') + ($this->coach?->salary ?? 0);
+        return $this->players()->sum('salary') + ($this->coach()->first()?->salary ?? 0);
+    }
 }
