@@ -7,6 +7,8 @@ use Tests\TestCase;
 use App\Models\Club;
 use App\Models\Coach;
 use App\Models\Player;
+use App\Notifications\NotifierManager;
+use Mockery;
 use Tests\Helpers\Traits\DataCreationForTesting;
 
 abstract class UnitTestCase extends TestCase
@@ -50,6 +52,18 @@ abstract class UnitTestCase extends TestCase
             'salary' => $salary,
             'club' => $club ?? $this->club,
         ]);
+    }
+
+    protected function setNotifierManagerWithMockedNotificationChannel(
+        string $channel,
+        object $notifierInstance,
+        callable $configureMock
+    ): NotifierManager {
+        $notifierMock = Mockery::mock($notifierInstance)->makePartial();
+
+        $configureMock($notifierMock);
+
+        return new NotifierManager([$channel => $notifierMock]);
     }
 
     protected function expectExceptionOnly(

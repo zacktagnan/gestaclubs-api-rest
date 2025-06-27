@@ -25,6 +25,8 @@ class PipelineTest extends UnitTestCase
 {
     use MockeryPHPUnitIntegration;
 
+    private NotifierManager $notifierManager;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,19 +48,53 @@ class PipelineTest extends UnitTestCase
         // );
         // $this->app->instance(NotifierManager::class, $notifierMock);
 
-        $emailNotifierInstance = new EmailNotifier();
-        $emailNotifierMock = Mockery::mock($emailNotifierInstance)->makePartial();
-        $emailNotifierMock
-            ->shouldReceive('notify')
-            ->once()
-            ->with(
-                Mockery::on(fn($notifiable) => $notifiable->is($this->player)),
-                Mockery::type(PlayerAssignedToClubNotification::class)
-            );
+        // o mejor =====================================================================
 
-        $this->app->instance(NotifierManager::class, new NotifierManager([
-            'mail' => $emailNotifierMock,
-        ]));
+        // $emailNotifierInstance = new EmailNotifier();
+        // $emailNotifierMock = Mockery::mock($emailNotifierInstance)->makePartial();
+        // $emailNotifierMock
+        //     ->shouldReceive('notify')
+        //     ->once()
+        //     ->with(
+        //         Mockery::on(fn($notifiable) => $notifiable->is($this->player)),
+        //         Mockery::type(PlayerAssignedToClubNotification::class)
+        //     );
+
+        // $this->app->instance(NotifierManager::class, new NotifierManager([
+        //     'mail' => $emailNotifierMock,
+        // ]));
+
+        // o ============================================================================
+
+        // $this->notifierManager = $this->setNotifierManagerWithMockedNotificationChannel(
+        //     'mail',
+        //     new EmailNotifier(),
+        //     function ($mock) {
+        //         $mock->shouldReceive('notify')
+        //             ->once()
+        //             ->with(
+        //                 Mockery::on(fn($notifiable) => $notifiable->is($this->player)),
+        //                 Mockery::type(PlayerAssignedToClubNotification::class)
+        //             );
+        //     }
+        // );
+
+        // $this->app->instance(NotifierManager::class, $this->notifierManager);
+
+        // o ============================================================================
+
+        $this->app->instance(NotifierManager::class, $this->setNotifierManagerWithMockedNotificationChannel(
+            'mail',
+            new EmailNotifier(),
+            function ($mock) {
+                $mock->shouldReceive('notify')
+                    ->once()
+                    ->with(
+                        Mockery::on(fn($notifiable) => $notifiable->is($this->player)),
+                        Mockery::type(PlayerAssignedToClubNotification::class)
+                    );
+            }
+        ));
 
         $salaryToAssign = $this->club->budget - 1;
 
@@ -121,17 +157,30 @@ class PipelineTest extends UnitTestCase
         // $mock->shouldReceive('notify')->andThrow(new \RuntimeException('Fake notification failure.'));
         // $this->app->instance(NotifierManager::class, $mock);
 
-        $emailNotifierInstance = new EmailNotifier();
-        $emailNotifierMock = Mockery::mock($emailNotifierInstance)->makePartial();
-        $emailNotifierMock
-            ->shouldReceive('notify')
-            // ->once()
-            ->andThrow(new \RuntimeException('Fake notification failure.'));
+        // o mejor ======================================================================
 
-        $this->app->instance(NotifierManager::class, new NotifierManager([
-            'mail' => $emailNotifierMock,
-        ]));
+        // $emailNotifierInstance = new EmailNotifier();
+        // $emailNotifierMock = Mockery::mock($emailNotifierInstance)->makePartial();
+        // $emailNotifierMock
+        //     ->shouldReceive('notify')
+        //     // ->once()
+        //     ->andThrow(new \RuntimeException('Fake notification failure.'));
 
+        // $this->app->instance(NotifierManager::class, new NotifierManager([
+        //     'mail' => $emailNotifierMock,
+        // ]));
+
+        // o ============================================================================
+
+        $this->app->instance(NotifierManager::class, $this->setNotifierManagerWithMockedNotificationChannel(
+            'mail',
+            new EmailNotifier(),
+            function ($mock) {
+                $mock->shouldReceive('notify')
+                    // ->once()
+                    ->andThrow(new \RuntimeException('Fake notification failure.'));
+            }
+        ));
 
         $this->expectExceptionMessage('Failed to send notification to assigned Player: Fake notification failure.');
 

@@ -42,18 +42,6 @@ class NotificationToAssignedPlayerActionTest extends UnitTestCase
         ])->save();
     }
 
-    protected function setNotifierManagerWithMockedNotificationChannel(
-        string $channel,
-        object $notifierInstance,
-        callable $configureMock
-    ): NotifierManager {
-        $notifierMock = Mockery::mock($notifierInstance)->makePartial();
-
-        $configureMock($notifierMock);
-
-        return new NotifierManager([$channel => $notifierMock]);
-    }
-
     #[Test]
     #[Group('api:v1:unit:management:club:sign_player:actions:notification_to_assigned:success')]
     public function it_sends_notification_to_assigned_player(): void
