@@ -20,6 +20,7 @@ abstract class UnitTestCase extends TestCase
     protected Coach $coach;
     protected Player $player;
 
+    protected $clubsTable = 'clubs';
     protected $coachesTable = 'coaches';
     protected $playersTable = 'players';
 
