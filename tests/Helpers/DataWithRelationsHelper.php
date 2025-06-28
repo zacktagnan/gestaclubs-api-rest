@@ -22,6 +22,15 @@ class DataWithRelationsHelper
         }
     }
 
+    public static function assignPlayersStaffToClub(Club $club, array $playerSalaries = []): void
+    {
+        foreach ($playerSalaries as $salary) {
+            Player::factory()->for($club)->create([
+                'salary' => $salary,
+            ]);
+        }
+    }
+
     public static function assignCoachToClub(Club $club, int $coachSalary = 4_000_000): Coach
     {
         return Coach::factory()->for($club)->create([

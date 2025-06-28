@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\API\V1;
 
+use App\Actions\API\V1\Club\SignCoach\Passable as SignCoachPassable;
 use App\Actions\API\V1\Club\SignPlayer\Passable as SignPlayerPassable;
 use Tests\TestCase;
 use App\Models\Club;
@@ -40,6 +41,18 @@ abstract class UnitTestCase extends TestCase
     protected function setUpPlayer(): void
     {
         $this->player = $this->createPlayer();
+    }
+
+    protected function setPassableForCoachSigning(
+        int $salary,
+        ?Club $club = null,
+        ?Coach $coach = null
+    ): SignCoachPassable {
+        return new SignCoachPassable([
+            'coach_id' => ($coach ?? $this->coach)->id,
+            'salary' => $salary,
+            'club' => $club ?? $this->club,
+        ]);
     }
 
     protected function setPassableForPlayerSigning(
