@@ -91,18 +91,35 @@ abstract class UnitTestCase extends TestCase
         $actionCallback();
     }
 
-    protected function expectExceptionAndDatabaseMissing(
+    // protected function expectExceptionAndDatabaseMissing(
+    //     string $exceptionClass,
+    //     string $exceptionMessage,
+    //     string $table,
+    //     array $missingData,
+    //     callable $actionCallback
+    // ): void {
+    //     $this->expectException($exceptionClass);
+    //     $this->expectExceptionMessage($exceptionMessage);
+
+    //     $this->assertDatabaseMissing($table, $missingData);
+
+    //     $actionCallback();
+    // }
+    // reemplazado por el expectExceptionAndAssertDatabase()
+
+    protected function expectExceptionAndAssertDatabase(
         string $exceptionClass,
         string $exceptionMessage,
-        string $table,
-        array $missingData,
-        callable $actionCallback
+        callable $assertDatabaseCallback,
+        ?callable $actionCallback = null
     ): void {
         $this->expectException($exceptionClass);
         $this->expectExceptionMessage($exceptionMessage);
 
-        $this->assertDatabaseMissing($table, $missingData);
+        $assertDatabaseCallback();
 
-        $actionCallback();
+        if ($actionCallback) {
+            $actionCallback();
+        }
     }
 }

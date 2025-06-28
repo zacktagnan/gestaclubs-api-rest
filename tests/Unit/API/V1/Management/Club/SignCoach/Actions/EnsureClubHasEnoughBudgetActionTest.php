@@ -64,14 +64,13 @@ class EnsureClubHasEnoughBudgetActionTest extends UnitTestCase
             salary: 6_000_000,
         );
 
-        $this->expectExceptionAndDatabaseMissing(
+        $this->expectExceptionAndAssertDatabase(
             ClubBudgetExceededException::class,
             'Club has not enough budget for this Coach signing.',
-            $this->coachesTable,
-            [
+            fn() => $this->assertDatabaseMissing($this->coachesTable, [
                 'id' => $this->coach->id,
                 'club_id' => $this->club->id,
-            ],
+            ]),
             fn() => $this->action->handle($passable, fn($p) => $p),
         );
     }

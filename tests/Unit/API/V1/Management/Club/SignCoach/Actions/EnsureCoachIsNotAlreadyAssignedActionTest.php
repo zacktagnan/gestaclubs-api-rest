@@ -75,15 +75,14 @@ class EnsureCoachIsNotAlreadyAssignedActionTest extends UnitTestCase
             salary: $this->club->budget - 1,
         );
 
-        $this->expectExceptionAndDatabaseMissing(
+        $this->expectExceptionAndAssertDatabase(
             CoachAlreadyAssignedException::class,
             "This Coach is already assigned to another Club ({$anotherClub->name}).",
-            $this->coachesTable,
-            [
+            fn() => $this->assertDatabaseMissing($this->coachesTable, [
                 'id' => $this->coach->id,
                 'club_id' => $this->club->id,
-            ],
-            fn() => $this->action->handle($passable, fn() => null),
+            ]),
+            fn() => $this->action->handle($passable, fn($p) => $p),
         );
     }
 }
