@@ -5,7 +5,6 @@ namespace Tests\Unit\API\V1\Management\Coach\RemoveFromClub\Actions;
 use App\Actions\API\V1\Coach\RemoveFromClub\NotificationToRemovedCoachAction;
 use App\Models\Coach;
 use App\Notifications\CoachRemovedFromClubNotification;
-use App\Notifications\NotifierManager;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\Attributes\Group;
@@ -27,7 +26,6 @@ class NotificationToRemovedCoachActionTest extends UnitTestCase
 {
     use MockeryPHPUnitIntegration;
 
-    private NotifierManager $notifierManager;
     private NotificationToRemovedCoachAction $action;
     private int $coachSalary = 5_000_000;
 
@@ -48,16 +46,16 @@ class NotificationToRemovedCoachActionTest extends UnitTestCase
     #[Group('api:v1:unit:management:coach:remove_from_club:actions:notification_to_removed:success')]
     public function it_sends_notification_to_removed_coach(): void
     {
-        $this->notifierManager = $this->setNotifierManagerWithMockedNotificationChannel('mail', new EmailNotifier(), function ($mock) {
-            $mock->shouldReceive('notify')
-                ->once()
-                ->with(
-                    Mockery::on(fn(Coach $c) => $c->is($this->coach)),
-                    Mockery::type(CoachRemovedFromClubNotification::class)
-                );
-        });
-
-        $this->action = new NotificationToRemovedCoachAction($this->notifierManager);
+        $this->action = new NotificationToRemovedCoachAction(
+            $this->setNotifierManagerWithMockedNotificationChannel('mail', new EmailNotifier(), function ($mock) {
+                $mock->shouldReceive('notify')
+                    ->once()
+                    ->with(
+                        Mockery::on(fn(Coach $c) => $c->is($this->coach)),
+                        Mockery::type(CoachRemovedFromClubNotification::class)
+                    );
+            })
+        );
 
         $passable = new RemoveFromClubPassable($this->coach);
         $passable->setClub($this->club);
