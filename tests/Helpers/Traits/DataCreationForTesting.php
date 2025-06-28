@@ -32,6 +32,11 @@ trait DataCreationForTesting
         return Player::factory()->create();
     }
 
+    protected function createCoachAssignedToClub(Club $club, int $coachSalary = 4_000_000): Coach
+    {
+        return DataWithRelationsHelper::assignCoachToClub($club, $coachSalary);
+    }
+
     protected function createPlayerAssignedToClub(Club $club, int $playerSalary = 7_000_000): Player
     {
         return DataWithRelationsHelper::assignPlayerToClub($club, $playerSalary);
