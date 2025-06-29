@@ -44,4 +44,60 @@ class DataWithRelationsHelper
             'salary' => $playerSalary,
         ]);
     }
+
+    // public static function createClubWithRelations(
+    //     int $clubBudget = 21_000_000,
+    //     bool $withCoach = true,
+    //     int $coachSalary = 5_000_000,
+    //     // int $playerCount = 4,
+    //     // int $playerSalary = 7_000_000
+    // )
+    // public static function createClubWithRelations(
+    //     int $clubBudget = 21_000_000,
+    //     bool $withCoach = true,
+    //     int $coachSalary = 5_000_000,
+    //     // int $playerCount = 4,
+    //     // int $playerSalary = 7_000_000
+    // ): array {
+    //     $club = Club::factory()
+    //         ->state(['budget' => $clubBudget])
+    //         ->create();
+
+    //     $coach = null;
+    //     if ($withCoach) {
+    //         $coach = Coach::factory()->for($club)->create([
+    //             'salary' => $coachSalary,
+    //         ]);
+    //     }
+
+    //     // Por si se deseara crear Player(s) también
+    //     // $players = Player::factory()->count($playerCount)->for($club)->create([
+    //     //     'salary' => $playerSalary,
+    //     // ]);
+
+    //     // return compact('club', 'coach');
+    //     // return compact('club', 'coach', 'players');
+    //     return [
+    //         'club' => $club,
+    //         'coach' => $coach,
+    //         // 'players' => $players,
+    //     ];
+    // }
+    public static function createClubWithRelations(int $totalPlayers = 4, bool $withPlayer = false): array
+    {
+        $club = Club::factory()
+            ->hasPlayers($totalPlayers)->create();
+
+        $coach = Coach::factory()->for($club)->create();
+
+        $player = null;
+        if ($withPlayer) {
+            $player = Player::factory()->for($club)->create();
+        }
+
+        return [
+            'coach' => $coach,
+            'player' => $player,
+        ];
+    }
 }
