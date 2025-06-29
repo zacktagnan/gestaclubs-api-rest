@@ -96,6 +96,11 @@ class UpdateBudgetTest extends ClubTestCase
             ->assertUnprocessable()
             ->assertJsonValidationErrors(['budget']);
 
+        $this->assertStringContainsString(
+            'The budget must be at least',
+            $response->json('errors.budget.0')
+        );
+
         $this->assertDatabaseHas($this->table, [
             'id' => $this->club->id,
             'budget' => $this->club->budget,
