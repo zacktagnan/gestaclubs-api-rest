@@ -45,8 +45,17 @@ class AuthDataProvider
                 ],
                 ['password'],
             ],
+            'missing device_name' => [
+                [
+                    'email' => 'user@test.com',
+                    'password' => 'password',
+                    'password_confirmation' => 'password',
+                ],
+                ['device_name'],
+            ],
         ];
     }
+
     public static function provideUserBaseDataToLogin(): array
     {
         return [
@@ -80,6 +89,13 @@ class AuthDataProvider
                     'device_name' => 'testing',
                 ],
                 ['password'],
+            ],
+            'missing device_name' => [
+                [
+                    'email' => 'user@test.com',
+                    'password' => 'password',
+                ],
+                ['device_name'],
             ],
         ];
     }

@@ -30,9 +30,34 @@ class LoginTest extends AuthTestCase
         $response = $this
             ->postJson(route($this->authBaseRouteName . 'login'), $userData)
             ->assertOk();
+        // ->assertJsonStructure([
+        //     'data' => [
+        //         'token',
+        //         'token_type',
+        //     ],
+        // ]);
+        // ->assertJsonStructure([
+        //     'status',
+        //     'message',
+        //     'data' => ['token', 'token_type'],
+        // ]);
+        // o, más exacto y estricto
+        $response
+            ->assertExactJson([
+                'status' => 'success',
+                'message' => 'Success',
+                'data' => [
+                    'token' => $response->json('data.token'),
+                    'token_type' => $response->json('data.token_type'),
+                ],
+            ]);
 
         $this->assertArrayHasKey('token', $response->json('data'));
         $this->assertArrayHasKey('token_type', $response->json('data'));
+
+        $this->assertNotEmpty($response->json('data.token'));
+        $this->assertTrue(is_string($response->json('data.token')));
+        $this->assertEquals('bearer', $response->json('data.token_type'));
     }
 
     #[Test]
