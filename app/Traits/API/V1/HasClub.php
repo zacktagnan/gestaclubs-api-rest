@@ -5,6 +5,12 @@ namespace App\Traits\API\V1;
 use App\Models\Club;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * Trait HasClub
+ *
+ * Se utiliza, únicamente, en seeders y factories para generar datos
+ * aleatorios con o sin relación con un club. No se usa en producción.
+ */
 trait HasClub
 {
     public function withoutClub(): Factory
