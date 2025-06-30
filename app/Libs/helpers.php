@@ -24,7 +24,15 @@ if (!function_exists('formatCurrencyLocalized')) {
         $locale ??= app()->getLocale();
         $currency = getCurrencyCodeForLocale($locale);
 
-        $formatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
+        try {
+            $formatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
+        } catch (\ValueError $e) {
+            // Locale inválido: en ese caso, se usará un fallback seguro
+            // entre los locales conocidos en el proyecto.
+            $fallbackLocale = 'es_ES';
+            $currency = getCurrencyCodeForLocale($fallbackLocale);
+            $formatter = new \NumberFormatter($fallbackLocale, \NumberFormatter::CURRENCY);
+        }
 
         return $formatter->formatCurrency($amount, $currency);
     }
