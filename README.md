@@ -161,7 +161,7 @@ Todo con el objetivo de proporcionar una experiencia de usuario completa para la
 
 ## 🛠️ Estructura del proyecto
 
-```
+```bash
 app/
 ├── Actions/
 ├── Console/
