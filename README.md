@@ -45,7 +45,7 @@
 >
 > Si no fuera posible usar Docker, configurar el entorno manualmente, siguiendo la [documentación oficial de Laravel](https://laravel.com/docs/installation) según el sistema operativo empleado, demandando principalmente:
 >
-> - **PHP 8.3+** y [Composer](https://getcomposer.org/)
+> - **PHP 8.2+** y [Composer](https://getcomposer.org/)
 
 1. **Clonar el repositorio**
 
