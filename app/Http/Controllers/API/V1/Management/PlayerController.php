@@ -20,10 +20,11 @@ class PlayerController
      */
     public function index(): JsonResponse
     {
-        $players = Player::with([
-            'club' => fn($query) => $query
-                ->withCount('players'),
-        ])
+        $players = Player::filteredWithPipeline()
+            ->with([
+                'club' => fn($query) => $query
+                    ->withCount('players'),
+            ])
             ->paginate();
 
         return ApiResponseService::success(
@@ -34,7 +35,8 @@ class PlayerController
 
     public function unassignedList()
     {
-        $players = Player::whereNull('club_id')
+        $players = Player::filteredWithPipeline()
+            ->whereNull('club_id')
             ->paginate();
 
         return ApiResponseService::success(
