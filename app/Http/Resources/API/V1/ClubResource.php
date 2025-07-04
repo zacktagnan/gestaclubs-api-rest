@@ -31,7 +31,7 @@ class ClubResource extends JsonResource
             //         'email' => $this->coach->email,
             //     ];
             // }),
-            'players_count' => $this->players_count,
+            'players_count' => $this->players_count ?? 0,
 
             'created_at' => $this->created_at->format('Y-m-d'),
         ];

@@ -23,6 +23,7 @@ class PlayerController
         $players = Player::filteredWithPipeline()
             ->with([
                 'club' => fn($query) => $query
+                    ->with('coach')
                     ->withCount('players'),
             ])
             ->paginate();

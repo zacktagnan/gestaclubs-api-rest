@@ -23,7 +23,7 @@ class PlayerResource extends JsonResource
 
             'full_name' => $this->full_name,
             'email' => $this->email,
-            'salary' => $this->salary,
+            'salary' => $this->salary ?? 0,
 
             // -> Todos los datos
             // 'club' => new ClubResource($this->whenLoaded('club')),
