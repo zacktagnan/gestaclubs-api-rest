@@ -12,7 +12,18 @@ final class SortFilter extends QueryStringFilter
         'id',
         'full_name',
         'email',
+        'salary',
+        // 'club_name', // pasado a la allowedRelations
         // otros ...
+    ];
+
+    protected array $allowedRelations = [
+        'club_name' => [
+            'relation' => 'club',
+            'table' => 'clubs',
+            'column' => 'name',
+            'column_relation' => 'club_id',
+        ],
     ];
 
     protected ?string $column;
@@ -26,11 +37,31 @@ final class SortFilter extends QueryStringFilter
 
     protected function apply(Builder $builder): Builder
     {
-        if (!in_array($this->column, $this->allowedColumns)) {
+        // dump('Desde el APPLY del SortFilter:', request()->query('sort'));
+
+        if (
+            !in_array($this->column, $this->allowedColumns)
+            && !array_key_exists($this->column, $this->allowedRelations)
+        ) {
             return $builder; // ignorar si no es una columna válida
         }
 
+        if (array_key_exists($this->column, $this->allowedRelations)) {
+            return $this->applyRelationSort($builder);
+        }
+
         return $builder->orderBy($this->column, Str::lower($this->direction) === 'desc' ? 'desc' : 'asc');
+    }
+
+    protected function applyRelationSort(Builder $builder): Builder
+    {
+        $relation = $this->allowedRelations[$this->column];
+        $foreignKey = $relation['column_relation'] ?? "{$relation['relation']}_id";
+
+        return $builder
+            ->leftJoin("{$relation['table']}", "players.{$foreignKey}", '=', "{$relation['table']}.id")
+            ->orderBy("{$relation['table']}.{$relation['column']}", $this->direction === 'desc' ? 'desc' : 'asc')
+            ->select('players.*');
     }
 
     protected function filterName(): string

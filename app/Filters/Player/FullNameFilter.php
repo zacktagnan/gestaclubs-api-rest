@@ -16,6 +16,8 @@ class FullNameFilter extends QueryStringFilter
 
     protected function apply(Builder $builder): Builder
     {
+        // dump('Aloha desde el FullNameFilter...');
+        // dd(request()->query());
         return $builder->where('full_name', 'like', '%' . $this->value . '%');
     }
 

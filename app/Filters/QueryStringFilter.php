@@ -9,7 +9,7 @@ abstract class QueryStringFilter
 {
     public function handle(Builder $builder, Closure $next): Builder
     {
-        if (!request()->query($this->filterName())) {
+        if (!$this->hasValue()) {
             return $next($builder);
         }
 
@@ -19,4 +19,10 @@ abstract class QueryStringFilter
     abstract protected function apply(Builder $builder): Builder;
 
     abstract protected function filterName(): string;
+
+    // Método para detectar si hay valor (por defecto mira filterName)
+    protected function hasValue(): bool
+    {
+        return (bool) request()->query($this->filterName());
+    }
 }

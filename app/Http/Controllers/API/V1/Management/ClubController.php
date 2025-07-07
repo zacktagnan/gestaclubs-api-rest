@@ -21,6 +21,7 @@ use App\DTOs\API\V1\Player\WithRelationsDTO as PlayerWithRelationsDTO;
 use App\Actions\API\V1\Club\SignCoach\Pipeline as ClubSignCoachPipeline;
 use App\Actions\API\V1\Club\SignPlayer\Pipeline as ClubSignPlayerPipeline;
 use App\Contracts\DomainUnprocessableException;
+use App\Filters\Player\ClubNameFilter;
 
 class ClubController
 {
@@ -167,5 +168,17 @@ class ClubController
                 message: $e->getMessage()
             );
         }
+    }
+
+    public function players(Club $club): JsonResponse
+    {
+        $players = $club->players()
+            ->filteredWithPipeline([ClubNameFilter::class])
+            ->paginate();
+
+        return ApiResponseService::success(
+            PlayerResource::collection($players),
+            message: 'Players of the Club retrieved successfully.'
+        );
     }
 }

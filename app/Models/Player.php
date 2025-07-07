@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Filters\Player\ClubNameFilter;
 use App\Filters\Player\EmailFilter;
 use App\Filters\Player\FullNameFilter;
 use App\Filters\Player\SalaryRangeFilter;
@@ -42,16 +43,33 @@ class Player extends Model implements NotifiableEntityInterface
         return $this->belongsTo(Club::class);
     }
 
-    public function scopeFilteredWithPipeline(Builder $builder): Builder
+    public function scopeFilteredWithPipeline(Builder $builder, array $filtersToIgnore = []): Builder
     {
+        // return app(Pipeline::class)
+        //     ->send($builder)
+        //     ->through([
+        //         FullNameFilter::class,
+        //         EmailFilter::class,
+        //         ClubNameFilter::class,
+        //         SalaryRangeFilter::class,
+        //         SortFilter::class,
+        //     ])
+        //     ->thenReturn();
+
+        // ahora, considerando los $filtersToIgnore ...
+
+        $filterPipes = collect([
+            FullNameFilter::class,
+            EmailFilter::class,
+            ClubNameFilter::class,
+            SalaryRangeFilter::class,
+            SortFilter::class,
+        ])->reject(fn($filter) => in_array($filter, $filtersToIgnore))
+            ->all();
+
         return app(Pipeline::class)
             ->send($builder)
-            ->through([
-                FullNameFilter::class,
-                EmailFilter::class,
-                SalaryRangeFilter::class,
-                SortFilter::class,
-            ])
+            ->through($filterPipes)
             ->thenReturn();
     }
 }

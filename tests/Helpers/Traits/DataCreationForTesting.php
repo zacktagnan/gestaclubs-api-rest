@@ -41,4 +41,49 @@ trait DataCreationForTesting
     {
         return DataWithRelationsHelper::assignPlayerToClub($club, $playerSalary);
     }
+
+    /**
+     * Create little Player list using a full_name array.
+     *
+     * @param array<int, string> $fullNames
+     */
+    public function createPlayersOnlyWithFullName(array $fullNames = ['Juan Carlos', 'Carlos García', 'Pepe Rodríguez']): void
+    {
+        foreach ($fullNames as $fullName) {
+            Player::factory()->create(['full_name' => $fullName]);
+        }
+    }
+
+    /**
+     * Crea múltiples jugadores con posibilidad de definir atributos globales o individuales.
+     *
+     * @param  array<int, string|array<string, mixed>> $players
+     *        Ej: ['Juan', ['full_name' => 'Ana', 'email' => 'ana@mail.com']]
+     * @param  array<string, mixed> $globalOverrides
+     *        Atributos comunes a todos los jugadores.
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function createPlayersWithVariousData(array $players, array $globalOverrides = [])
+    {
+        return collect($players)->map(function ($item, $index) use ($globalOverrides) {
+            if (is_string($item)) {
+                $attributes = ['full_name' => $item];
+            } elseif (is_array($item)) {
+                $attributes = $item;
+            } else {
+                throw new \InvalidArgumentException('Cada jugador debe generarse mediante un string de "full_name" o un array de atributos.');
+            }
+
+            // Si hay email global, hacerlo único
+            if (isset($globalOverrides['email'])) {
+                $email = $globalOverrides['email'];
+                $emailParts = explode('@', $email);
+                $uniqueEmail = $emailParts[0] . "-$index@" . $emailParts[1];
+
+                $globalOverrides['email'] = $uniqueEmail;
+            }
+
+            return Player::factory()->create(array_merge($attributes, $globalOverrides));
+        });
+    }
 }

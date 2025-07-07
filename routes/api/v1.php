@@ -27,6 +27,7 @@ Route::prefix('management')->middleware('auth:sanctum')->group(function () {
         Route::patch('{club}/budget', [ClubController::class, 'updateBudget'])->name('updateBudget');
         Route::post('{club}/sign-player', [ClubController::class, 'signPlayer'])->name('signPlayer');
         Route::post('{club}/sign-coach', [ClubController::class, 'signCoach'])->name('signCoach');
+        Route::get('{club}/players', [ClubController::class, 'players'])->name('players');
     });
 
     // -> Para evitar colisiones con /coaches/{coach}, se coloca antes de la apiResource
