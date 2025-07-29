@@ -1,13 +1,14 @@
 <?php
 
-use App\Exceptions\API\V1\ClubHasMembersException;
-use App\Exceptions\API\V1\ErrorSendingNotificationException;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Middleware\HandleCors;
 use App\Services\API\V1\ApiResponseService;
+use Symfony\Component\HttpFoundation\Response;
+use App\Exceptions\API\V1\ClubHasMembersException;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
-use Symfony\Component\HttpFoundation\Response;
+use App\Exceptions\API\V1\ErrorSendingNotificationException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -18,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->append(HandleCors::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (ThrottleRequestsException $exception) {
