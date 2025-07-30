@@ -45,15 +45,18 @@ class RegisterTest extends AuthTestCase
                 'data' => [
                     'token' => $response->json('data.token'),
                     'token_type' => $response->json('data.token_type'),
+                    'user' => $response->json('data.user'),
                 ],
             ]);
 
         $this->assertArrayHasKey('token', $response->json('data'));
         $this->assertArrayHasKey('token_type', $response->json('data'));
+        $this->assertArrayHasKey('user', $response->json('data'));
 
         $this->assertNotEmpty($response->json('data.token'));
         $this->assertTrue(is_string($response->json('data.token')));
         $this->assertEquals('bearer', $response->json('data.token_type'));
+        $this->assertTrue(is_array($response->json('data.user')));
     }
 
     // #[Test]

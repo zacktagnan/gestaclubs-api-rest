@@ -11,4 +11,6 @@ interface AuthServiceInterface
     public function login(array $credentials): JsonResponse;
 
     public function logout(): JsonResponse;
+
+    public function me(): JsonResponse;
 }

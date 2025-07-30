@@ -5,6 +5,7 @@ use App\Http\Controllers\API\V1\Auth\{
     RegisterController,
     LoginController,
     LogoutController,
+    MeController,
 };
 use App\Http\Controllers\API\V1\Management\{
     ClubController,
@@ -17,6 +18,7 @@ Route::prefix('auth')->as('auth.')->group(function () {
     Route::post('/login', LoginController::class)->name('login');
 
     Route::group(['middleware' => 'auth:sanctum'], function () {
+        Route::get('/me', MeController::class)->name('me');
         Route::post('/logout', LogoutController::class)->name('logout');
     });
 });

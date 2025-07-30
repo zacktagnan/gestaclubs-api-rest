@@ -3,6 +3,7 @@
 namespace App\Services\API\V1;
 
 use App\Contracts\API\Auth\AuthServiceInterface;
+use App\Http\Resources\API\V1\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,9 @@ class AuthSanctumService implements AuthServiceInterface
     {
         $user = User::create($data);
 
-        $token = $user
+        Auth::login($user);
+
+        $token = Auth::user()
             ->createToken(
                 data_get($data, 'device_name')
             )
@@ -22,6 +25,7 @@ class AuthSanctumService implements AuthServiceInterface
         return ApiResponseService::success([
             'token' => $token,
             'token_type' => 'bearer',
+            'user' => new UserResource(Auth::user()),
         ]);
     }
 
@@ -43,6 +47,7 @@ class AuthSanctumService implements AuthServiceInterface
         return ApiResponseService::success([
             'token' => $token,
             'token_type' => 'bearer',
+            'user' => new UserResource(Auth::user()),
         ]);
     }
 
@@ -51,5 +56,12 @@ class AuthSanctumService implements AuthServiceInterface
         Auth::user()->tokens()->delete();
 
         return ApiResponseService::success(null, 'Logged out successfully!!');
+    }
+
+    public function me(): JsonResponse
+    {
+        return ApiResponseService::success([
+            'user' => new UserResource(Auth::user()),
+        ]);
     }
 }
